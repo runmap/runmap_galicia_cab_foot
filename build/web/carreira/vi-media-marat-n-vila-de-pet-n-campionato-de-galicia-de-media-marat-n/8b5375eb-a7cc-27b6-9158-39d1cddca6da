@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+
+<html lang="gl">
+<head><title>
+	Carreiras Galegas - Federación Galega de Atletismo
+</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" /><link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" /><link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" /><link href="../../css/pages/globals.css" rel="stylesheet" /><link href="../../css/pages/master.css" rel="stylesheet" /><link href="../../css/cookiecuttr.css" rel="stylesheet" />
+    <script src="../../js/jquery.cookie.js"></script>
+    <script src="../../js/jquery.cookiecuttr.js"></script>
+    <script src="../../js/pages/globals.js"></script>
+    <script src="../../js/pages/master.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    
+    <script src="../../js/pages/carreira.js?v=1.5.0.7"></script>
+    <link href="../../css/pages/carreira.css?v=1.5.0.7" rel="stylesheet" />
+    <script src="../../js/jquery.flipcountdown.js"></script>
+    <link href="../../css/jquery.flipcountdown.css" rel="stylesheet" />
+<link href="../../css/pages/mobile.css" rel="stylesheet" /></head>
+<body>
+    <form method="post" action="8b5375eb-a7cc-27b6-9158-39d1cddca6da" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="+SPOgyYP6RDBKfX8N1zqXTjdJOAw3klrZQzm24aKuaIO//7f4U/z0strH0Ya9cHiU2K9D/IFcaLN4Wj20bStp/+8qmGKnuGTT+PJES+gqS/jB4rw2FBt5apRDRiQ9BLR" />
+        <header>
+            <div class="header">
+                <nav class="navbar navbar-default container" role="navigation">
+                    <!-- Brand and toggle get grouped for better mo
+                    bile display -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="../../index.html">
+                            <img src="../../img/master/logo-carreiras-galegas.jpg" /></a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#categorias">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="header-info">                            
+                            <div class="header-contact">
+                                <span><i class="fa fa-envelope-o"></i><a href="mailto:info@carreirasgalegas.com">info@carreirasgalegas.com</a></span> <span><i class="fa fa-phone"></i>+34 981 29 17 99<br />
+                                </span>
+                            </div>
+                            <div class="btn-group language">
+                                <button type="button" class="btn btn-default">GL</button>
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="8b5375eb-a7cc-27b6-9158-39d1cddca6da#">GL</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="categorias">
+                        <ul class="nav navbar-nav">
+                            <li id="nav-inicio">
+                                <a href="../../index.html">Inicio</a>
+                            </li>
+                            <li id="nav-noticias">
+                                <a href="../../noticias">Novas</a>
+                            </li>
+                            <li id="nav-calendario">
+                                <a href="../../calendario">Calendario</a>
+                            </li>
+                            <li id="nav-resultados">
+                                <a href="../../resultados">Resultados</a>
+                            </li>
+                            <li id="nav-entrenamiento">
+                                <a href="../../entrenamiento">Adestramento</a>
+                            </li>
+                            <li id="nav-salud">
+                                <a href="../../salud">Saúde</a>
+                            </li>
+                            <li id="nav-licenzas">
+                                <a href="http://licenzas.carreirasgalegas.com" target="_blank">Licenzas</a>
+                            </li>
+                            <li id="nav-contacto">
+                                <a href="../../contacto">Contacto</a>
+                            </li>
+                            
+                            
+                             
+                             
+                            <li id="navlogin" class="pull-right">
+                                <a href="../../login"><i class="fa fa-sign-in"></i> Iniciar sesión</a>                                
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+        </header>
+        <section class="container web-content">
+            <aside id="filter">
+            </aside>
+            <section>
+                
+    <div id="carreira">
+        <div class="col-md-3 cartel">
+            <div class="thumbnail">
+                <img id="imgCartel" src="http://images.carreirasgalegas.com/image/carrera/8b5375eb-a7cc-27b6-9158-39d1cddca6da-300x.jpg" />
+            </div>
+            <div class="reglamento">
+                <a href="../../reglamento/vi-media-marat-n-vila-de-pet-n-campionato-de-galicia-de-media-marat-n/8b5375eb-a7cc-27b6-9158-39d1cddca6da" id="btnReglamento" class="btn btn-reglamento" target="_blank"><i class="fa fa-download"></i>Regulamento</a>
+            </div>
+            <div class="contacto">
+                
+                
+            </div>
+            <div id="contador" class="contador">
+                <p class="counter-label col-md-12">Tempo para o inicio da carreira</p>
+                <div id="counter" class="col-md-12">
+                </div>
+                <div id="counterHeaders" class="col-md-12">
+                    <span class="col-md-3">Días</span>
+                    <span class="col-md-3">Horas</span>
+                    <span class="col-md-3">Min.</span>
+                    <span class="col-md-3">Seg.</span>
+                </div>
+            </div>
+            <div id="video" class="video">
+            </div>
+            <div id="recorrido" class="recorrido">
+                <a id="hypRecorrido" href="http://images.carreirasgalegas.com/image/recorrido/ccbcc294-d690-4b63-23c7-39d20bc20560-800.jpg" target="_bank"><img src="http://images.carreirasgalegas.com/image/recorrido/ccbcc294-d690-4b63-23c7-39d20bc20560-800.jpg" alt="" /></a>
+            </div>
+            
+            <div id="comida">
+                <p>Reserva de comida de acompañante/s (O custo son 10 euros)</p>
+                <a href="http://www.carreirasgalegas.com/comida/vi-media-marat-n-vila-de-pet-n-campionato-de-galicia-de-media-marat-n/8b5375eb-a7cc-27b6-9158-39d1cddca6da" id="btnComida" class="btn btn-inscripcion"><i class="fa fa-edit"></i>Comida</a>
+                
+            </div>
+        </div>
+        <div class="col-md-9 datos">
+            <h2>
+                Petín ,
+                domingo, 20 de setembro de 2015
+                <input name="ctl00$content$clockcount" type="hidden" id="clockcount" value="09/20/2015 11:00:00" />
+            </h2>
+            <h1>
+                VI MEDIA MARATÓN "VILA DE PETÍN" CAMPIONATO DE GALICIA DE MEDIA MARATÓN</h1>
+            
+            
+                    
+                    <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Salida</th>
+                                <th>Distancia</th>
+                                <th>Inscrición hasta</th>
+                                <th>Precio</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                    <tr class="border-left distancia">
+                                        <td class="f6">
+                                            
+                                            <span class="name">
+                                                CARREIRA (DENDE JUN ATA VET)</span></td>
+                                        <td class="f6">
+                                            <span class="inscritos"><a href='http://www.carreirasgalegas.com/inscritos/vi-media-marat-n-vila-de-pet-n-campionato-de-galicia-de-media-marat-n/ccbcc294-d690-4b63-23c7-39d20bc20560'><i class="fa fa-edit"></i>
+                                                2 inscritos</a></span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-clock-o"></i>
+                                                11:00</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-arrows-h"></i>
+                                                21,1 km</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-calendar"></i>
+                                                15/09/2015</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-euro"></i>
+                                                12,00</span></td>
+                                        <td>
+                                            <span class='no-plazas'>
+                                                 plazas</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            <span id="spanFecha2"><i class="fa fa-calendar"></i>
+                                                17/09/2015</span></td>
+                                        <td class="f6">
+                                            <span id="spanPrecio2"><i class="fa fa-euro"></i>
+                                                15,00</span></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+
+                                
+                        </tbody>
+                        <tfooter>
+                            <tr>
+                                <td><a href="http://www.carreirasgalegas.com/inscripcion/vi-media-marat-n-vila-de-pet-n-campionato-de-galicia-de-media-marat-n/8b5375eb-a7cc-27b6-9158-39d1cddca6da/grupo-1" id="btnInscripcion" class="btn btn-inscripcion"><i class="fa fa-edit"></i>Inscribirme</a>
+                    </td>
+                                <td><span class="totalinscritos">Total: 2 inscritos</span></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfooter>
+                    </table>                         
+                </div>
+                
+                    
+                    <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Salida</th>
+                                <th>Distancia</th>
+                                <th>Inscrición hasta</th>
+                                <th>Precio</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                    <tr class="border-left distancia">
+                                        <td class="f6">
+                                            
+                                            <span class="name">
+                                                ANDAINA (DENDE 1997 ATA VET)</span></td>
+                                        <td class="f6">
+                                            <span class="inscritos"><a href='http://www.carreirasgalegas.com/inscritos/vi-media-marat-n-vila-de-pet-n-campionato-de-galicia-de-media-marat-n/c25b3c62-6c1b-a5f1-db42-39d20bc7f358'><i class="fa fa-edit"></i>
+                                                1 inscritos</a></span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-clock-o"></i>
+                                                10:30</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-arrows-h"></i>
+                                                14 km</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-calendar"></i>
+                                                15/09/2015</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-euro"></i>
+                                                12,00</span></td>
+                                        <td>
+                                            <span class='no-plazas'>
+                                                 plazas</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            <span id="spanPrecio2"><i class="fa fa-euro"></i>
+                                                15,00</span></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+
+                                
+                        </tbody>
+                        <tfooter>
+                            <tr>
+                                <td><a href="http://www.carreirasgalegas.com/inscripcion/vi-media-marat-n-vila-de-pet-n-campionato-de-galicia-de-media-marat-n/8b5375eb-a7cc-27b6-9158-39d1cddca6da/grupo-2" id="btnInscripcion" class="btn btn-inscripcion"><i class="fa fa-edit"></i>Inscribirme</a>
+                    </td>
+                                <td><span class="totalinscritos">Total: 1 inscritos</span></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfooter>
+                    </table>                         
+                </div>
+                
+            
+            <div class="descripcion">
+                <div><span style="line-height: 1.5;">O Concello de Petín de Valdeorras e a Delegación da F.G.A en Valdeorras, organizan o VIº MEDIA MARATÓN “VILA DE PETIN” CAMPIONATO DE GALICIA DE MEDIO MARATÓN E Vª ANDAINA POPULAR.</span><br></div><div><span style="line-height: 1.5;"><br></span></div><div><b><font color="#f83a22"><a href="https://isis.rfea.es/sirfea2/ ">INSCRICIÓN AO CAMPIONATO DE GALICIA (AQUÍ)</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="http://www.atletismogalego.org/CIRCULARES/Circular%2054-2015.pdf">MÁIS INFORMACIÓN DO CAMPIONATO (Circular 54)</a></font></b><br></div><div><span style="line-height: 1.5;"><br></span></div><div><span style="line-height: 1.5;"><b>INSCRICIONS:</b> populares ata</span><span style="line-height: 1.5;">&nbsp;o xoves 17 de setembro.</span></div><div><span style="line-height: 1.5;"><b>RETIRADA DE DORSAIS: </b>realizarase na secretaría habilitada para tal fin, no Teleclube de Petín.</span><br></div><div style="text-align: justify;">Dende as 9:00 h. ata 10:00 h. para a Andaina Popular.</div><div style="text-align: justify;">Dende as 9:00 h. ata a 10:30 h. para o Medio Maratón.</div><div><div style="text-align: justify;"><b>SERVIZOS: </b>Farase entrega no intre da retirada do dorsal, da BOLSA DO CORREDOR e o vale para la COMIDA POPULAR a&nbsp;<span style="line-height: 1.5;">todos os participantes inscritos en el VIº Medio Maratón “Vila de Petín” &nbsp;e a os da ANDAINA POPULAR.</span></div><div style="text-align: justify;">Poderase adquirir para os acompañantes vales para a COMIDA POPULAR no momento de formalizar&nbsp;<span style="line-height: 1.5;">a inscrición ó precio de 10,00 €. (Na propia páxina web no aparatado de comida).</span></div></div><div style="text-align: justify;"><font color="#f83a22"><span style="line-height: 1.5;">Os corredores do Campionato de Galicia que desexen concertar a comida, deben&nbsp;</span>formalizar<span style="line-height: 1.5;">&nbsp;o pago da reserva da comida.</span></font></div><div style="text-align: justify;"><span style="line-height: 1.5;"><b><br></b></span></div><div style="text-align: justify;"><span style="line-height: 1.5;"><b>PREMIOS:</b></span></div><div><ul><li style="text-align: justify;"><span style="line-height: 1.5;">Haberá trofeo os 3 primeiros clasificados da Carreira Popular masculina e feminina.</span><br></li><li style="text-align: justify;"><span style="line-height: 1.5;">Haberá medalla commemorativa do campionato para os tres primeiros clasificados nas seguintes categorías: Xunior, Promesa, Senior e Veterans masculino e feminino.</span><br></li><li style="text-align: justify;"><span style="line-height: 1.5;">Haberá trofeo para o primeiro atleta local masculino e feminino.</span></li></ul><font color="#4986e7"><div style="text-align: justify;"><span style="line-height: 1.5;">O</span><span style="line-height: 1.5;">s trofeos non serán acumulativos.</span></div></font></div>
+            </div>
+        </div>
+
+    </div>
+
+            </section>
+        </section>
+        <footer>
+            <div class="footer">
+                <div class="container">
+                    <div class="col-md-4 info">
+                        <strong>Carreiras Galegas</strong>
+                        <p>Benvido á web do departamento de carreiras populares oficiais da Federación Galega de Atletismo. Aquí atoparás toda a información relativa ó calendario autonómico</p>
+                        
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 address">
+                        <address>
+                            <strong>Federación Galega de Atletismo</strong><br>
+                            <i class="fa fa-map-marker"></i>Avenida de Glasgow S/N<br />
+                            <span>O Birloque, 15008 A Coruña</span><br />
+                            <i class="fa fa-phone"></i>+34 981 29 17 99 - 981 29 16 83<br />
+                            <i class="fa fa-envelope-o"></i><a href="mailto:info@carreirasgalegas.com">info@carreirasgalegas.com</a>
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="col-md-12">
+                        ©
+                        2015
+                        Federación Galega de Atletismo - Sitio web desenvolvido por <a href="http://www.igasoft.es" target="_blank">Igasoft</a>
+
+                        <ul class="footer-nav">
+                            <li>
+                                <a href="../../aviso-legal">Aviso Legal</a>
+                            </li>
+                            <li>
+                                <a href="../../politica-cookies">Política de cookies</a>
+                            </li>
+                            <li>
+                                <a href="../../calendario">Calendario</a>
+                            </li>
+                            <li>
+                                <a href="../../resultados">Resultados</a>
+                            </li>
+                            <li>
+                                <a href="../../noticias">Novas</a>
+                            </li>
+                             <li>
+                                <a href="http://licenzas.carreirasgalegas.com" target="_blank">Licenzas</a>
+                            </li>
+                            <li>
+                                <a href="../../contacto">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-46963871-1', 'carreirasgalegas.com');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

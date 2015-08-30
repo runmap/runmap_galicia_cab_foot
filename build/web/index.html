@@ -1,0 +1,902 @@
+
+
+<!DOCTYPE html>
+
+<html lang="gl">
+<head><meta charset="UTF-8"><title>
+	RunMapGalicia : Buscador de eventos deportivos
+</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" /><link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" /><link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" /><link href="css/pages/globals.css" rel="stylesheet" /><link href="css/pages/master.css" rel="stylesheet" /><link href="css/cookiecuttr.css" rel="stylesheet" />
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.cookiecuttr.js"></script>
+    <script src="js/pages/globals.js"></script>
+    <script src="js/pages/master.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    
+    <script src="js/pages/calendario.js"></script>
+    <link href="css/pages/calendario.css" rel="stylesheet" />
+    <link href="css/pages/mobile.css" rel="stylesheet" />
+    
+    
+    <!-- Code from RunMap -->
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>  
+    <script src="gmaps.js"></script>
+
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+
+
+
+</head>
+        
+<body>
+    <form method="post" action="calendario" id="form1">
+<!--<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+-->
+        
+
+<br><br>
+    <section class="container web-content">
+        <aside id="filter">
+        </aside>
+        
+        <section>
+    <h1 class="inicio_seccion2"> Próximos eventos </h1>     <br>        
+    <div class="row-fluid">
+        <div class="carousel slide row" id="carreras">
+            
+            <div class="carousel-inner">
+                    
+                            <div class='item active' id="activos">
+                            <!--<div class="col-md-3">
+                                <div class="caption">
+                                    <div class="fecha">
+                                        <span class="day">23</span><span class="month">
+                                            ago</span>
+                                    </div>
+                                    <div class="name">15ª CARREIRA POPULAR DE BETANZOS</div>
+                                    <div class="place">Betanzos</div>
+                                </div>
+                                <div class="thumbnail">
+                                    <a href='carreira/15-carreira-popular-de-betanzos/907f8ad0-0836-6eaf-5ea1-39d1e64624fc'>
+                                        <img src='http://images.carreirasgalegas.com/image/carrera/907f8ad0-0836-6eaf-5ea1-39d1e64624fc-250x333.jpg' alt='15ª CARREIRA POPULAR DE BETANZOS' /></a>
+                                </div>
+                                <div class="inscribirme"><a href='carreira/15-carreira-popular-de-betanzos/907f8ad0-0836-6eaf-5ea1-39d1e64624fc'><i class='fa fa-edit'></i> Inscribirme</a></div>
+                                <div class="caption-more">
+                                    <span><i class="fa fa-edit"></i>-</span>
+                                    <span title="Inscritos"><i class="fa fa-clock-o"></i>11:30</span>
+                                    <span><i class="fa fa-arrows-h"></i>8,12 km</span>
+                                    <span><i class="fa fa-euro"></i>5</span>
+                                </div>
+                            </div>
+                            
+                        
+                            
+                            <div class="col-md-3">
+                                <div class="caption">
+                                    <div class="fecha">
+                                        <span class="day">29</span><span class="month">
+                                            ago</span>
+                                    </div>
+                                    <div class="name">XXIV Carreira das Areas Concello de Carnota - II Circuíto “Correndo pola Costa da Morte”</div>
+                                    <div class="place">Carnota</div>
+                                </div>
+                                <div class="thumbnail">
+                                    <a href='carreira/xxiv-carreira-das-areas-concello-de-carnota-ii-circuito-correndo-pola-costa-da-morte/6918dd62-b0a5-db39-d0f9-39cea546f00b'>
+                                        <img src='http://images.carreirasgalegas.com/image/carrera/6918dd62-b0a5-db39-d0f9-39cea546f00b-250x333.jpg' alt='XXIV Carreira das Areas Concello de Carnota - II Circuíto “Correndo pola Costa da Morte”' /></a>
+                                </div>
+                                <div class="inscribirme"><a href='carreira/xxiv-carreira-das-areas-concello-de-carnota-ii-circuito-correndo-pola-costa-da-morte/6918dd62-b0a5-db39-d0f9-39cea546f00b'><i class='fa fa-edit'></i> Inscribirme</a></div>
+                                <div class="caption-more">
+                                    <span><i class="fa fa-edit"></i>-</span>
+                                    <span title="Inscritos"><i class="fa fa-clock-o"></i>00:00</span>
+                                    <span><i class="fa fa-arrows-h"></i>0 km</span>
+                                    <span><i class="fa fa-euro"></i>0</span>
+                                </div>
+                            </div>
+                            
+                        
+                            
+                            <div class="col-md-3">
+                                <div class="caption">
+                                    <div class="fecha">
+                                        <span class="day">29</span><span class="month">
+                                            ago</span>
+                                    </div>
+                                    <div class="name">XIX CARREIRA PEDESTRE POPULAR DE NOIA. III CIRCUITO PROVINCIAL DE CARREIRAS POPULARES DEPUTACIÓN PROVINCIAL DE A CORUÑA</div>
+                                    <div class="place">Noia</div>
+                                </div>
+                                <div class="thumbnail">
+                                    <a href='carreira/xix-carreira-pedestre-popular-de-noia-iii-circuito-provincial-de-carreiras-populares-deputaci-n-provincial-de-a-coruña/b9a7e664-dc35-80f8-6421-39cf45433503'>
+                                        <img src='http://images.carreirasgalegas.com/image/carrera/b9a7e664-dc35-80f8-6421-39cf45433503-250x333.jpg' alt='XIX CARREIRA PEDESTRE POPULAR DE NOIA. III CIRCUITO PROVINCIAL DE CARREIRAS POPULARES DEPUTACIÓN PROVINCIAL DE A CORUÑA' /></a>
+                                </div>
+                                <div class="inscribirme"><a href='carreira/xix-carreira-pedestre-popular-de-noia-iii-circuito-provincial-de-carreiras-populares-deputaci-n-provincial-de-a-coruña/b9a7e664-dc35-80f8-6421-39cf45433503'><i class='fa fa-edit'></i> Inscribirme</a></div>
+                                <div class="caption-more">
+                                    <span><i class="fa fa-edit"></i>-</span>
+                                    <span title="Inscritos"><i class="fa fa-clock-o"></i>00:00</span>
+                                    <span><i class="fa fa-arrows-h"></i>0 km</span>
+                                    <span><i class="fa fa-euro"></i>0</span>
+                                </div>
+                            </div>
+                            
+                        
+                            
+                            <div class="col-md-3">
+                                <div class="caption">
+                                    <div class="fecha">
+                                        <span class="day">30</span><span class="month">
+                                            ago</span>
+                                    </div>
+                                    <div class="name">VII CARREIRA POPULARA CONCELLO A POBRA. III CIRCUITO PROVINCIAL DE CARREIRAS POPULARES DEPUTACIÓN PROVINCIAL DE A CORUÑA</div>
+                                    <div class="place">A Pobra</div>
+                                </div>
+                                <div class="thumbnail">
+                                    <a href='carreira/vii-carreira-populara-concello-a-pobra-iii-circuito-provincial-de-carreiras-populares-deputaci-n-provincial-de-a-coruña/0648d795-0857-dd19-2547-39cf45440f89'>
+                                        <img src='http://images.carreirasgalegas.com/image/carrera/0648d795-0857-dd19-2547-39cf45440f89-250x333.jpg' alt='VII CARREIRA POPULARA CONCELLO A POBRA. III CIRCUITO PROVINCIAL DE CARREIRAS POPULARES DEPUTACIÓN PROVINCIAL DE A CORUÑA' /></a>
+                                </div>
+                                <div class="inscribirme"><a href='carreira/vii-carreira-populara-concello-a-pobra-iii-circuito-provincial-de-carreiras-populares-deputaci-n-provincial-de-a-coruña/0648d795-0857-dd19-2547-39cf45440f89'><i class='fa fa-edit'></i> Inscribirme</a></div>
+                                <div class="caption-more">
+                                    <span><i class="fa fa-edit"></i>-</span>
+                                    <span title="Inscritos"><i class="fa fa-clock-o"></i>11:30</span>
+                                    <span><i class="fa fa-arrows-h"></i>7,8 km</span>
+                                    <span><i class="fa fa-euro"></i>5</span>
+                                </div>
+                            </div>-->
+                            </div>
+                        
+                            <div class='item' id='ronda-2'>
+                                
+                                
+                            <!--<div class="col-md-3">
+                                <div class="caption">
+                                    <div class="fecha">
+                                        <span class="day">30</span><span class="month">
+                                            ago</span>
+                                    </div>
+                                    <div class="name">5KM CORRENDO POLA PRAIA DE RAZO. 2015</div>
+                                    <div class="place">Razo</div>
+                                </div>
+                                <div class="thumbnail">
+                                    <a href='carreira/5km-correndo-pola-praia-de-razo-2015/38d3362b-e6b8-49db-2e8c-39d23bde718d'>
+                                        <img src='http://images.carreirasgalegas.com/image/carrera/38d3362b-e6b8-49db-2e8c-39d23bde718d-250x333.jpg' alt='5KM CORRENDO POLA PRAIA DE RAZO. 2015' /></a>
+                                </div>
+                                <div class="inscribirme"><a href='carreira/5km-correndo-pola-praia-de-razo-2015/38d3362b-e6b8-49db-2e8c-39d23bde718d'><i class='fa fa-edit'></i> Inscribirme</a></div>
+                                <div class="caption-more">
+                                    <span><i class="fa fa-edit"></i>-</span>
+                                    <span title="Inscritos"><i class="fa fa-clock-o"></i>12:45</span>
+                                    <span><i class="fa fa-arrows-h"></i>5 km</span>
+                                    <span><i class="fa fa-euro"></i>0</span>
+                                </div>
+                            </div>
+                            
+                        
+                            
+                            <div class="col-md-3">
+                                <div class="caption">
+                                    <div class="fecha">
+                                        <span class="day">6</span><span class="month">
+                                            set</span>
+                                    </div>
+                                    <div class="name">V CARREIRA POPULAR CONCELLO DE VIMIANZO. CAMPIONATO DE GALICIA 10 KM RUTA</div>
+                                    <div class="place">Vimianzo</div>
+                                </div>
+                                <div class="thumbnail">
+                                    <a href='carreira/v-carreira-popular-concello-de-vimianzo-campionato-de-galicia-10-km-ruta/9567b1e2-bf22-a669-b9f6-39d1cdf50391'>
+                                        <img src='http://images.carreirasgalegas.com/image/carrera/9567b1e2-bf22-a669-b9f6-39d1cdf50391-250x333.jpg' alt='V CARREIRA POPULAR CONCELLO DE VIMIANZO. CAMPIONATO DE GALICIA 10 KM RUTA' /></a>
+                                </div>
+                                <div class="inscribirme"><a href='carreira/v-carreira-popular-concello-de-vimianzo-campionato-de-galicia-10-km-ruta/9567b1e2-bf22-a669-b9f6-39d1cdf50391'><i class='fa fa-edit'></i> Inscribirme</a></div>
+                                <div class="caption-more">
+                                    <span><i class="fa fa-edit"></i>-</span>
+                                    <span title="Inscritos"><i class="fa fa-clock-o"></i>11:00</span>
+                                    <span><i class="fa fa-arrows-h"></i>10 km</span>
+                                    <span><i class="fa fa-euro"></i>6</span>
+                                </div>
+                            </div>
+                            
+                        
+                            
+                            <div class="col-md-3">
+                                <div class="caption">
+                                    <div class="fecha">
+                                        <span class="day">6</span><span class="month">
+                                            set</span>
+                                    </div>
+                                    <div class="name">IV CARREIRA SOLIDARIA DA PISCINA MUNICIPAL DE MUROS</div>
+                                    <div class="place">Muros</div>
+                                </div>
+                                <div class="thumbnail">
+                                    <a href='carreira/iv-carreira-solidaria-da-piscina-municipal-de-muros/799987b8-9af4-4624-2467-39d0402bd589'>
+                                        <img src='http://images.carreirasgalegas.com/image/carrera/799987b8-9af4-4624-2467-39d0402bd589-250x333.jpg' alt='IV CARREIRA SOLIDARIA DA PISCINA MUNICIPAL DE MUROS' /></a>
+                                </div>
+                                <div class="inscribirme"><a href='carreira/iv-carreira-solidaria-da-piscina-municipal-de-muros/799987b8-9af4-4624-2467-39d0402bd589'><i class='fa fa-edit'></i> Inscribirme</a></div>
+                                <div class="caption-more">
+                                    <span><i class="fa fa-edit"></i>-</span>
+                                    <span title="Inscritos"><i class="fa fa-clock-o"></i>11:00</span>
+                                    <span><i class="fa fa-arrows-h"></i>8 km</span>
+                                    <span><i class="fa fa-euro"></i>5</span>
+                                </div>
+                            </div>
+                            
+                        
+                            
+                            <div class="col-md-3">
+                                <div class="caption">
+                                    <div class="fecha">
+                                        <span class="day">6</span><span class="month">
+                                            set</span>
+                                    </div>
+                                    <div class="name">3ª CARREIRA POPULAR BENQUERENCIA TERRA - MAR</div>
+                                    <div class="place">Benquerencia</div>
+                                </div>
+                                <div class="thumbnail">
+                                    <a href='carreira/3-carreira-popular-benquerencia-terra-mar/573c2c36-2e2a-0412-7d2b-39d113bc6853'>
+                                        <img src='http://images.carreirasgalegas.com/image/carrera/573c2c36-2e2a-0412-7d2b-39d113bc6853-250x333.jpg' alt='3ª CARREIRA POPULAR BENQUERENCIA TERRA - MAR' /></a>
+                                </div>
+                                <div class="inscribirme"><a href='carreira/3-carreira-popular-benquerencia-terra-mar/573c2c36-2e2a-0412-7d2b-39d113bc6853'><i class='fa fa-edit'></i> Inscribirme</a></div>
+                                <div class="caption-more">
+                                    <span><i class="fa fa-edit"></i>-</span>
+                                    <span title="Inscritos"><i class="fa fa-clock-o"></i>17:45</span>
+                                    <span><i class="fa fa-arrows-h"></i>7,3 km</span>
+                                    <span><i class="fa fa-euro"></i>5</span>
+                                </div>
+                            </div> -->
+                            </div>
+                        
+                            <div class='item' id='ronda-3'>
+                            
+                            <!--<div class="col-md-3">
+                                <div class="caption">
+                                    <div class="fecha">
+                                        <span class="day">20</span><span class="month">
+                                            set</span>
+                                    </div>
+                                    <div class="name">VI MEDIA MARATÓN "VILA DE PETÍN" CAMPIONATO DE GALICIA DE MEDIA MARATÓN</div>
+                                    <div class="place">Petín </div>
+                                </div>
+                                <div class="thumbnail">
+                                    <a href='carreira/vi-media-marat-n-vila-de-pet-n-campionato-de-galicia-de-media-marat-n/8b5375eb-a7cc-27b6-9158-39d1cddca6da'>
+                                        <img src='http://images.carreirasgalegas.com/image/carrera/8b5375eb-a7cc-27b6-9158-39d1cddca6da-250x333.jpg' alt='VI MEDIA MARATÓN "VILA DE PETÍN" CAMPIONATO DE GALICIA DE MEDIA MARATÓN' /></a>
+                                </div>
+                                <div class="inscribirme"><a href='carreira/vi-media-marat-n-vila-de-pet-n-campionato-de-galicia-de-media-marat-n/8b5375eb-a7cc-27b6-9158-39d1cddca6da'><i class='fa fa-edit'></i> Inscribirme</a></div>
+                                <div class="caption-more">
+                                    <span><i class="fa fa-edit"></i>-</span>
+                                    <span title="Inscritos"><i class="fa fa-clock-o"></i>11:00</span>
+                                    <span><i class="fa fa-arrows-h"></i>21,097 km</span>
+                                    <span><i class="fa fa-euro"></i>12</span>
+                                </div>
+                            </div>
+                            
+                        
+                            
+                            <div class="col-md-3">
+                                <div class="caption">
+                                    <div class="fecha">
+                                        <span class="day">20</span><span class="month">
+                                            set</span>
+                                    </div>
+                                    <div class="name">IV CORRESAN GRANXA DO XESTO – CRONOESCALADA AO MONTE PEDROSO</div>
+                                    <div class="place">Santiago de Compostela</div>
+                                </div>
+                                <div class="thumbnail">
+                                    <a href='carreira/iv-corresan-granxa-do-xesto-cronoescalada-ao-monte-pedroso/60c29d43-8564-08f7-5070-39d1a8257246'>
+                                        <img src='http://images.carreirasgalegas.com/image/carrera/60c29d43-8564-08f7-5070-39d1a8257246-250x333.jpg' alt='IV CORRESAN GRANXA DO XESTO – CRONOESCALADA AO MONTE PEDROSO' /></a>
+                                </div>
+                                <div class="inscribirme"><a href='carreira/iv-corresan-granxa-do-xesto-cronoescalada-ao-monte-pedroso/60c29d43-8564-08f7-5070-39d1a8257246'><i class='fa fa-plus'></i> MÁIS INFO</a></div>
+                                <div class="caption-more">
+                                    <span><i class="fa fa-edit"></i>-</span>
+                                    <span title="Inscritos"><i class="fa fa-clock-o"></i>00:00</span>
+                                    <span><i class="fa fa-arrows-h"></i>0 km</span>
+                                    <span><i class="fa fa-euro"></i>0</span>
+                                </div>
+                            </div>
+                            
+                        
+                            
+                            <div class="col-md-3">
+                                <div class="caption">
+                                    <div class="fecha">
+                                        <span class="day">10</span><span class="month">
+                                            out</span>
+                                    </div>
+                                    <div class="name">IV CORRESAN CIDADE DA CULTURA</div>
+                                    <div class="place">Santiago de Compostela</div>
+                                </div>
+                                <div class="thumbnail">
+                                    <a href='carreira/iv-corresan-cidade-da-cultura/a3422aa7-2bed-75fd-4b50-39d1a82709a5'>
+                                        <img src='http://images.carreirasgalegas.com/image/carrera/a3422aa7-2bed-75fd-4b50-39d1a82709a5-250x333.jpg' alt='IV CORRESAN CIDADE DA CULTURA' /></a>
+                                </div>
+                                <div class="inscribirme"><a href='carreira/iv-corresan-cidade-da-cultura/a3422aa7-2bed-75fd-4b50-39d1a82709a5'><i class='fa fa-plus'></i> MÁIS INFO</a></div>
+                                <div class="caption-more">
+                                    <span><i class="fa fa-edit"></i>-</span>
+                                    <span title="Inscritos"><i class="fa fa-clock-o"></i>00:00</span>
+                                    <span><i class="fa fa-arrows-h"></i>0 km</span>
+                                    <span><i class="fa fa-euro"></i>0</span>
+                                </div>
+                            </div>-->
+                            </div>
+                        
+            </div>
+            <a data-slide="prev" href="calendario#carreras" class="left carousel-control">‹</a>
+            <a data-slide="next" href="calendario#carreras" class="right carousel-control">›</a>
+        </div>
+    </div>
+          
+    <script>
+        
+        
+ function loadResults (data) {
+        
+     var html = "";  
+     var html_ronda2 = "";
+     var html_ronda3 = "";
+     var contador=0;
+      
+     if (data.length > 0) {
+
+        for (var i = 0; i < data.length; i++) {
+            
+            var item = data[i];
+            var width = item.width_imagen;
+            var height = item.heigth_imagen;
+            var relacion = (height*1.0) / (width*1.0);
+            
+            //alert(width + " " + height + " " + relacion)
+            
+            if(item.lat && item.nombre_imagen && relacion>1.35 && relacion<1.45){
+                
+                //alert("OK" + width + " " + height + " " + relacion)
+                
+                var fec = item.fecha;
+                
+                var anho = fec.substring(0, 4);
+                var mes = fec.substring(4, 6)-1;
+                var dia = fec.substring(6, 8);
+                var fecDate = new Date(anho, mes, dia);
+                
+                var ruta_im = "img/" + item.nombre_imagen;
+
+                var diames = dia+"/"+mes;
+
+                var aux_html="";
+                
+                aux_html += "<div class=\"col-md-3\">" + 
+                "<div class=\"thumbnail\"> <a href='"+ item.url+"'>"+
+                "<img src='"+ruta_im+ "' alt="+item.mejorTitulo+" /></a></div>" + 
+                "<div class=\"caption\"> <div class=\"fecha\">" +
+                "<span class=\"day\"> " + diames + "</span><span class=\"month\">&nbsp;</span><span class=\"month\">&nbsp;</span> </div>" +
+                "<div class=\"name\">" + item.mejorTitulo + "</div> <div class=\"place\">" + item.lugarBonito + "</div> </div></div>"; 
+                
+        
+          
+                if(contador<4){
+                    html += aux_html;
+                }
+                
+                else if(contador>3 && contador<8){
+                    html_ronda2 += aux_html;
+                }
+                
+                else if(contador>7 && contador<12){
+                    html_ronda3 += aux_html;
+                }
+          
+                contador++;
+                
+                if(contador===12){
+                    break;
+                }
+ 
+            }
+            
+        }
+     }
+     
+     $('#activos').html(html);
+     
+     $('#ronda-2').html(html_ronda2);
+     
+     $('#ronda-3').html(html_ronda3);
+  }
+    
+    
+        
+    var xhr  = $.getJSON('testTodasCarreras.json'); 
+    xhr.done(loadResults);
+    
+    
+    </script>
+
+    <br><br><br>
+    <h1 class="inicio_seccion"> Buscador de eventos </h1> 
+
+    <div class="contenido"> 
+    
+    <div class="Division"><br><br><!--<p class="padding"><label for="cb"><input id="cb" type="checkbox" onclick="handleClick(this);">Ocultar eventos</label></p> -->
+    
+    <!--<center><h2> RunMap.gal </h2></center> -->
+
+    
+    
+    <p class="padding"> <label for="cb_todos"><input id="cb_todos" type="checkbox" onclick=handleClickTodos(this)>&nbsp;&nbsp;Todos</label><br>
+                        <label for="cb_carrera"><input id="cb_carrera" type="checkbox" onclick=handleClickCarrera(this) checked>&nbsp;&nbsp;Carreira popular</label><br>
+                        <label for="cb_maraton"><input id="cb_maraton" type="checkbox" onclick=handleClickMaraton(this)>&nbsp;&nbsp;Maratón/Media</label><br>
+                        <label for="cb_tlon"><input id="cb_tlon" type="checkbox" onclick="handleClickTlon(this);">&nbsp;&nbsp;Duatlón/Triatlón</label><br> 
+                        <label for="cb_bici"><input id="cb_bici" type="checkbox" onclick="handleClickBici(this);">&nbsp;&nbsp;Ruta ciclista</label><br>
+                        <label for="cb_trail"><input id="cb_trail" type="checkbox" onclick="handleClickTrail(this);">&nbsp;&nbsp;Trail/Montaña</label><br>
+                        <label for="cb_andaina"><input id="cb_andaina" type="checkbox" onclick="handleClickAndaina(this);">&nbsp;&nbsp;Andaina/Roteiro</label><br>
+                        <label for="cb_especial"><input id="cb_especial" type="checkbox" onclick="handleClickEspecial(this);">&nbsp;&nbsp;Especial</label><br> 
+                        <br> 
+                        &nbsp;&nbsp;Dende<br>
+                        &nbsp;&nbsp;<input type="text" name="datepicker" id="datepicker" readonly="readonly" size="8"  /> <br><br>
+                        &nbsp;&nbsp;Ata<br>
+                        &nbsp;&nbsp;<input type="text" name="datepicker2" id="datepicker2" readonly="readonly" size="8" />   
+    </p>              
+    
+    <!-- //value="01/09/2015" -->
+    
+    </div>
+
+<center>    <br><br>
+    <div class="Division2" id="map"></div> 
+</center></div>
+    
+    
+  <script>
+    
+    var today = new Date();
+    var dateDesde = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    var dd2;
+
+    if(dd<10) {
+        dd2='0'+dd;
+    } else
+        dd2 = dd;
+
+    if(mm<10) {
+        mm='0'+mm;
+    } 
+
+    today = dd2+'/'+mm+'/'+yyyy;
+        
+    
+    
+    var today_more_1_month = new Date();
+    today_more_1_month.setMonth(today_more_1_month.getMonth() + 1);
+    var dateHasta = new Date();
+    dateHasta.setMonth(dateHasta.getMonth() + 1);
+    
+    
+
+    var _dd = today_more_1_month.getDate();
+    var _mm = today_more_1_month.getMonth()+1; //January is 0!
+    var _yyyy = today_more_1_month.getFullYear();
+
+    var _dd2;
+
+    if(_dd<10) {
+        _dd2='0'+_dd;
+    } else
+        _dd2 = _dd;
+
+    if(_mm<10) {
+        _mm='0'+_mm;
+    } 
+
+    today_more_1_month = _dd2+'/'+_mm+'/'+_yyyy;
+    
+    
+    document.getElementById('datepicker').value = today;
+    document.getElementById('datepicker2').value = today_more_1_month;
+
+
+      
+    jQuery(function($){
+        $.datepicker.regional['es'] = {
+        closeText: 'Cerrar',
+        prevText: '&#x3c;Ant',
+        nextText: 'Sig&#x3e;',
+        currentText: 'Hoy',
+        monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+        'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+        monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun',
+        'Jul','Ago','Sep','Oct','Nov','Dic'],
+        dayNames: ['Domingo','Lunes','Martes','Mi&eacute;rcoles','Jueves','Viernes','S&aacute;bado'],
+        dayNamesShort: ['Dom','Lun','Mar','Mi&eacute;','Juv','Vie','S&aacute;b'],
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','S&aacute;'],
+        weekHeader: 'Sm',
+        dateFormat: 'dd/mm/yy',
+        yearRange: '2015:2016',
+        minDate: new Date(yyyy, mm-1, dd),
+        maxDate: '+1Y',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: ''};
+        $.datepicker.setDefaults($.datepicker.regional['es']);
+    }); 
+    
+$(document).ready(function() {
+    $("#datepicker").datepicker({
+    //minDate: new Date(2015, 8, 1),
+    //maxDate: new Date(2015, 12, 31),
+    dateFormat: 'dd/mm/yy',
+    constrainInput: true });
+  });
+  
+$("#datepicker").datepicker({
+  onSelect: function(dateText1) {
+     // alert(dateText1);
+      
+  var anhoDesde = dateText1.substring(6, 10);
+  var mesDesde = dateText1.substring(3, 5)-1;
+  var diaDesde = dateText1.substring(0, 2);
+  
+  dateDesde = new Date(anhoDesde, mesDesde, diaDesde);
+
+  xhr.done(loadResults);
+    
+  }
+});
+
+$(document).ready(function() {
+    $("#datepicker2").datepicker();
+  });
+  
+$("#datepicker2").datepicker({
+  onSelect: function(dateText2) {
+ 
+  var anhoHasta = dateText2.substring(6, 10);
+  var mesHasta = dateText2.substring(3, 5)-1;
+  var diaHasta = dateText2.substring(0, 2);
+  
+  dateHasta = new Date(anhoHasta, mesHasta, diaHasta);
+  //alert(dateHasta);
+    
+    //alert ( new Date(dateText2) );
+    
+   xhr.done(loadResults);
+  }
+});
+    
+    // Cambiar el tipo de letra
+    
+    //var mostrarResultados = true;
+    var todosChecked = false;
+    var carreraChecked = true;
+    var maratonChecked = false;
+    var tlonChecked = false;
+    var biciChecked = false;
+    var trailChecked = false;
+    var andainaChecked = false;
+    var especialChecked = false;
+    
+    var fechaHasta = "";
+    
+    //var dateHasta = new Date(2015, 8, 1);
+    
+    //alert("llega");
+    /*function handleClick(cb) {
+        
+        if(cb.checked)
+            mostrarResultados = false;
+        else
+            mostrarResultados = true;
+        
+        //display("Click, new value = " + cb.checked);
+        //var xhr  = $.getJSON('testTodasCarreras.json');
+        //xhr.done(printResults);
+        xhr.done(loadResults);
+  
+    }*/
+    
+    //display("Click, new value = " + cb.checked);
+    //var xhr  = $.getJSON('testTodasCarreras.json');
+    //xhr.done(printResults);
+    
+    function handleClickTodos(cb_todos) {
+        
+        if(cb_todos.checked){
+            todosChecked = true;
+            $("#cb_carrera").prop("checked", false);
+            carreraChecked = false;
+            $("#cb_maraton").prop("checked", false);
+            maratonChecked = false;
+            $("#cb_tlon").prop("checked", false);
+            tlonChecked = false;
+            $("#cb_bici").prop("checked", false);
+            biciChecked = false;
+            $("#cb_trail").prop("checked", false);
+            trailChecked = false;
+            $("#cb_andaina").prop("checked", false);
+            andainaChecked = false;
+            $("#cb_especial").prop("checked", false);
+            especialChecked = false;
+            
+        }else{
+            todosChecked = false;
+            $("#cb_carrera").prop("checked", false);
+            carreraChecked = false;
+            $("#cb_maraton").prop("checked", false);
+            maratonChecked = false;
+            $("#cb_tlon").prop("checked", false);
+            tlonChecked = false;
+            $("#cb_bici").prop("checked", false);
+            biciChecked = false;
+            $("#cb_trail").prop("checked", false);
+            trailChecked = false;
+            $("#cb_andaina").prop("checked", false);
+            andainaChecked = false;
+            $("#cb_especial").prop("checked", false);
+            especialChecked = false;
+        }
+        
+        xhr.done(loadResults);
+    }
+
+    
+    function handleClickCarrera(cb_carrera) {
+        
+        if(cb_carrera.checked)
+            carreraChecked = true;
+        else
+            carreraChecked = false;
+        
+        xhr.done(loadResults);
+    }
+    
+    function handleClickMaraton(cb_maraton) {
+        
+        if(cb_maraton.checked)
+            maratonChecked = true;
+        else
+            maratonChecked = false;
+        
+        xhr.done(loadResults);
+    }
+      
+    function handleClickTlon(cb_tlon) {
+        
+        if(cb_tlon.checked)
+            tlonChecked = true;
+        else
+            tlonChecked = false;
+        
+        xhr.done(loadResults);
+    }
+
+    function handleClickBici(cb_bici) {
+        
+        if(cb_bici.checked)
+            biciChecked = true;
+        else
+            biciChecked = false;
+        
+        xhr.done(loadResults);
+    }    
+        
+    function handleClickTrail(cb_trail) {
+        
+        if(cb_trail.checked)
+            trailChecked = true;
+        else
+            trailChecked = false;
+        
+        xhr.done(loadResults);
+    }      
+        
+        
+    function handleClickAndaina(cb_andaina) {
+        
+        if(cb_andaina.checked)
+            andainaChecked = true;
+        else
+            andainaChecked = false;
+        
+        xhr.done(loadResults);
+    }      
+        
+    function handleClickEspecial(cb_especial) {
+        
+        if(cb_especial.checked)
+            especialChecked = true;
+        else
+            especialChecked = false;
+        
+        xhr.done(loadResults);
+    }        
+        
+        
+
+    var map;  
+ 
+    function printResults(data) {
+      //$('#foursquare-results').text(JSON.stringify(data));
+      //prettyPrint();
+    }
+    
+    function loadResults (data) {
+        
+
+        
+      var markers_data = [];      
+      
+      map.removeMarkers();
+      
+      //if (data.length > 0 && mostrarResultados) {
+      if (data.length > 0) {
+        //items = data.carreras;
+
+        for (var i = 0; i < data.length; i++) {
+            
+          var item = data[i];
+
+          if (item.lat != undefined && item.lng != undefined) {
+            var icon = 'http://4.bp.blogspot.com/_CveElNoYZVE/TVJZb4CQ-iI/AAAAAAAAJHU/1bxwXqprbi8/s1600/toggleActivityPanel%2528%2529.png';
+
+
+            
+            
+            if(item.lat){
+                
+                
+                var fec = item.fecha;
+                
+                var anho = fec.substring(0, 4);
+                var mes = fec.substring(4, 6)-1;
+                var dia = fec.substring(6, 8);
+                var fecDate = new Date(anho, mes, dia);
+                
+               // alert(fecDate);
+               // alert(dateDesde);
+                //alert(fec + " " + anho + " " + mes + " " + dia + " " + fecDate);
+                
+                //fecDate >= dateDesde &&
+                if( fecDate >= dateDesde && fecDate <= dateHasta &&
+                    ( todosChecked ||     
+                    ((carreraChecked && $.inArray("Carrera" ,  item.categoriasEvento)>-1) ||
+                    (maratonChecked && $.inArray("Maraton" ,  item.categoriasEvento)>-1) ||   
+                    (tlonChecked && $.inArray("Duatlon" ,     item.categoriasEvento)>-1) ||
+                    (biciChecked && $.inArray("Ciclismo" ,    item.categoriasEvento)>-1) ||
+                    (trailChecked && $.inArray("Trail" ,    item.categoriasEvento)>-1) ||
+                    (andainaChecked && $.inArray("Andaina" ,  item.categoriasEvento)>-1) ||
+                    (especialChecked && $.inArray("Especial", item.categoriasEvento)>-1) )  )  ){
+                
+
+                
+                    var tit="";
+
+                    if(item.tituloExtra){
+                        tit = item.tituloExtra;
+                    }else{
+                        tit = item.titulo;
+                    }
+
+                    var fecha_evento=item.fecha;
+
+                    if(item.hora_comienzo){
+                        fecha_evento= fecha_evento+" ("+item.hora_comienzo+")";
+                    }
+
+
+                    /*var content = "<p align=\"left\">Titulo: "  +  item.titulo + "<br>" +
+                                  "Titulo2: " +  item.tituloExtra + "<br>" + 
+                                  "Fecha: "    +  fecha_evento + "<br>"+
+                                  "Tipo: "     +  item.tipo + "</p>"+
+                                  "<a href=\"https://championchipnorte.com\" target=\"_blank\">Inscribirme</a><br><br>"+
+                                  "<a href=\"cartel-molgas.jpg\" target=\"_blank\"><img src=\"cartel-molgas.jpg\"  height=\"400\" width=\"270\"> </a><br><br> ";*/
+
+                    var lugar="";
+
+                    if (item.lugarBonito)
+                        lugar = "Lugar: "    +  item.lugarBonito + "<br>";
+
+                    var ruta_imagen="";
+
+                    if (item.nombre_imagen)
+                        ruta_imagen = "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/" + item.nombre_imagen  + "  height=\"300\" width=\"200\"> </a><br><br> "
+
+                    var tipo = "";
+                    if(item.categoriasEvento)
+                        tipo = "Tipo: "     +  item.categoriasEvento;
+
+
+
+
+
+                    //if( !soloCortaDistancia || (soloCortaDistancia && (item.tipo == "Menos de 10 km" || item.tipo == "10 Km")  ) ){
+
+                        //if( soloCortaDistancia )
+                        //    alert("llega");
+
+                        var contentMejorado = "<p align=\"left\">Titulo: "  +  item.mejorTitulo + "<br>" +
+                                      "Fecha: "    +  item.fecha_bonita + "<br>"+
+                                      lugar+tipo+"</p>"+
+                                      "<a href=" + item.url + " target=\"_blank\">Link del evento</a><br><br>"+
+                                      ruta_imagen;
+                                      //"<a href=\"https://championchipnorte.com\" target=\"_blank\">Inscribirme</a><br><br>"+
+                                      //"<a href=\"cartel-molgas.jpg\" target=\"_blank\"><img src=\"cartel-molgas.jpg\"  height=\"300\" width=\"200\"> </a><br><br> ";
+
+
+                        markers_data.push({
+                          lat : item.lat,
+                          lng : item.lng,
+                          title : tit,
+                          infoWindow: {
+                             content: contentMejorado
+                          },
+                          icon : {
+                            size : new google.maps.Size(26, 26),
+                            url : icon
+                          }
+                        });
+
+
+                    //}
+                
+                
+                }
+            }
+          }
+        }
+        
+        map.addMarkers(markers_data);
+        
+      }else{
+ 
+        //markers_data = [];
+        map.removeMarkers();
+        
+      }
+      
+    }
+    
+    var xhr  = $.getJSON('testTodasCarreras_geos.json');
+    //xhr.done(printResults);
+    xhr.done(loadResults);
+
+    map = new GMaps({
+      el: '#map',
+      lat: 42.8,
+      lng: -8.06,
+      zoom: 8
+      //zoom: fitZoom
+    });
+  </script>
+            </section>
+        </section>
+        
+<br><br>
+    </form>
+    
+    
+    
+    
+    
+    <!--<script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-46963871-1', 'carreirasgalegas.com');
+        ga('send', 'pageview');
+
+    </script> -->
+</body>
+</html>

@@ -1,0 +1,616 @@
+
+
+<!DOCTYPE html>
+
+<html lang="gl">
+<head><title>
+	Carreiras Galegas - Federación Galega de Atletismo
+</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" /><link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" /><link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" /><link href="../../css/pages/globals.css" rel="stylesheet" /><link href="../../css/pages/master.css" rel="stylesheet" /><link href="../../css/cookiecuttr.css" rel="stylesheet" />
+    <script src="../../js/jquery.cookie.js"></script>
+    <script src="../../js/jquery.cookiecuttr.js"></script>
+    <script src="../../js/pages/globals.js"></script>
+    <script src="../../js/pages/master.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    
+    <script src="../../js/pages/carreira.js?v=1.5.0.7"></script>
+    <link href="../../css/pages/carreira.css?v=1.5.0.7" rel="stylesheet" />
+    <script src="../../js/jquery.flipcountdown.js"></script>
+    <link href="../../css/jquery.flipcountdown.css" rel="stylesheet" />
+<link href="../../css/pages/mobile.css" rel="stylesheet" /></head>
+<body>
+    <form method="post" action="907f8ad0-0836-6eaf-5ea1-39d1e64624fc" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="lE4dxCHTTaCUj0zGPSTewDWolLgy8DYHrbZt/oa18jqeCiONh9vzGvApkc0x2iHl04ldxx4Dqk8BJqi6vEeejaxNo3RBXYvbu8SF4/dUwoaT9gEiF2czCIqodd9j2oiC" />
+        <header>
+            <div class="header">
+                <nav class="navbar navbar-default container" role="navigation">
+                    <!-- Brand and toggle get grouped for better mo
+                    bile display -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="../../index.html">
+                            <img src="../../img/master/logo-carreiras-galegas.jpg" /></a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#categorias">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="header-info">                            
+                            <div class="header-contact">
+                                <span><i class="fa fa-envelope-o"></i><a href="mailto:info@carreirasgalegas.com">info@carreirasgalegas.com</a></span> <span><i class="fa fa-phone"></i>+34 981 29 17 99<br />
+                                </span>
+                            </div>
+                            <div class="btn-group language">
+                                <button type="button" class="btn btn-default">GL</button>
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="907f8ad0-0836-6eaf-5ea1-39d1e64624fc#">GL</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="categorias">
+                        <ul class="nav navbar-nav">
+                            <li id="nav-inicio">
+                                <a href="../../index.html">Inicio</a>
+                            </li>
+                            <li id="nav-noticias">
+                                <a href="../../noticias">Novas</a>
+                            </li>
+                            <li id="nav-calendario">
+                                <a href="../../calendario">Calendario</a>
+                            </li>
+                            <li id="nav-resultados">
+                                <a href="../../resultados">Resultados</a>
+                            </li>
+                            <li id="nav-entrenamiento">
+                                <a href="../../entrenamiento">Adestramento</a>
+                            </li>
+                            <li id="nav-salud">
+                                <a href="../../salud">Saúde</a>
+                            </li>
+                            <li id="nav-licenzas">
+                                <a href="http://licenzas.carreirasgalegas.com" target="_blank">Licenzas</a>
+                            </li>
+                            <li id="nav-contacto">
+                                <a href="../../contacto">Contacto</a>
+                            </li>
+                            
+                            
+                             
+                             
+                            <li id="navlogin" class="pull-right">
+                                <a href="../../login"><i class="fa fa-sign-in"></i> Iniciar sesión</a>                                
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+        </header>
+        <section class="container web-content">
+            <aside id="filter">
+            </aside>
+            <section>
+                
+    <div id="carreira">
+        <div class="col-md-3 cartel">
+            <div class="thumbnail">
+                <img id="imgCartel" src="http://images.carreirasgalegas.com/image/carrera/907f8ad0-0836-6eaf-5ea1-39d1e64624fc-300x.jpg" />
+            </div>
+            <div class="reglamento">
+                <a href="../../reglamento/15-carreira-popular-de-betanzos/907f8ad0-0836-6eaf-5ea1-39d1e64624fc" id="btnReglamento" class="btn btn-reglamento" target="_blank"><i class="fa fa-download"></i>Regulamento</a>
+            </div>
+            <div class="contacto">
+                <div id="webDiv"><a href="https://clubatletismoasmarinas.wordpress.com/" id="web" target="_blank">WEB</a><i class="fa fa-home"></i></div>
+                
+            </div>
+            <div id="contador" class="contador">
+                <p class="counter-label col-md-12">Tempo para o inicio da carreira</p>
+                <div id="counter" class="col-md-12">
+                </div>
+                <div id="counterHeaders" class="col-md-12">
+                    <span class="col-md-3">Días</span>
+                    <span class="col-md-3">Horas</span>
+                    <span class="col-md-3">Min.</span>
+                    <span class="col-md-3">Seg.</span>
+                </div>
+            </div>
+            <div id="video" class="video">
+            </div>
+            <div id="recorrido" class="recorrido">
+                <a id="hypRecorrido" href="http://images.carreirasgalegas.com/image/recorrido/9ab616f3-a649-0d31-5b67-39d1e94fe169-800.jpg" target="_bank"><img src="http://images.carreirasgalegas.com/image/recorrido/9ab616f3-a649-0d31-5b67-39d1e94fe169-800.jpg" alt="" /></a>
+            </div>
+            
+            
+        </div>
+        <div class="col-md-9 datos">
+            <h2>
+                Betanzos,
+                domingo, 23 de agosto de 2015
+                <input name="ctl00$content$clockcount" type="hidden" id="clockcount" value="08/23/2015 11:30:00" />
+            </h2>
+            <h1>
+                15ª CARREIRA POPULAR DE BETANZOS</h1>
+            
+            
+                    
+                    <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Salida</th>
+                                <th>Distancia</th>
+                                <th>Inscrición hasta</th>
+                                <th>Precio</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                    <tr class="border-left distancia">
+                                        <td class="f6">
+                                            
+                                            <span class="name">
+                                                DENDE 19 ANOS ATA +60</span></td>
+                                        <td class="f6">
+                                            <span class="inscritos"><a href='http://www.carreirasgalegas.com/inscritos/15-carreira-popular-de-betanzos/9ab616f3-a649-0d31-5b67-39d1e94fe169'><i class="fa fa-edit"></i>
+                                                187 inscritos</a></span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-clock-o"></i>
+                                                11:30</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-arrows-h"></i>
+                                                8,12 km</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-calendar"></i>
+                                                20/08/2015</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-euro"></i>
+                                                5,00</span></td>
+                                        <td>
+                                            <span class='plazas'>
+                                                400 plazas</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+
+                                
+                                    <tr class="border-left distancia">
+                                        <td class="f6">
+                                            
+                                            <span class="name">
+                                                DENDE 17 ATA 18 ANOS</span></td>
+                                        <td class="f6">
+                                            <span class="inscritos"><a href='http://www.carreirasgalegas.com/inscritos/15-carreira-popular-de-betanzos/3c12535a-ada0-b594-5c79-39d1e94ce9e0'><i class="fa fa-edit"></i>
+                                                5 inscritos</a></span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-clock-o"></i>
+                                                11:30</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-arrows-h"></i>
+                                                5,62 km</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-calendar"></i>
+                                                20/08/2015</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-euro"></i>
+                                                0,00</span></td>
+                                        <td>
+                                            <span class='no-plazas'>
+                                                 plazas</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+
+                                
+                                    <tr class="border-left distancia">
+                                        <td class="f6">
+                                            
+                                            <span class="name">
+                                                DENDE 13 ATA 16 ANOS</span></td>
+                                        <td class="f6">
+                                            <span class="inscritos"><a href='http://www.carreirasgalegas.com/inscritos/15-carreira-popular-de-betanzos/2124a356-f309-1805-a32a-39d1e94b1be7'><i class="fa fa-edit"></i>
+                                                13 inscritos</a></span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-clock-o"></i>
+                                                11:30</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-arrows-h"></i>
+                                                3,12 km</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-calendar"></i>
+                                                20/08/2015</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-euro"></i>
+                                                0,00</span></td>
+                                        <td>
+                                            <span class='no-plazas'>
+                                                 plazas</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+
+                                
+                                    <tr class="border-left distancia">
+                                        <td class="f6">
+                                            
+                                            <span class="name">
+                                                 DENDE 11ATA 12 ANOS</span></td>
+                                        <td class="f6">
+                                            <span class="inscritos"><a href='http://www.carreirasgalegas.com/inscritos/15-carreira-popular-de-betanzos/5a3dcd4b-bd8b-6fcb-a470-39d1e9476239'><i class="fa fa-edit"></i>
+                                                11 inscritos</a></span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-clock-o"></i>
+                                                11:15</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-arrows-h"></i>
+                                                1 km</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-calendar"></i>
+                                                20/08/2015</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-euro"></i>
+                                                0,00</span></td>
+                                        <td>
+                                            <span class='no-plazas'>
+                                                 plazas</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+
+                                
+                                    <tr class="border-left distancia">
+                                        <td class="f6">
+                                            
+                                            <span class="name">
+                                                DENDE 7 ATA 10  ANOS</span></td>
+                                        <td class="f6">
+                                            <span class="inscritos"><a href='http://www.carreirasgalegas.com/inscritos/15-carreira-popular-de-betanzos/e3f10c53-0f69-bbb6-cee6-39d1e9451189'><i class="fa fa-edit"></i>
+                                                38 inscritos</a></span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-clock-o"></i>
+                                                11:05</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-arrows-h"></i>
+                                                0,5 km</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-calendar"></i>
+                                                20/08/2015</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-euro"></i>
+                                                0,00</span></td>
+                                        <td>
+                                            <span class='no-plazas'>
+                                                 plazas</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+
+                                
+                                    <tr class="border-left distancia">
+                                        <td class="f6">
+                                            
+                                            <span class="name">
+                                                ATA 6  ANOS</span></td>
+                                        <td class="f6">
+                                            <span class="inscritos"><a href='http://www.carreirasgalegas.com/inscritos/15-carreira-popular-de-betanzos/e469c0f0-d9b8-3bce-ce59-39d1e942efd6'><i class="fa fa-edit"></i>
+                                                35 inscritos</a></span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-clock-o"></i>
+                                                11:01</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-arrows-h"></i>
+                                                0,2 km</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-calendar"></i>
+                                                20/08/2015</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-euro"></i>
+                                                0,00</span></td>
+                                        <td>
+                                            <span class='no-plazas'>
+                                                 plazas</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+
+                                
+                        </tbody>
+                        <tfooter>
+                            <tr>
+                                <td><a href="http://www.carreirasgalegas.com/inscripcion/15-carreira-popular-de-betanzos/907f8ad0-0836-6eaf-5ea1-39d1e64624fc/grupo-1" id="btnInscripcion" class="btn btn-inscripcion"><i class="fa fa-edit"></i>Inscribirme</a>
+                    </td>
+                                <td><span class="totalinscritos">Total: 289 inscritos</span></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfooter>
+                    </table>                         
+                </div>
+                
+            
+            <div class="descripcion">
+                <div style="text-align: justify;"><span style="line-height: 1.5;">Organiza o Clube de Atletismo “As Mariñas”, colaborando en labores de organización: Concello de Betanzos, Policia local de Betanzos, Portección Civil de Betanzos, e Cruz Bermella. As probas estarán baixo o control técnico da Federación Galega de Atletismo.</span><br></div><div style="text-align: justify;">Esta carreira ten un carácter aberto e popular, na que poden participar atletas federados coma non federados.</div><div style="text-align: justify;"><span style="line-height: 1.5;"><br></span></div><div style="text-align: justify;"><span style="line-height: 1.5;"><b>SAÍDA:&nbsp;</b>A saida e a chegada estarán instaladas no complexo deportivo da avenida do Carregal.</span><br></div><div style="text-align: justify;"><b style="line-height: 1.5;">CATEGORÍAS</b><br></div><div style="text-align: justify;">ATA 6 &nbsp;ANOS<span class="Apple-tab-span" style="white-space:pre">	</span>200 MTRS.<span class="Apple-tab-span" style="white-space:pre">	</span>11:01h</div><div style="text-align: justify;">7 - 10 &nbsp;ANOS<span class="Apple-tab-span" style="white-space:pre">	</span>500 MTRS<span class="Apple-tab-span" style="white-space:pre">	</span>11:05h</div><div style="text-align: justify;">11-12 ANOS<span class="Apple-tab-span" style="white-space:pre">	</span>1000 MTRS<span class="Apple-tab-span" style="white-space:pre">	</span>11:15h&nbsp;</div><div style="text-align: justify;">13-14 ANOS<span class="Apple-tab-span" style="white-space:pre">	</span>3120 MTRS (1VOLTA) &nbsp;11:30h</div><div style="text-align: justify;">15-16 ANOS<span class="Apple-tab-span" style="white-space:pre">	</span>3120 MTRS (1VOLTA)<span class="Apple-tab-span" style="white-space:pre">	</span>11:30h</div><div style="text-align: justify;">17-18 ANOS<span class="Apple-tab-span" style="white-space:pre">	</span>5620 MTRS (2 VOLTAS) &nbsp;11:30h</div><div style="text-align: justify;">19-39 ANOS<span class="Apple-tab-span" style="white-space:pre">	</span>8120 MTRS (3 VOLTAS) &nbsp;11:30h</div><div style="text-align: justify;">40-49 ANOS<span class="Apple-tab-span" style="white-space:pre">	</span>8120 MTRS (3 VOLTAS) &nbsp;11:30h</div><div style="text-align: justify;">50-59 ANOS<span class="Apple-tab-span" style="white-space:pre">	</span>8120 MTRS (3 VOLTAS) &nbsp;11:30h</div><div style="text-align: justify;">+ 60 ANOS<span class="Apple-tab-span" style="white-space:pre">	</span>8120 MTRS (3 VOLTAS) &nbsp;11:30h</div><div style="text-align: justify;"><br></div><div style="text-align: justify;"><b>INSCRICIÓNS:</b>&nbsp;<span style="line-height: 1.5;">O prazo de inscrición rematará o venres 21 ás 14:00h. Non se admitirán inscricións fora de prazo.</span></div><div style="text-align: justify;"><b>DORSAIS:</b> A entrega de dorsais terá lugar momentos antes da carreira nas inmediacións da carreira, ata 30 min antes da celebración da proba.</div>
+            </div>
+        </div>
+
+    </div>
+
+            </section>
+        </section>
+        <footer>
+            <div class="footer">
+                <div class="container">
+                    <div class="col-md-4 info">
+                        <strong>Carreiras Galegas</strong>
+                        <p>Benvido á web do departamento de carreiras populares oficiais da Federación Galega de Atletismo. Aquí atoparás toda a información relativa ó calendario autonómico</p>
+                        
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 address">
+                        <address>
+                            <strong>Federación Galega de Atletismo</strong><br>
+                            <i class="fa fa-map-marker"></i>Avenida de Glasgow S/N<br />
+                            <span>O Birloque, 15008 A Coruña</span><br />
+                            <i class="fa fa-phone"></i>+34 981 29 17 99 - 981 29 16 83<br />
+                            <i class="fa fa-envelope-o"></i><a href="mailto:info@carreirasgalegas.com">info@carreirasgalegas.com</a>
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="col-md-12">
+                        ©
+                        2015
+                        Federación Galega de Atletismo - Sitio web desenvolvido por <a href="http://www.igasoft.es" target="_blank">Igasoft</a>
+
+                        <ul class="footer-nav">
+                            <li>
+                                <a href="../../aviso-legal">Aviso Legal</a>
+                            </li>
+                            <li>
+                                <a href="../../politica-cookies">Política de cookies</a>
+                            </li>
+                            <li>
+                                <a href="../../calendario">Calendario</a>
+                            </li>
+                            <li>
+                                <a href="../../resultados">Resultados</a>
+                            </li>
+                            <li>
+                                <a href="../../noticias">Novas</a>
+                            </li>
+                             <li>
+                                <a href="http://licenzas.carreirasgalegas.com" target="_blank">Licenzas</a>
+                            </li>
+                            <li>
+                                <a href="../../contacto">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-46963871-1', 'carreirasgalegas.com');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

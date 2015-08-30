@@ -1,0 +1,74 @@
+﻿body {
+    font-family: 'Open Sans', sans-serif;
+    /*background-image: url('../../img/master/fondo1.png'); 
+    background-position: center center;
+    background-repeat: no-repeat;*/
+}
+
+a
+{
+    color: #009adc;
+}
+
+th
+{
+    color: #009adc;
+}
+
+th i
+{
+    color: #000;
+}
+
+.web-content
+{
+    margin-top: 20px;
+}
+
+.has-error
+{
+    border-color: red;
+    color: red;
+    font-weight: bold !important;
+}
+
+.bar {
+    height: 18px;
+    background: green;
+}
+
+.center
+{
+    text-align: center;
+}
+
+.fa
+{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.f6
+{
+    background-color: #f6f6f6;
+}
+
+.carreiras {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 300;
+    font-family: 'Open Sans Condensed';
+}
+
+.galegas {
+    color: #009adc;
+    font-size: 30px;
+    font-weight: 300;
+    font-family: 'Open Sans Condensed';
+}
+
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }

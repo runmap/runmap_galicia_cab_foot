@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+
+<html lang="gl">
+<head><title>
+	Carreiras Galegas - Federación Galega de Atletismo
+</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" /><link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" /><link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" /><link href="../../css/pages/globals.css" rel="stylesheet" /><link href="../../css/pages/master.css" rel="stylesheet" /><link href="../../css/cookiecuttr.css" rel="stylesheet" />
+    <script src="../../js/jquery.cookie.js"></script>
+    <script src="../../js/jquery.cookiecuttr.js"></script>
+    <script src="../../js/pages/globals.js"></script>
+    <script src="../../js/pages/master.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    
+    <script src="../../js/pages/carreira.js?v=1.5.0.7"></script>
+    <link href="../../css/pages/carreira.css?v=1.5.0.7" rel="stylesheet" />
+    <script src="../../js/jquery.flipcountdown.js"></script>
+    <link href="../../css/jquery.flipcountdown.css" rel="stylesheet" />
+<link href="../../css/pages/mobile.css" rel="stylesheet" /></head>
+<body>
+    <form method="post" action="9567b1e2-bf22-a669-b9f6-39d1cdf50391" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="LS++gRUiO2yENEauXAhrtUduowMAAB9Z2mBZA2a+Uenvx0tonjIn79booK4hudkQZmY9rvpjP7qW8xJlpHI6U5sT6RHqNWeuA1eKp70fWZDxtpJCI/6MIR0i6DMBsaPO" />
+        <header>
+            <div class="header">
+                <nav class="navbar navbar-default container" role="navigation">
+                    <!-- Brand and toggle get grouped for better mo
+                    bile display -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="../../index.html">
+                            <img src="../../img/master/logo-carreiras-galegas.jpg" /></a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#categorias">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="header-info">                            
+                            <div class="header-contact">
+                                <span><i class="fa fa-envelope-o"></i><a href="mailto:info@carreirasgalegas.com">info@carreirasgalegas.com</a></span> <span><i class="fa fa-phone"></i>+34 981 29 17 99<br />
+                                </span>
+                            </div>
+                            <div class="btn-group language">
+                                <button type="button" class="btn btn-default">GL</button>
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="9567b1e2-bf22-a669-b9f6-39d1cdf50391#">GL</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="categorias">
+                        <ul class="nav navbar-nav">
+                            <li id="nav-inicio">
+                                <a href="../../index.html">Inicio</a>
+                            </li>
+                            <li id="nav-noticias">
+                                <a href="../../noticias">Novas</a>
+                            </li>
+                            <li id="nav-calendario">
+                                <a href="../../calendario">Calendario</a>
+                            </li>
+                            <li id="nav-resultados">
+                                <a href="../../resultados">Resultados</a>
+                            </li>
+                            <li id="nav-entrenamiento">
+                                <a href="../../entrenamiento">Adestramento</a>
+                            </li>
+                            <li id="nav-salud">
+                                <a href="../../salud">Saúde</a>
+                            </li>
+                            <li id="nav-licenzas">
+                                <a href="http://licenzas.carreirasgalegas.com" target="_blank">Licenzas</a>
+                            </li>
+                            <li id="nav-contacto">
+                                <a href="../../contacto">Contacto</a>
+                            </li>
+                            
+                            
+                             
+                             
+                            <li id="navlogin" class="pull-right">
+                                <a href="../../login"><i class="fa fa-sign-in"></i> Iniciar sesión</a>                                
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+        </header>
+        <section class="container web-content">
+            <aside id="filter">
+            </aside>
+            <section>
+                
+    <div id="carreira">
+        <div class="col-md-3 cartel">
+            <div class="thumbnail">
+                <img id="imgCartel" src="http://images.carreirasgalegas.com/image/carrera/9567b1e2-bf22-a669-b9f6-39d1cdf50391-300x.jpg" />
+            </div>
+            <div class="reglamento">
+                <a href="../../reglamento/v-carreira-popular-concello-de-vimianzo-campionato-de-galicia-10-km-ruta/9567b1e2-bf22-a669-b9f6-39d1cdf50391" id="btnReglamento" class="btn btn-reglamento" target="_blank"><i class="fa fa-download"></i>Regulamento</a>
+            </div>
+            <div class="contacto">
+                <div id="webDiv"><a href="http://www.vimianzo.es/" id="web" target="_blank">WEB</a><i class="fa fa-home"></i></div>
+                
+            </div>
+            <div id="contador" class="contador">
+                <p class="counter-label col-md-12">Tempo para o inicio da carreira</p>
+                <div id="counter" class="col-md-12">
+                </div>
+                <div id="counterHeaders" class="col-md-12">
+                    <span class="col-md-3">Días</span>
+                    <span class="col-md-3">Horas</span>
+                    <span class="col-md-3">Min.</span>
+                    <span class="col-md-3">Seg.</span>
+                </div>
+            </div>
+            <div id="video" class="video">
+            </div>
+            <div id="recorrido" class="recorrido">
+                <a id="hypRecorrido" href="http://images.carreirasgalegas.com/image/recorrido/fdff9bb2-c3fe-5595-e4df-39d1ce16a6bc-800.jpg" target="_bank"><img src="http://images.carreirasgalegas.com/image/recorrido/fdff9bb2-c3fe-5595-e4df-39d1ce16a6bc-800.jpg" alt="" /></a>
+            </div>
+            
+            
+        </div>
+        <div class="col-md-9 datos">
+            <h2>
+                Vimianzo,
+                domingo, 06 de setembro de 2015
+                <input name="ctl00$content$clockcount" type="hidden" id="clockcount" value="09/06/2015 11:00:00" />
+            </h2>
+            <h1>
+                V CARREIRA POPULAR CONCELLO DE VIMIANZO. CAMPIONATO DE GALICIA 10 KM RUTA</h1>
+            
+            
+                    
+                    <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Salida</th>
+                                <th>Distancia</th>
+                                <th>Inscrición hasta</th>
+                                <th>Precio</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                    <tr class="border-left distancia">
+                                        <td class="f6">
+                                            
+                                            <span class="name">
+                                                CARREIRA POPULAR</span></td>
+                                        <td class="f6">
+                                            <span class="inscritos"><a href='http://www.carreirasgalegas.com/inscritos/v-carreira-popular-concello-de-vimianzo-campionato-de-galicia-10-km-ruta/fdff9bb2-c3fe-5595-e4df-39d1ce16a6bc'><i class="fa fa-edit"></i>
+                                                8 inscritos</a></span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-clock-o"></i>
+                                                11:00</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-arrows-h"></i>
+                                                10 km</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-calendar"></i>
+                                                01/10/2015</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-euro"></i>
+                                                6,00</span></td>
+                                        <td>
+                                            <span class='no-plazas'>
+                                                 plazas</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+
+                                
+                        </tbody>
+                        <tfooter>
+                            <tr>
+                                <td><a href="http://www.carreirasgalegas.com/inscripcion/v-carreira-popular-concello-de-vimianzo-campionato-de-galicia-10-km-ruta/9567b1e2-bf22-a669-b9f6-39d1cdf50391/grupo-1" id="btnInscripcion" class="btn btn-inscripcion"><i class="fa fa-edit"></i>Inscribirme</a>
+                    </td>
+                                <td><span class="totalinscritos">Total: 8 inscritos</span></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfooter>
+                    </table>                         
+                </div>
+                
+            
+            <div class="descripcion">
+                <div style="text-align: justify;"><span style="line-height: 1.5;">O Concello de Vimianzo a través da súa Concellería de Cultura, Deportes e Mocidade organiza o domingo 6 de SETEMBRO DE 2015, &nbsp;a partir das 11:00 horas, a V edición da Carreira Popular Concello de Vimianzo e o Campionato de Galicia de 10 quilómetros en ruta.</span><br></div><div style="text-align: justify;"><span style="line-height: 1.5;"><br></span></div><div style="text-align: justify;"><b><a href="https://isis.rfea.es/sirfea2/     "><font color="#f83a22">INSCRICIÓN AO CAMPIONATO DE GALICIA (AQUÍ) &nbsp; &nbsp; </font></a><a href="http://www.atletismogalego.org/CIRCULARES/Circular%2053-2015.pdf"><font color="#ff7537">MÁIS INFORMACIÓN DO CAMPIONATO (Circular 53)</font></a></b></div><div style="text-align: justify;"><font color="#444444"><br></font></div><div style="text-align: justify;"><font color="#444444">A proba disputarase sobre unha distancia de 10 km homologados pola Real Federación Española de Atletismo (RFEA). &nbsp;</font>A proba levarase a cabo na localidade de Vimianzo e estará baixo o control técnico da Federación Galega de Atletismo.&nbsp;</div><div style="text-align: justify;"><span style="line-height: 1.5;"><br></span></div><div style="text-align: justify;"><span style="line-height: 1.5;"><b>CATEGORIAS DE PARTICIPACION</b> da proba <b>POPULAR</b> da</span><span style="line-height: 1.5;">&nbsp;V Carreira Popular Concello de Vimianzo as categorías de competición serán as seguintes:</span><span style="line-height: 1.5;">&nbsp;</span></div><div style="text-align: justify;"><ul><li><span style="line-height: 1.5;">SENIOR: </span><span style="line-height: 1.5;">Atletas nados no ano 1997 ata veteranos.</span><br></li><li><span style="line-height: 1.5;">M40 F40: </span><span style="line-height: 1.5;">Atletas de 40 a 49 anos.</span></li><li><span style="line-height: 1.5;">M50</span><span class="Apple-tab-span" style="line-height: 1.5; white-space: pre;">	</span>&nbsp;F50:&nbsp;<span style="line-height: 1.5;">Atletas de 50 ou máis anos.&nbsp;</span><br></li></ul></div><div style="text-align: justify;"><span style="line-height: 1.5;">A Saída e meta estarán ubicadas na rúa Antón Vázquez Mouzo (a altura da Praza do Concello).</span><br></div><div style="text-align: justify;"><span style="line-height: 1.5;"><b><br></b></span></div><div style="text-align: justify;"><span style="line-height: 1.5;"><b>HORARIO</b></span><br></div><div style="text-align: justify;">11:00 h <span class="Apple-tab-span" style="white-space:pre">	</span>Campionato de Galicia &nbsp;10 Km ruta<span class="Apple-tab-span" style="white-space:pre">	</span>10 km homologados pola RFEA &nbsp;</div><div style="text-align: justify;">11:00 h <span class="Apple-tab-span" style="white-space:pre">	</span>Sénior Popular &nbsp;10 km homologados pola RFEA &nbsp;</div><div style="text-align: justify;">11:00 h <span class="Apple-tab-span" style="white-space:pre">	</span>M40 Popular &nbsp;10 km homologados pola RFEA &nbsp;</div><div style="text-align: justify;">11:00 h <span class="Apple-tab-span" style="white-space:pre">	</span>M50 Popular &nbsp;10 km homologados pola RFEA &nbsp;</div><div style="text-align: justify;">12:30 h<span class="Apple-tab-span" style="white-space:pre">	</span>ENTREGA DE PREMIOS (Praza do Concello)</div><div style="text-align: justify;"><br></div><div style="text-align: justify;"><font color="#4986e7"><span style="line-height: 1.5;"><b>INSCRICIÓNS:&nbsp;</b></span><span style="line-height: 1.5;">Os participantes na V <b>Carreira Popular</b> Concello de Vimianzo ata ó martes 1 de setembro ás 23:59</span></font></div><div style="text-align: justify;"><div><b>RETIRADA DE DORSAIS E CHIPS:</b>&nbsp;<span style="line-height: 1.5;">Realizarase o mesmo día da proba na CASA DO CONCELLO, dende as 9:30 h. ata media hora antes do inicio da proba. O dorsal deberá levarse colocado na parte anterior do corpo e de xeito visible. Todo atleta que entre na meta sen o seu dorsal será descualificado.&nbsp;</span></div><div><span style="line-height: 1.5;"><b>PREMIOS:</b>&nbsp;</span><span style="line-height: 1.5;">Haberá dúas entregas de premios:</span><br></div></div><div style="text-align: justify;"><ul><li><span style="line-height: 1.5;">V Carreira Popular Concello de Vimianzo</span><br></li><li><span style="line-height: 1.5;">Campionato Galego 10Km ruta</span><br></li></ul></div><div style="text-align: justify;"><font color="#9a9cff">V CARREIRA POPULAR CONCELLO DE VIMIANZO</font></div><div style="text-align: justify;">SÉNIOR:&nbsp;Medalla aos tres primeiros e tres primeiras clasificadas</div><div style="text-align: justify;">M40:&nbsp;Medalla aos tres primeiros e tres primeiras clasificadas</div><div style="text-align: justify;">M50<span class="Apple-tab-span" style="white-space:pre">	</span>:&nbsp;Medalla aos tres primeiros e tres primeiras clasificadas</div><div style="text-align: justify;">LOCAL:&nbsp;Medalla ao primeiro e primeira atletas empadroados no concello de Vimianzo</div><div style="text-align: justify;"><font color="#9a9cff">CAMPIONATO DE GALICIA 10 KM EN RUTA</font></div><div style="text-align: justify;">Haberá medallas aos tres primeiros e tres primeiras clasificadas en cada unha das categorías determinadas pola FGA.</div>
+            </div>
+        </div>
+
+    </div>
+
+            </section>
+        </section>
+        <footer>
+            <div class="footer">
+                <div class="container">
+                    <div class="col-md-4 info">
+                        <strong>Carreiras Galegas</strong>
+                        <p>Benvido á web do departamento de carreiras populares oficiais da Federación Galega de Atletismo. Aquí atoparás toda a información relativa ó calendario autonómico</p>
+                        
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 address">
+                        <address>
+                            <strong>Federación Galega de Atletismo</strong><br>
+                            <i class="fa fa-map-marker"></i>Avenida de Glasgow S/N<br />
+                            <span>O Birloque, 15008 A Coruña</span><br />
+                            <i class="fa fa-phone"></i>+34 981 29 17 99 - 981 29 16 83<br />
+                            <i class="fa fa-envelope-o"></i><a href="mailto:info@carreirasgalegas.com">info@carreirasgalegas.com</a>
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="col-md-12">
+                        ©
+                        2015
+                        Federación Galega de Atletismo - Sitio web desenvolvido por <a href="http://www.igasoft.es" target="_blank">Igasoft</a>
+
+                        <ul class="footer-nav">
+                            <li>
+                                <a href="../../aviso-legal">Aviso Legal</a>
+                            </li>
+                            <li>
+                                <a href="../../politica-cookies">Política de cookies</a>
+                            </li>
+                            <li>
+                                <a href="../../calendario">Calendario</a>
+                            </li>
+                            <li>
+                                <a href="../../resultados">Resultados</a>
+                            </li>
+                            <li>
+                                <a href="../../noticias">Novas</a>
+                            </li>
+                             <li>
+                                <a href="http://licenzas.carreirasgalegas.com" target="_blank">Licenzas</a>
+                            </li>
+                            <li>
+                                <a href="../../contacto">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-46963871-1', 'carreirasgalegas.com');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

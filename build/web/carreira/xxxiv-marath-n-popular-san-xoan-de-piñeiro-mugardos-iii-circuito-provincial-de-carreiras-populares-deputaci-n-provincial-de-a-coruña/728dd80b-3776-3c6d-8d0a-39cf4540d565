@@ -1,0 +1,555 @@
+
+
+<!DOCTYPE html>
+
+<html lang="gl">
+<head><title>
+	Carreiras Galegas - Federación Galega de Atletismo
+</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" /><link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" /><link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" /><link href="../../css/pages/globals.css" rel="stylesheet" /><link href="../../css/pages/master.css" rel="stylesheet" /><link href="../../css/cookiecuttr.css" rel="stylesheet" />
+    <script src="../../js/jquery.cookie.js"></script>
+    <script src="../../js/jquery.cookiecuttr.js"></script>
+    <script src="../../js/pages/globals.js"></script>
+    <script src="../../js/pages/master.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    
+    <script src="../../js/pages/carreira.js?v=1.5.0.7"></script>
+    <link href="../../css/pages/carreira.css?v=1.5.0.7" rel="stylesheet" />
+    <script src="../../js/jquery.flipcountdown.js"></script>
+    <link href="../../css/jquery.flipcountdown.css" rel="stylesheet" />
+<link href="../../css/pages/mobile.css" rel="stylesheet" /></head>
+<body>
+    <form method="post" action="728dd80b-3776-3c6d-8d0a-39cf4540d565" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="4T3xz9Q7G/Si5cZfDDtGGF9JXNkeXn5igicF4USmFaHj0QYPhbSbZm7bxxy7wAf2l8SNRgFQom2parF12UiG0BfP8APc/nAzSgCHSU/tHpVW57sPTAh/WdE+YifA5VXh" />
+        <header>
+            <div class="header">
+                <nav class="navbar navbar-default container" role="navigation">
+                    <!-- Brand and toggle get grouped for better mo
+                    bile display -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="../../index.html">
+                            <img src="../../img/master/logo-carreiras-galegas.jpg" /></a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#categorias">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="header-info">                            
+                            <div class="header-contact">
+                                <span><i class="fa fa-envelope-o"></i><a href="mailto:info@carreirasgalegas.com">info@carreirasgalegas.com</a></span> <span><i class="fa fa-phone"></i>+34 981 29 17 99<br />
+                                </span>
+                            </div>
+                            <div class="btn-group language">
+                                <button type="button" class="btn btn-default">GL</button>
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="728dd80b-3776-3c6d-8d0a-39cf4540d565#">GL</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="categorias">
+                        <ul class="nav navbar-nav">
+                            <li id="nav-inicio">
+                                <a href="../../index.html">Inicio</a>
+                            </li>
+                            <li id="nav-noticias">
+                                <a href="../../noticias">Novas</a>
+                            </li>
+                            <li id="nav-calendario">
+                                <a href="../../calendario">Calendario</a>
+                            </li>
+                            <li id="nav-resultados">
+                                <a href="../../resultados">Resultados</a>
+                            </li>
+                            <li id="nav-entrenamiento">
+                                <a href="../../entrenamiento">Adestramento</a>
+                            </li>
+                            <li id="nav-salud">
+                                <a href="../../salud">Saúde</a>
+                            </li>
+                            <li id="nav-licenzas">
+                                <a href="http://licenzas.carreirasgalegas.com" target="_blank">Licenzas</a>
+                            </li>
+                            <li id="nav-contacto">
+                                <a href="../../contacto">Contacto</a>
+                            </li>
+                            
+                            
+                             
+                             
+                            <li id="navlogin" class="pull-right">
+                                <a href="../../login"><i class="fa fa-sign-in"></i> Iniciar sesión</a>                                
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+        </header>
+        <section class="container web-content">
+            <aside id="filter">
+            </aside>
+            <section>
+                
+    <div id="carreira">
+        <div class="col-md-3 cartel">
+            <div class="thumbnail">
+                <img id="imgCartel" src="http://images.carreirasgalegas.com/image/carrera/728dd80b-3776-3c6d-8d0a-39cf4540d565-300x.jpg" />
+            </div>
+            <div class="reglamento">
+                <a href="../../reglamento/xxxiv-marath-n-popular-san-xoan-de-piñeiro-mugardos-iii-circuito-provincial-de-carreiras-populares-deputaci-n-provincial-de-a-coruña/728dd80b-3776-3c6d-8d0a-39cf4540d565" id="btnReglamento" class="btn btn-reglamento" target="_blank"><i class="fa fa-download"></i>Regulamento</a>
+            </div>
+            <div class="contacto">
+                
+                <div id="mailDiv"><a href="mailto:scrdsanxoan@telefonica.net." id="mail" target="_blank">MAIL</a><i class="fa fa-envelope"></i></div>
+            </div>
+            <div id="contador" class="contador">
+                <p class="counter-label col-md-12">Tempo para o inicio da carreira</p>
+                <div id="counter" class="col-md-12">
+                </div>
+                <div id="counterHeaders" class="col-md-12">
+                    <span class="col-md-3">Días</span>
+                    <span class="col-md-3">Horas</span>
+                    <span class="col-md-3">Min.</span>
+                    <span class="col-md-3">Seg.</span>
+                </div>
+            </div>
+            <div id="video" class="video">
+            </div>
+            
+            
+            
+        </div>
+        <div class="col-md-9 datos">
+            <h2>
+                Mugardos,
+                sábado, 05 de setembro de 2015
+                <input name="ctl00$content$clockcount" type="hidden" id="clockcount" value="09/05/2015 18:30:00" />
+            </h2>
+            <h1>
+                XXXIV MARATHÓN POPULAR SAN XOAN DE PIÑEIRO MUGARDOS. III CIRCUITO PROVINCIAL DE CARREIRAS POPULARES DEPUTACIÓN PROVINCIAL DE A CORUÑA</h1>
+            
+            
+                    
+                    <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Salida</th>
+                                <th>Distancia</th>
+                                <th>Inscrición hasta</th>
+                                <th>Precio</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                    <tr class="border-left distancia">
+                                        <td class="f6">
+                                            
+                                            <span class="name">
+                                                ABSOLUTA</span></td>
+                                        <td class="f6">
+                                            <span class="inscritos"><a href='http://www.carreirasgalegas.com/inscritos/xxxiv-marath-n-popular-san-xoan-de-pi%C3%B1eiro-mugardos-iii-circuito-provincial-de-carreiras-populares-deputaci-n-provincial-de-a-coru%C3%B1a/a39474ef-cff3-e4fd-9087-39d252b44815'><i class="fa fa-edit"></i>
+                                                11 inscritos</a></span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-clock-o"></i>
+                                                18:30</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-arrows-h"></i>
+                                                10,4 km</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-calendar"></i>
+                                                04/09/2015</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-euro"></i>
+                                                0,00</span></td>
+                                        <td>
+                                            <span class='no-plazas'>
+                                                 plazas</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+
+                                
+                                    <tr class="border-left distancia">
+                                        <td class="f6">
+                                            
+                                            <span class="name">
+                                                ALEV - INF - CAD</span></td>
+                                        <td class="f6">
+                                            <span class="inscritos"><a href='http://www.carreirasgalegas.com/inscritos/xxxiv-marath-n-popular-san-xoan-de-pi%C3%B1eiro-mugardos-iii-circuito-provincial-de-carreiras-populares-deputaci-n-provincial-de-a-coru%C3%B1a/f524e31c-ea23-6b5f-64b2-39d252a6c9dd'><i class="fa fa-edit"></i>
+                                                1 inscritos</a></span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-clock-o"></i>
+                                                18:20</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-arrows-h"></i>
+                                                1,9 km</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-calendar"></i>
+                                                04/09/2015</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-euro"></i>
+                                                0,00</span></td>
+                                        <td>
+                                            <span class='no-plazas'>
+                                                 plazas</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+
+                                
+                                    <tr class="border-left distancia">
+                                        <td class="f6">
+                                            
+                                            <span class="name">
+                                                BENXAMÍN</span></td>
+                                        <td class="f6">
+                                            <span class="inscritos"><a href='http://www.carreirasgalegas.com/inscritos/xxxiv-marath-n-popular-san-xoan-de-pi%C3%B1eiro-mugardos-iii-circuito-provincial-de-carreiras-populares-deputaci-n-provincial-de-a-coru%C3%B1a/aeb5caa4-98e5-3e71-c8e2-39d252a1df20'><i class="fa fa-edit"></i>
+                                                0 inscritos</a></span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-clock-o"></i>
+                                                18:10</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-arrows-h"></i>
+                                                1,2 km</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-calendar"></i>
+                                                04/09/2015</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-euro"></i>
+                                                0,00</span></td>
+                                        <td>
+                                            <span class='no-plazas'>
+                                                 plazas</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+
+                                
+                                    <tr class="border-left distancia">
+                                        <td class="f6">
+                                            
+                                            <span class="name">
+                                                PREBENXAMÍN</span></td>
+                                        <td class="f6">
+                                            <span class="inscritos"><a href='http://www.carreirasgalegas.com/inscritos/xxxiv-marath-n-popular-san-xoan-de-pi%C3%B1eiro-mugardos-iii-circuito-provincial-de-carreiras-populares-deputaci-n-provincial-de-a-coru%C3%B1a/9fdde39c-e9dc-df3e-8584-39d2529fb265'><i class="fa fa-edit"></i>
+                                                1 inscritos</a></span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-clock-o"></i>
+                                                18:05</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-arrows-h"></i>
+                                                0,8 km</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-calendar"></i>
+                                                04/09/2015</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-euro"></i>
+                                                0,00</span></td>
+                                        <td>
+                                            <span class='no-plazas'>
+                                                 plazas</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+
+                                
+                                    <tr class="border-left distancia">
+                                        <td class="f6">
+                                            
+                                            <span class="name">
+                                                PITUFOS</span></td>
+                                        <td class="f6">
+                                            <span class="inscritos"><a href='http://www.carreirasgalegas.com/inscritos/xxxiv-marath-n-popular-san-xoan-de-pi%C3%B1eiro-mugardos-iii-circuito-provincial-de-carreiras-populares-deputaci-n-provincial-de-a-coru%C3%B1a/f79fa720-01e4-bd7b-e996-39d2529a54d9'><i class="fa fa-edit"></i>
+                                                1 inscritos</a></span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-clock-o"></i>
+                                                18:00</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-arrows-h"></i>
+                                                0,25 km</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-calendar"></i>
+                                                04/09/2015</span></td>
+                                        <td class="f6">
+                                            <span><i class="fa fa-euro"></i>
+                                                0,00</span></td>
+                                        <td>
+                                            <span class='no-plazas'>
+                                                 plazas</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="f6">
+                                            </td>
+                                        <td class="f6">
+                                            </td>
+                                        <td></td>
+                                    </tr>
+
+                                
+                        </tbody>
+                        <tfooter>
+                            <tr>
+                                <td><a href="http://www.carreirasgalegas.com/inscripcion/xxxiv-marath-n-popular-san-xoan-de-pi%C3%B1eiro-mugardos-iii-circuito-provincial-de-carreiras-populares-deputaci-n-provincial-de-a-coru%C3%B1a/728dd80b-3776-3c6d-8d0a-39cf4540d565/grupo-1" id="btnInscripcion" class="btn btn-inscripcion"><i class="fa fa-edit"></i>Inscribirme</a>
+                    </td>
+                                <td><span class="totalinscritos">Total: 14 inscritos</span></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfooter>
+                    </table>                         
+                </div>
+                
+            
+            <div class="descripcion">
+                <div><b><font color="#16a765">Esta proba pertence ao&nbsp;III CIRCUITO PROVINCIAL DE CARREIRAS POPULARES DEPUTACIÓN PROVINCIAL DE A CORUÑA.</font></b></div><div><span class="Apple-tab-span" style="line-height: 1.5; white-space: pre;">	</span><br></div><div>A inscripción será libre e gratuita.<span class="Apple-tab-span" style="white-space:pre">					</span>&nbsp;</div><div><span style="line-height: 1.5;"><b>INSCRICIONS: </b>ata o xoves 4 de setembro ás 23:59h.</span><br></div><div><b>DORSAIS:</b> Serán entregados o día das carreiras nas inmediacións de ésta.&nbsp;<span style="line-height: 1.5;">Todos los participantes en la carrera absoluta 10.400 mts llevaran un chip en los dorsales que les proporcionara la organización para el control de la carrera.</span></div><div><b>CATEGORIAS</b></div><div>PITUFO M y F<span class="Apple-tab-span" style="white-space:pre">	</span>2010/2015: &nbsp;250 mts<span class="Apple-tab-span" style="white-space:pre">	</span>18:00 h</div><div>PREBENXAMIN M y F: &nbsp;2008/2009<span class="Apple-tab-span" style="white-space:pre">	</span>800 mts<span class="Apple-tab-span" style="white-space:pre">	</span>18:05 h</div><div>BENXAMIN M y F: &nbsp;2006/2007<span class="Apple-tab-span" style="white-space:pre">	</span>1.200 mts<span class="Apple-tab-span" style="white-space:pre">	</span>18:10 h</div><div>ALEVIN M y F<span class="Apple-tab-span" style="white-space:pre">	</span>2004/2005: &nbsp;1.900 mts<span class="Apple-tab-span" style="white-space:pre">	</span>18:20 h</div><div>INFANTIL M y F&nbsp;2002/2003: &nbsp;1.900 mts<span class="Apple-tab-span" style="white-space:pre">	</span>18:20 h</div><div>CADETE M y F: &nbsp;2000/2001<span class="Apple-tab-span" style="white-space:pre">	</span>1.900 mts<span class="Apple-tab-span" style="white-space:pre">	</span>18:20 h</div><div>XUVENIL M y F: &nbsp;1998/1999<span class="Apple-tab-span" style="white-space:pre">	</span>10.400 mts<span class="Apple-tab-span" style="white-space:pre">	</span>18:30 h</div><div>JUNIOR&nbsp;1996/1997 M y F: &nbsp;10.400 mts<span class="Apple-tab-span" style="white-space:pre">	</span>18:30 h</div><div>PROMESA M y F: &nbsp;1993-1994-1995<span class="Apple-tab-span" style="white-space:pre">	</span>10.400 mts<span class="Apple-tab-span" style="white-space:pre">	</span>18:30 h</div><div>SENIOR M y F: &nbsp;1981 ata 1992<span class="Apple-tab-span" style="white-space:pre">	</span>10.400 mts<span class="Apple-tab-span" style="white-space:pre">	</span>18:30 h</div><div>VETERAN 1 M Y F: &nbsp;1975 ata 1980<span class="Apple-tab-span" style="white-space:pre">	</span>10.400 mts<span class="Apple-tab-span" style="white-space:pre">	</span>18:30 h</div><div>VETERAN 2 M y F: &nbsp;1974 ata 1966<span class="Apple-tab-span" style="white-space:pre">	</span>10.400 mts<span class="Apple-tab-span" style="white-space:pre">	</span>18:30 h</div><div>VETERAN 3 M y F: &nbsp;1965 ata 1956<span class="Apple-tab-span" style="white-space:pre">	</span>10.400 mts<span class="Apple-tab-span" style="white-space:pre">	</span>18:30 h</div><div>VETERAN 4 M y F: &nbsp;1955 ata 1900<span class="Apple-tab-span" style="white-space:pre">	</span>10.400 mts<span class="Apple-tab-span" style="white-space:pre">	</span>18:30 h</div><div><br></div><div><b>PREMIOS:</b> H<span style="line-height: 1.5;">aberá trofeos para os 3 primeiros clasificados de todas as categorías e medallas para todos os participantes de la categoría pitufo.</span></div>
+            </div>
+        </div>
+
+    </div>
+
+            </section>
+        </section>
+        <footer>
+            <div class="footer">
+                <div class="container">
+                    <div class="col-md-4 info">
+                        <strong>Carreiras Galegas</strong>
+                        <p>Benvido á web do departamento de carreiras populares oficiais da Federación Galega de Atletismo. Aquí atoparás toda a información relativa ó calendario autonómico</p>
+                        
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 address">
+                        <address>
+                            <strong>Federación Galega de Atletismo</strong><br>
+                            <i class="fa fa-map-marker"></i>Avenida de Glasgow S/N<br />
+                            <span>O Birloque, 15008 A Coruña</span><br />
+                            <i class="fa fa-phone"></i>+34 981 29 17 99 - 981 29 16 83<br />
+                            <i class="fa fa-envelope-o"></i><a href="mailto:info@carreirasgalegas.com">info@carreirasgalegas.com</a>
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="col-md-12">
+                        ©
+                        2015
+                        Federación Galega de Atletismo - Sitio web desenvolvido por <a href="http://www.igasoft.es" target="_blank">Igasoft</a>
+
+                        <ul class="footer-nav">
+                            <li>
+                                <a href="../../aviso-legal">Aviso Legal</a>
+                            </li>
+                            <li>
+                                <a href="../../politica-cookies">Política de cookies</a>
+                            </li>
+                            <li>
+                                <a href="../../calendario">Calendario</a>
+                            </li>
+                            <li>
+                                <a href="../../resultados">Resultados</a>
+                            </li>
+                            <li>
+                                <a href="../../noticias">Novas</a>
+                            </li>
+                             <li>
+                                <a href="http://licenzas.carreirasgalegas.com" target="_blank">Licenzas</a>
+                            </li>
+                            <li>
+                                <a href="../../contacto">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-46963871-1', 'carreirasgalegas.com');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

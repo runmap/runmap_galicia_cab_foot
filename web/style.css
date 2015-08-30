@@ -1,0 +1,74 @@
+.datepicker{
+border: 1px solid #ccc;
+}
+
+.contenido{
+    //float: left;
+    //width: 1350px;
+    //height: 700px;
+    border: 0px solid #000000;
+    margin-left: 3px;
+}
+
+#map {
+      width: 760px;
+      height: 620px;
+}
+
+body{
+  background:#f3f3f3;
+  //background-image: url("Correr-en-playa.jpg") ;
+  //background-size: 100%;
+  background-repeat:no-repeat;
+  margin:0;
+  padding:0;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.Division{
+    float: left;
+    width: 250px;
+    //height: 700px;
+    //border: 0px solid #000000;
+    //margin-left: 3px;
+}
+
+.Division2{
+    //float: left;
+    width: 1000px;
+    //width: 60%;
+    //height: 700px;
+    border: 0px solid #000000;
+    margin-left: 3px;
+}
+
+.p{
+   
+}
+
+p.padding {
+    padding-top: 0.5cm;
+    padding-left: 0.5cm;
+}
+
+.inicio_seccion
+{
+    background-color: #f3f3f3;
+    font-weight: bold; 
+    font-size: 14px;
+    border-left: 3px solid #00638e;
+    padding: 10px;
+    text-transform: uppercase;
+    color: #00638e;
+}
+
+.inicio_seccion2
+{
+    background-color: #f3f3f3;
+    font-weight: bold; 
+    font-size: 15px;
+    //border-left: 3px solid #00638e;
+    padding: 2px;
+    text-transform: uppercase;
+    color: #00638e;
+}

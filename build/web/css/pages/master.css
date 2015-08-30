@@ -1,0 +1,206 @@
+﻿.header
+{
+    background-image: url(../../img/master/fondo-menu.jpg);
+    background-repeat: repeat-x;
+    background-position: center 100px;
+    width: 100%;
+    height: 156px;
+}
+
+.header-info
+{
+    color: #a1a1a1;
+    font-size: 12px;
+    float: right;
+    margin-top: 40px;
+}
+
+.header-contact
+{
+    float: right;
+    margin-right: 100px;
+}
+
+.header-info a
+{
+    color: #a1a1a1;
+}
+
+.header-info span
+{
+    margin-left: 20px;
+}
+
+.header-info .language
+{
+    position: absolute;
+    right: 20px;
+    top: 30px;
+}
+
+.header-info .language .btn
+{
+    color: #a1a1a1;
+}
+
+.header-info .dropdown-menu a
+{
+    color: #a1a1a1;
+}
+
+.navbar-default
+{
+    border: none;
+    background-color: transparent;
+}
+
+.navbar-header
+{
+    width: 100%;
+    height: 100px;
+}
+
+.navbar-collapse
+{
+    padding: 0;
+}
+
+.navbar-nav
+{
+    width: 100%;
+    height: 56px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.navbar-default .navbar-nav > li > a
+{
+    background-color: #030025;
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover
+{
+    background-color: #009adc;
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > .active > a
+{
+    background-color: #009adc;
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > .active > a:hover
+{
+    background-color: #009adc;
+    color: #fff;
+}
+
+.navbar-brand
+{
+    padding: 3px;
+}
+
+/************/
+/*Nav var right (usuario logueado)*/
+/************/
+
+.pull-right a
+{
+    background-color: transparent !important;
+    border-left: none !important;
+}
+
+.pull-right a:hover
+{
+    color: #000 !important;
+}
+
+.footer
+{
+    background-color: #1a1a1a;
+    background-image: url(../../img/master/fondo-pie.jpg);
+    background-repeat: repeat-x;
+    background-position: center top;
+    width: 100%;
+    height: 215px;
+    margin-top: 20px;
+}
+
+.footer .container
+{
+    padding-top: 105px;
+    font-size: 12px;
+}
+
+.info
+{
+    color: #000000;
+}
+
+.info strong
+{
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.address
+{
+    color: #808080;
+}
+
+.address span
+{
+    margin-left: 40px;
+}
+
+.address strong
+{
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.address i
+{
+    width: 30px;
+    text-align: center;
+}
+
+.copyright
+{
+    background-color: #222222;
+    height: 80px;
+    color: #656565;
+    font-size: 12px;
+    padding-top: 30px;
+}
+
+.copyright a
+{
+    color: #656565;
+}
+
+.footer .info
+{
+    color: #808080;
+}
+
+.footer-nav
+{
+    float: right;
+}
+
+.footer-nav li
+{
+    display: inline;
+    list-style: none;
+    padding-left: 10px;
+}
+
+.publi{
+    float: right;
+    margin-top: 20px;
+}
