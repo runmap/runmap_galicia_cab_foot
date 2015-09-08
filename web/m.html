@@ -37,8 +37,10 @@
     <script type="text/javascript">
     
     
+    
+    
     //alert(screen.width);
-    if (screen.width >= 650 ) {
+    if (screen.width >= 750 ) {
         //alert("pantalla pequeña");
        window.location = "index.html";
     }
@@ -221,13 +223,13 @@
         <h1 class="inicio_seccion"> Buscador de eventos </h1> 
 
     
-    <!--<div class="contenido"> -->
+    <div class="contenido"> 
         
         
         <br><br>
         <div class="Division2_movil" id="map_movil"></div> 
         
-    <!--</div>  -->
+    </div>  
     </center>     
     
     
@@ -256,7 +258,7 @@
 
         var css = "";
 
-        alert(screen.width);
+        //alert(screen.width);
         //alert(screen.width);
         if (screen.width <430 ) {
             css="padding_movil";
@@ -265,7 +267,7 @@
             css="padding_movil_horizontal";
         }
 
-        alert(css);
+        //alert(css);
 
         document.getElementById("opciones").setAttribute("class", css);
         //document.getElementById("Division2_movil").setAttribute("class", css);
@@ -532,7 +534,7 @@ $("#datepicker2").datepicker({
         
         
 
-    var map;  
+    var map_movil;  
  
     function printResults(data) {
       //$('#foursquare-results').text(JSON.stringify(data));
@@ -546,7 +548,7 @@ $("#datepicker2").datepicker({
         
       var markers_data = [];      
       
-      map.removeMarkers();
+      map_movil.removeMarkers();
       
       //if (data.length > 0 && mostrarResultados) {
       if (data.length > 0) {
@@ -647,12 +649,12 @@ $("#datepicker2").datepicker({
           }
         }
         
-        map.addMarkers(markers_data);
+        map_movil.addMarkers(markers_data);
         
       }else{
  
         //markers_data = [];
-        map.removeMarkers();
+        map_movil.removeMarkers();
         
       }
       
@@ -662,7 +664,7 @@ $("#datepicker2").datepicker({
     
     xhr.done(loadResults);
 
-    map = new GMaps({
+    map_movil = new GMaps({
       el: '#map_movil',
       lat: 42.8,
       lng: -8.06,

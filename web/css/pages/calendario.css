@@ -1,11 +1,28 @@
-﻿#carreras .thumbnail img
+
+#carreras .thumbnail img
 {
     width: 250px;
     height: 340px;
     background-color: #f3f3f3;
 }
 
+#carreras .thumbnail_movil img
+{
+    width: 200px;
+    height: 280px;
+    background-color: #f3f3f3;
+}
+
 #carreras .thumbnail
+{
+    background-color: #f3f3f3;
+    position: relative;
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#carreras .thumbnail_movil
 {
     background-color: #f3f3f3;
     position: relative;
