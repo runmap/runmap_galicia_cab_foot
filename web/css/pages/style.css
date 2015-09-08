@@ -15,6 +15,11 @@ border: 1px solid #ccc;
       height: 650px;
 }
 
+#map_movil {
+      width: 275px;
+      height: 275px;
+}
+
 body{
   background:#f3f3f3;
   //background-image: url("Correr-en-playa.jpg") ;
@@ -27,15 +32,35 @@ body{
 
 .Division{
     float: left;
-    width: 250px;
+    width: 300px;
     //height: 700px;
     //border: 0px solid #000000;
     //margin-left: 3px;
 }
 
+
+
 .Division2{
     //float: left;
     width: 1000px;
+    //width: 60%;
+    //height: 700px;
+    border: 0px solid #000000;
+    margin-left: 3px;
+}
+
+.Division2_movil{
+    //float: left;
+    width: 300px;
+    //width: 60%;
+    //height: 700px;
+    border: 0px solid #000000;
+    margin-left: 3px;
+}
+
+.Division2_movil_horizontal{
+    //float: left;
+    width: 570px;
     //width: 60%;
     //height: 700px;
     border: 0px solid #000000;
@@ -50,6 +75,19 @@ p.padding {
     padding-top: 0.5cm;
     padding-left: 0.5cm;
 }
+
+p.padding_movil {
+    padding-top: 1cm;
+    padding-left: 100px;
+    width: 300px;
+}
+
+p.padding_movil_horizontal {
+    padding-top: 1cm;
+    padding-left: 200px;
+    width: 600px;
+}
+
 
 .inicio_seccion
 {

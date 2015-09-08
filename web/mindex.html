@@ -33,48 +33,57 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>  
     <script src="js/gmaps.js"></script>
     <link href="css/pages/style.css" rel="stylesheet" type="text/css"/>
-    
+
     <script type="text/javascript">
     
     
     //alert(screen.width);
-    if (screen.width < 650 ) {
+    if (screen.width >= 650 ) {
         //alert("pantalla pequeña");
-       window.location = "mindex.html";
+       window.location = "index.html";
     }
     
   </script>
-
 </head>
         
 <body>
+    
     <form method="post" action="calendario" id="form1">
 
 
 <br><br>
     <section class="container web-content">
+        
         <aside id="filter">
         </aside>
         
         <section>
-    <h1 class="inicio_seccion2"> Próximos eventos </h1>     <br>        
-    <div class="row-fluid">
-        <div class="carousel slide row" id="carreras">
             
-            <div class="carousel-inner">
+            <center>  
+            <h1 class="inicio_seccion2"> Próximos eventos </h1>     <br>        
+            <div class="row-fluid">
+                <div class="carousel slide row" id="carreras">
+
+                    <div class="carousel-inner">
                     
                             <div class='item active' id="activos"></div>
-                        
                             <div class='item' id='ronda-2'></div>
-                
+                            <div class='item' id='ronda-3'></div> 
+                            <div class='item' id='ronda-4'></div> 
+                            <div class='item' id='ronda-5'></div> 
+                            <div class='item' id='ronda-6'></div> 
+                            <div class='item' id='ronda-7'></div> 
+                            <div class='item' id='ronda-8'></div> 
+                            <div class='item' id='ronda-9'></div> 
+                            <div class='item' id='ronda-10'></div> 
                         
-                            <div class='item' id='ronda-3'></div>
-                        
+                    </div>
+                <a data-slide="prev" href="calendario#carreras" class="left carousel-control">‹</a>
+             <a data-slide="next" href="calendario#carreras" class="right carousel-control">›</a>
+                </div>
             </div>
-            <a data-slide="prev" href="calendario#carreras" class="left carousel-control">‹</a>
-            <a data-slide="next" href="calendario#carreras" class="right carousel-control">›</a>
-        </div>
-    </div>
+            
+            </center> 
           
     <script>
         
@@ -84,6 +93,14 @@
      var html = "";  
      var html_ronda2 = "";
      var html_ronda3 = "";
+     var html_ronda4 = "";
+     var html_ronda5 = "";
+     var html_ronda6 = "";
+     var html_ronda7 = "";
+     var html_ronda8 = "";
+     var html_ronda9 = "";
+     var html_ronda10 = "";
+     
      var contador=0;
       
      if (data.length > 0) {
@@ -123,21 +140,51 @@
                 
         
           
-                if(contador<4){
+                if(contador===0){
                     html += aux_html;
                 }
                 
-                else if(contador>3 && contador<8){
+                else if(contador===1){
                     html_ronda2 += aux_html;
                 }
                 
-                else if(contador>7 && contador<12){
+                else if(contador===2){
                     html_ronda3 += aux_html;
                 }
+                
+                else if(contador===3){
+                    html_ronda4 += aux_html;
+                }
+                
+                else if(contador===4){
+                    html_ronda5 += aux_html;
+                }
+                
+                else if(contador===5){
+                    html_ronda6 += aux_html;
+                }
+                
+                else if(contador===6){
+                    html_ronda7 += aux_html;
+                }
+                
+                else if(contador===7){
+                    html_ronda8 += aux_html;
+                }
+                
+                else if(contador===8){
+                    html_ronda9 += aux_html;
+                }
+                
+                else if(contador===9){
+                    html_ronda10 += aux_html;
+                }
+                    
+                   
           
                 contador++;
                 
-                if(contador===12){
+                if(contador===10){
                     break;
                 }
  
@@ -147,10 +194,15 @@
      }
      
      $('#activos').html(html);
-     
      $('#ronda-2').html(html_ronda2);
-     
      $('#ronda-3').html(html_ronda3);
+     $('#ronda-4').html(html_ronda4);
+     $('#ronda-5').html(html_ronda5);
+     $('#ronda-6').html(html_ronda6);
+     $('#ronda-7').html(html_ronda7);
+     $('#ronda-8').html(html_ronda8);
+     $('#ronda-9').html(html_ronda9);
+     $('#ronda-10').html(html_ronda10);
   }
     
     
@@ -163,38 +215,72 @@
 
 
     <br><br><br>
-    <h1 class="inicio_seccion"> Buscador de eventos </h1> 
-
-    <div class="contenido"> 
     
-    <div class="Division"><br><br><!--<p class="padding"><label for="cb"><input id="cb" type="checkbox" onclick="handleClick(this);">Ocultar eventos</label></p> -->
-    
-    <!--<center><h2> RunMap.gal </h2></center> -->
+    <center> 
+        
+        <h1 class="inicio_seccion"> Buscador de eventos </h1> 
 
     
+    <!--<div class="contenido"> -->
+        
+        
+        <br><br>
+        <div class="Division2_movil" id="map_movil"></div> 
+        
+    <!--</div>  -->
+    </center>     
     
-    <p class="padding"> <label for="cb_todos"><input id="cb_todos" type="checkbox" onclick=handleClickTodos(this)>&nbsp;&nbsp;Todos</label><br>
-                        <label for="cb_carrera"><input id="cb_carrera" type="checkbox" onclick=handleClickCarrera(this) checked>&nbsp;&nbsp;Carreira popular</label><br>
-                        <label for="cb_maraton"><input id="cb_maraton" type="checkbox" onclick=handleClickMaraton(this)>&nbsp;&nbsp;Maratón/Media</label><br>
-                        <label for="cb_tlon"><input id="cb_tlon" type="checkbox" onclick="handleClickTlon(this);">&nbsp;&nbsp;Duatlón/Triatlón</label><br> 
-                        <label for="cb_bici"><input id="cb_bici" type="checkbox" onclick="handleClickBici(this);">&nbsp;&nbsp;Ruta ciclista</label><br>
-                        <label for="cb_trail"><input id="cb_trail" type="checkbox" onclick="handleClickTrail(this);">&nbsp;&nbsp;Trail/Montaña</label><br>
-                        <label for="cb_andaina"><input id="cb_andaina" type="checkbox" onclick="handleClickAndaina(this);">&nbsp;&nbsp;Andaina/Roteiro</label><br>
-                        <label for="cb_especial"><input id="cb_especial" type="checkbox" onclick="handleClickEspecial(this);">&nbsp;&nbsp;Especial</label><br> 
-                        <br> 
-                        &nbsp;&nbsp;Dende<br>
-                        &nbsp;&nbsp;<input type="text" name="datepicker" id="datepicker" readonly="readonly" size="10"  /> <br><br>
-                        &nbsp;&nbsp;Ata<br>
-                        &nbsp;&nbsp;<input type="text" name="datepicker2" id="datepicker2" readonly="readonly" size="10" />   
-    </p>              
     
-    <!-- //value="01/09/2015" -->
+    
+    <div class="Division"><br><br>
+    
+
+        <p id="opciones"> 
+
+                            <label for="cb_todos"><input id="cb_todos" type="checkbox" onclick=handleClickTodos(this)>&nbsp;&nbsp;Todos</label><br>
+                            <label for="cb_carrera"><input id="cb_carrera" type="checkbox" onclick=handleClickCarrera(this) checked>&nbsp;&nbsp;Carreira popular</label><br>
+                            <label for="cb_maraton"><input id="cb_maraton" type="checkbox" onclick=handleClickMaraton(this)>&nbsp;&nbsp;Maratón/Media</label><br>
+                            <label for="cb_tlon"><input id="cb_tlon" type="checkbox" onclick="handleClickTlon(this);">&nbsp;&nbsp;Duatlón/Triatlón</label><br> 
+                            <label for="cb_bici"><input id="cb_bici" type="checkbox" onclick="handleClickBici(this);">&nbsp;&nbsp;Ruta ciclista</label><br>
+                            <label for="cb_trail"><input id="cb_trail" type="checkbox" onclick="handleClickTrail(this);">&nbsp;&nbsp;Trail/Montaña</label><br>
+                            <label for="cb_andaina"><input id="cb_andaina" type="checkbox" onclick="handleClickAndaina(this);">&nbsp;&nbsp;Andaina/Roteiro</label><br>
+                            <label for="cb_especial"><input id="cb_especial" type="checkbox" onclick="handleClickEspecial(this);">&nbsp;&nbsp;Especial</label><br> 
+                            <br> 
+                            &nbsp;&nbsp;Dende<br>
+                            &nbsp;&nbsp;<input type="text" name="datepicker" id="datepicker" readonly="readonly" size="10"  /> <br><br>
+                            &nbsp;&nbsp;Ata<br>
+                            &nbsp;&nbsp;<input type="text" name="datepicker2" id="datepicker2" readonly="readonly" size="10" />   
+        </p>   
+    
+        <script type="text/javascript">
+
+        var css = "";
+
+        alert(screen.width);
+        //alert(screen.width);
+        if (screen.width <430 ) {
+            css="padding_movil";
+
+        }else{
+            css="padding_movil_horizontal";
+        }
+
+        alert(css);
+
+        document.getElementById("opciones").setAttribute("class", css);
+        //document.getElementById("Division2_movil").setAttribute("class", css);
+
+
+      </script>
+    
     
     </div>
 
-<center>    <br><br>
-    <div class="Division2" id="map"></div> 
-</center></div>
+  </section>
+</section>
+        
+<br><br>
+    </form>  
     
     
   <script>
@@ -577,21 +663,17 @@ $("#datepicker2").datepicker({
     xhr.done(loadResults);
 
     map = new GMaps({
-      el: '#map',
+      el: '#map_movil',
       lat: 42.8,
       lng: -8.06,
-      zoom: 8
+      zoom: 7
       //zoom: fitZoom
     });
   </script>
   
   
   
-    </section>
-</section>
-        
-<br><br>
-    </form>
+    
     
     
     
