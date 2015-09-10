@@ -100,6 +100,8 @@
      var html_ronda3 = "";
      var contador=0;
       
+     var today = new Date();
+      
      if (data.length > 0) {
 
         for (var i = 0; i < data.length; i++) {
@@ -120,39 +122,50 @@
                 var anho = fec.substring(0, 4);
                 var mes = fec.substring(4, 6);
                 var dia = fec.substring(6, 8);
-                var fecDate = new Date(anho, mes, dia);
+                var fecDate = new Date(anho, mes-1, dia);
                 
-                var ruta_im = "img/" + item.nombre_imagen;
+                if( fecDate >= today   ){
+                    
+                    //alert(fecDate);
+                    //alert(today);
+                    
+                    var ruta_im = "img/" + item.nombre_imagen;
 
-                var diames = dia+"/"+mes;
+                    var diames = dia+"/"+mes;
 
-                var aux_html="";
+                    var aux_html="";
+
+                    aux_html += "<div class=\"col-md-3\">" + 
+                    "<div class=\"thumbnail\"> <a href='"+ item.url+"'>"+
+                    "<img src='"+ruta_im+ "' alt="+item.mejorTitulo+" /></a></div>" + 
+                    "<div class=\"caption\"> <div class=\"fecha\">" +
+                    "<span class=\"day\"> " + diames + "</span><span class=\"month\">&nbsp;</span><span class=\"month\">&nbsp;</span> </div>" +
+                    "<div class=\"name\">" + item.mejorTitulo + "</div> <div class=\"place\">" + item.lugarBonito + "</div> </div></div>"; 
+
+
+
+                    if(contador<4){
+                        html += aux_html;
+                    }
+
+                    else if(contador>3 && contador<8){
+                        html_ronda2 += aux_html;
+                    }
+
+                    else if(contador>7 && contador<12){
+                        html_ronda3 += aux_html;
+                    }
+
+                    contador++;
+
+                    if(contador===12){
+                        break;
+                    }
                 
-                aux_html += "<div class=\"col-md-3\">" + 
-                "<div class=\"thumbnail\"> <a href='"+ item.url+"'>"+
-                "<img src='"+ruta_im+ "' alt="+item.mejorTitulo+" /></a></div>" + 
-                "<div class=\"caption\"> <div class=\"fecha\">" +
-                "<span class=\"day\"> " + diames + "</span><span class=\"month\">&nbsp;</span><span class=\"month\">&nbsp;</span> </div>" +
-                "<div class=\"name\">" + item.mejorTitulo + "</div> <div class=\"place\">" + item.lugarBonito + "</div> </div></div>"; 
-                
-        
-          
-                if(contador<4){
-                    html += aux_html;
-                }
-                
-                else if(contador>3 && contador<8){
-                    html_ronda2 += aux_html;
-                }
-                
-                else if(contador>7 && contador<12){
-                    html_ronda3 += aux_html;
-                }
-          
-                contador++;
-                
-                if(contador===12){
-                    break;
+                }else{
+
+                    //alert(fecDate);
+                    //alert(today);
                 }
  
             }

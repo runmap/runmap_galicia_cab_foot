@@ -113,6 +113,8 @@
      var html_ronda10 = "";
      
      var contador=0;
+     
+     var today = new Date();
       
      if (data.length > 0) {
 
@@ -134,69 +136,77 @@
                 var anho = fec.substring(0, 4);
                 var mes = fec.substring(4, 6);
                 var dia = fec.substring(6, 8);
-                var fecDate = new Date(anho, mes, dia);
+                var fecDate = new Date(anho, mes-1, dia);
                 
-                var ruta_im = "img/" + item.nombre_imagen;
+                if( fecDate >= today   ){
+                
+                    var ruta_im = "img/" + item.nombre_imagen;
 
-                var diames = dia+"/"+mes;
+                    var diames = dia+"/"+mes;
 
-                var aux_html="";
+                    var aux_html="";
+
+                    aux_html += "<div class=\"col-md-3\">" + 
+                    "<div class=\"thumbnail\"> <a href='"+ item.url+"'>"+
+                    "<img src='"+ruta_im+ "' alt="+item.mejorTitulo+" /></a></div>" + 
+                    "<div class=\"caption\"> <div class=\"fecha\">" +
+                    "<span class=\"day\"> " + diames + "</span><span class=\"month\">&nbsp;</span><span class=\"month\">&nbsp;</span> </div>" +
+                    "<div class=\"name\">" + item.mejorTitulo + "</div> <div class=\"place\">" + item.lugarBonito + "</div> </div></div>"; 
+
+
+
+                    if(contador===0){
+                        html += aux_html;
+                    }
+
+                    else if(contador===1){
+                        html_ronda2 += aux_html;
+                    }
+
+                    else if(contador===2){
+                        html_ronda3 += aux_html;
+                    }
+
+                    else if(contador===3){
+                        html_ronda4 += aux_html;
+                    }
+
+                    else if(contador===4){
+                        html_ronda5 += aux_html;
+                    }
+
+                    else if(contador===5){
+                        html_ronda6 += aux_html;
+                    }
+
+                    else if(contador===6){
+                        html_ronda7 += aux_html;
+                    }
+
+                    else if(contador===7){
+                        html_ronda8 += aux_html;
+                    }
+
+                    else if(contador===8){
+                        html_ronda9 += aux_html;
+                    }
+
+                    else if(contador===9){
+                        html_ronda10 += aux_html;
+                    }
+
+
+
+                    contador++;
+
+                    if(contador===10){
+                        break;
+                    }
                 
-                aux_html += "<div class=\"col-md-3\">" + 
-                "<div class=\"thumbnail\"> <a href='"+ item.url+"'>"+
-                "<img src='"+ruta_im+ "' alt="+item.mejorTitulo+" /></a></div>" + 
-                "<div class=\"caption\"> <div class=\"fecha\">" +
-                "<span class=\"day\"> " + diames + "</span><span class=\"month\">&nbsp;</span><span class=\"month\">&nbsp;</span> </div>" +
-                "<div class=\"name\">" + item.mejorTitulo + "</div> <div class=\"place\">" + item.lugarBonito + "</div> </div></div>"; 
-                
-        
-          
-                if(contador===0){
-                    html += aux_html;
-                }
-                
-                else if(contador===1){
-                    html_ronda2 += aux_html;
-                }
-                
-                else if(contador===2){
-                    html_ronda3 += aux_html;
-                }
-                
-                else if(contador===3){
-                    html_ronda4 += aux_html;
-                }
-                
-                else if(contador===4){
-                    html_ronda5 += aux_html;
-                }
-                
-                else if(contador===5){
-                    html_ronda6 += aux_html;
-                }
-                
-                else if(contador===6){
-                    html_ronda7 += aux_html;
-                }
-                
-                else if(contador===7){
-                    html_ronda8 += aux_html;
-                }
-                
-                else if(contador===8){
-                    html_ronda9 += aux_html;
-                }
-                
-                else if(contador===9){
-                    html_ronda10 += aux_html;
-                }
-                    
-                   
-          
-                contador++;
-                
-                if(contador===10){
-                    break;
+                }else{
+
+                    //alert(fecDate);
+                    //alert(today);
                 }
  
             }
