@@ -4,14 +4,22 @@ border: 1px solid #ccc;
 
 .contenido{
     //float: left;
-    //width: 1350px;
+    width: 1100px;
+    //height: 700px;
+    border: 0px solid #000000;
+    margin-left: 3px;
+}
+
+.contenido_movil{
+    //float: left;
+    //width: 1100px;
     //height: 700px;
     border: 0px solid #000000;
     margin-left: 3px;
 }
 
 #map {
-      width: 800px;
+      width: 750px;
       height: 650px;
 }
 
@@ -31,6 +39,14 @@ body{
 }
 
 .Division{
+    float: left;
+    width: 250px;
+    //height: 700px;
+    //border: 0px solid #000000;
+    //margin-left: 3px;
+}
+
+.Division_movil{
     float: left;
     width: 300px;
     //height: 700px;
