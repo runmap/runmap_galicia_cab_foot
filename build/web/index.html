@@ -552,9 +552,17 @@ $("#datepicker2").datepicker({
 
                     var ruta_imagen="";
 
-                    if (item.nombre_imagen)
-                        ruta_imagen = "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/" + item.nombre_imagen  + "  height=\"300\" width=\"200\"> </a><br><br> "
-
+                    if (item.nombre_imagen){
+                        
+                        
+                        
+                        if(item.heigth_imagen>= item.width_imagen)
+                            ruta_imagen = "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/" + item.nombre_imagen  + "  height=\"320\" width=\"210\"> </a><br><br> "
+                        else
+                            ruta_imagen = "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/" + item.nombre_imagen  + "  height=\"200\" width=\"290\"> </a><br><br> "
+                    }
+                    
+                    
                     var tipo = "";
                     if(item.categoriasEvento)
                         tipo = "Tipo: "     +  item.categoriasEvento;
@@ -562,7 +570,7 @@ $("#datepicker2").datepicker({
 
 
 
-                        var contentMejorado = "<p align=\"left\">Titulo: "  +  item.mejorTitulo + "<br>" +
+                        var contentMejorado = " <p class=\"market_data\" align=\"left\">Titulo: "  +  item.mejorTitulo + "<br>" +
                                       "Fecha: "    +  item.fecha_bonita + "<br>"+
                                       lugar+tipo+"</p>"+
                                       "<a href=" + item.url + " target=\"_blank\">Link del evento</a><br><br>"+

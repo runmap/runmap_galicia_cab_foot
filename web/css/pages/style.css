@@ -87,6 +87,13 @@ body{
    
 }
 
+p.market_data{
+   max-width: 320px; 
+   margin-right: 5px;
+   //align: "left";
+}
+
+
 p.padding {
     padding-top: 0.5cm;
     padding-left: 0.5cm;
