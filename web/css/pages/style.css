@@ -87,9 +87,19 @@ body{
    
 }
 
+img{white-space:pre}
+
 p.market_data{
    max-width: 320px; 
    margin-right: 5px;
+   //align: "left";
+}
+
+p.market_data_ancho{
+   max-width: 560px; 
+   max-height: 650px; 
+   margin-right: 5px;
+   margin-left: 5px;
    //align: "left";
 }
 
