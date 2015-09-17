@@ -18,10 +18,22 @@
     margin-left: 3px;
 }
 
+
+
+#map2 {
+      width: 600px;
+      height: 550px;
+      
+      max-width: 100%;
+}
+
 #map {
       width: 750px;
       height: 650px;
+      
+      max-width: 100%;
 }
+
 
 #map_movil {
       width: 275px;
@@ -40,7 +52,7 @@ body{
 
 .Division{
     float: left;
-    width: 250px;
+    //width: 250px;
     //height: 700px;
     //border: 0px solid #000000;
     //margin-left: 3px;
@@ -58,7 +70,7 @@ body{
 
 .Division2{
     //float: left;
-    width: 1000px;
+    //width: 1000px;
     //width: 60%;
     //height: 700px;
     border: 0px solid #000000;
@@ -106,7 +118,12 @@ p.market_data_ancho{
 
 p.padding {
     padding-top: 0.5cm;
-    padding-left: 0.5cm;
+    padding-left: 1.2cm;
+}
+
+p.padding2 {
+    padding-top: 0.2cm;
+    padding-left: 1.2cm;
 }
 
 p.padding_movil {
@@ -142,4 +159,17 @@ p.padding_movil_horizontal {
     padding: 2px;
     text-transform: uppercase;
     color: #00638e;
+    padding-left: 1cm;
+}
+
+.inicio_seccion_xs
+{
+    background-color: #f3f3f3;
+    font-weight: bold; 
+    font-size: 21px;
+    //border-left: 3px solid #00638e;
+    padding: 2px;
+    text-transform: uppercase;
+    color: #00638e;
+    //padding-left: 1cm;
 }

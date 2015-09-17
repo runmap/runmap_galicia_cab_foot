@@ -1,7 +1,4 @@
-
-
 <!DOCTYPE html>
-
 <html lang="es">
     
 <head>
@@ -15,7 +12,7 @@
     <meta property="og:site_name" content="RunMapGalicia.com" >
     <meta property="og:description" content="RunMapGalicia es un buscador de eventos deportivos populares para Galicia, incluyendo carreras populares , trail , montaña , ciclismo , btt , maratón , media y otros eventos especiales  " >
     <meta property="og:url" content="www.runmapgalicia.com/" >
-    <meta name="description" content="RunMapGalicia es un buscador de eventos deportivos populares para Galicia, incluyendo carreras populares , trail , montaña , ciclismo , btt , maratón , media y otros eventos especiales  " > 
+    <meta name="description" content="RunMapGalicia es un buscador de eventos deportivos populares para Galicia, incluyendo carreras populares, trail, ciclismo, btt, maratón, media maratón y otros eventos especiales" > 
     <meta name="keywords" content="deporte, popular, evento, eventos, galicia, carrera, carreira, deportivo, correr, duatlón, trial, montaña, run, runmap, runmapgalicia, galiza, ciclismo, marcha ciclista, btt, maratón,  "/>
     
     <!--Google analitics-->
@@ -133,6 +130,12 @@
                 //float: right;
             }
             
+            .image {
+                /* min-width: 100%; REMOVE THIS */
+                max-width: 100%;
+                height: auto;
+            }
+            
     </style>
   
 
@@ -168,8 +171,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" >
             <li class="active"><a href="#">Buscador</a></li>
-            <li><a href="#about">Acerca</a></li>
-            <li><a href="#contact">Contacta</a></li>
+            <li><a href="http://localhost:8080/RunMapGalicia_Servidor/sobre.html">Acerca</a></li>
+            <li><a href="http://localhost:8080/RunMapGalicia_Servidor/contacto2.html">Contacta</a></li>
           </ul>
         </div>
           
@@ -183,31 +186,97 @@
     
 <form method="post" action="calendario" id="form1">
 
-
 <br><br>
-    <section class="container web-content">
-        <aside id="filter">
-        </aside>
-        
-        <section>
-    <h1 class="inicio_seccion"> Próximos eventos </h1>     <br>        
-    <div class="row-fluid">
-        <div class="carousel slide row" id="carreras">
-            
-            <div class="carousel-inner">
-                    
-                            <div class='item active' id="activos"></div>
-                        
-                            <div class='item' id='ronda-2'></div>
-                
-                        
-                            <div class='item' id='ronda-3'></div>
-                        
-            </div>
-            <a data-slide="prev" href="calendario#carreras" class="left carousel-control">‹</a>
-            <a data-slide="next" href="calendario#carreras" class="right carousel-control">›</a>
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="text-center">
+            <span class="hidden-sm hidden-md hidden-lg">col-xs</span>
+            <span class="visible-sm hidden-md hidden-lg">col-sm</span>
+            <span class="visible-md hidden-sm hidden-lg">col-md</span>
+            <span class="visible-lg hidden-sm hidden-md">col-lg</span>
+            </h1>
+            <h3 class="text-center">
+            <span class="hidden-sm hidden-md hidden-lg">15px auto|30 15px</span>
+            <span class="visible-sm hidden-md hidden-lg">15px ~62|30 15px</span>
+            <span class="visible-md hidden-sm hidden-lg">15px ~81|30 15px</span>
+            <span class="visible-lg hidden-sm hidden-md">15px ~97|30 15px</span>
+            </h3>
         </div>
-    </div>
+    </div>    
+    
+<!--Comenté sections-->  
+
+
+
+<!-- Bootstrap traballa así:
+	 xs -> móbil
+	 sm -> tableta
+	 md -> pantalla de ordenador pequena
+	 lg -> pantalla de ordenador grande
+	-->
+
+    
+<br><br>
+
+<div class="container">
+ <div class="row">
+     
+  <div class="col-lg-12 col-md-12 hidden-sm hidden-xs center">
+	
+        <h1 class="inicio_seccion"> Próximos eventos </h1>     <br>        
+        <div class="row-fluid">
+            <div class="carousel slide row" id="carreras">
+
+                <div class="carousel-inner">
+
+                                <div class='item active' id="activos"></div>
+
+                                <div class='item' id='ronda-2'></div>
+
+
+                                <div class='item' id='ronda-3'></div>
+
+                </div>
+                <a data-slide="prev" href="calendario#carreras" class="left carousel-control">‹</a>
+                <a data-slide="next" href="calendario#carreras" class="right carousel-control">›</a>
+            </div>
+        </div>
+  </div>
+  
+     <div class="hidden-lg hidden-md center">
+         <center><h1 class="inicio_seccion_xs"> Próximos eventos </h1> </center>    <br>  <br> 
+     </div>
+     
+  <div class="col-xs-8 col-sm-6 col-xs-offset-2 col-sm-offset-3 hidden-lg hidden-md center">
+	
+
+              
+        <div class="row-fluid">
+            <div class="carousel slide row" id="carreras2">
+
+                <div class="carousel-inner">
+
+                        <div class='item active' id="xs_activos"></div>
+                        <div class='item' id='xs_ronda-2'></div>
+                        <div class='item' id='xs_ronda-3'></div> 
+                        <div class='item' id='xs_ronda-4'></div> 
+                        <div class='item' id='xs_ronda-5'></div> 
+                        <div class='item' id='xs_ronda-6'></div> 
+                        <div class='item' id='xs_ronda-7'></div> 
+                        <div class='item' id='xs_ronda-8'></div> 
+                        <div class='item' id='xs_ronda-9'></div> 
+                        <div class='item' id='xs_ronda-10'></div> 
+
+                </div>
+                <a data-slide="prev" href="calendario#carreras2" class="left carousel-control">‹</a>
+                <a data-slide="next" href="calendario#carreras2" class="right carousel-control">›</a>
+            </div>
+        </div>
+  </div>   
+     
+     
+ </div>    
+</div>
           
     <script>
         
@@ -217,6 +286,18 @@
      var html = "";  
      var html_ronda2 = "";
      var html_ronda3 = "";
+     
+     var xs_html = "";  
+     var xs_html_ronda2 = "";
+     var xs_html_ronda3 = "";
+     var xs_html_ronda4 = "";
+     var xs_html_ronda5 = "";
+     var xs_html_ronda6 = "";
+     var xs_html_ronda7 = "";
+     var xs_html_ronda8 = "";
+     var xs_html_ronda9 = "";
+     var xs_html_ronda10 = "";
+     
      var contador=0;
       
      var today = new Date();
@@ -244,10 +325,7 @@
                 var fecDate = new Date(anho, mes-1, dia);
                 
                 if( fecDate >= today   ){
-                    
-                    //alert(fecDate);
-                    //alert(today);
-                    
+
                     var ruta_im = "img/" + item.nombre_imagen;
 
                     var diames = dia+"/"+mes;
@@ -268,18 +346,13 @@
                     
                     else if(item.url_evento_facebook)
                         link_desde_cartel = item.url_evento_facebook;
-                            
-                    //alert(link_desde_cartel);
-
+ 
                     aux_html += "<div class=\"col-md-3\">" + 
                     "<div class=\"thumbnail\"> <a href=\""+ link_desde_cartel+"\" target=\"_blank\" >"+
                     "<img src='"+ruta_im+ "' alt="+item.mejorTitulo+" /></a></div>" + 
                     "<div class=\"caption\"> <div class=\"fecha\">" +
                     "<span class=\"day\"> " + diames + "</span><span class=\"month\">&nbsp;</span><span class=\"month\">&nbsp;</span> </div>" +
                     "<div class=\"name\">" + item.mejorTitulo + "  </div> <div class=\"place\">" + item.lugarBonito + "</div> </div></div>"; 
-
-                    
-                    //alert(aux_html);
 
                     if(contador<4){
                         html += aux_html;
@@ -292,6 +365,50 @@
                     else if(contador>7 && contador<12){
                         html_ronda3 += aux_html;
                     }
+                    
+                    
+                    
+                    if(contador===0){
+                        xs_html += aux_html;
+                    }
+
+                    else if(contador===1){
+                        xs_html_ronda2 += aux_html;
+                    }
+
+                    else if(contador===2){
+                        xs_html_ronda3 += aux_html;
+                    }
+
+                    else if(contador===3){
+                        xs_html_ronda4 += aux_html;
+                    }
+
+                    else if(contador===4){
+                        xs_html_ronda5 += aux_html;
+                    }
+
+                    else if(contador===5){
+                        xs_html_ronda6 += aux_html;
+                    }
+
+                    else if(contador===6){
+                        xs_html_ronda7 += aux_html;
+                    }
+
+                    else if(contador===7){
+                        xs_html_ronda8 += aux_html;
+                    }
+
+                    else if(contador===8){
+                        xs_html_ronda9 += aux_html;
+                    }
+
+                    else if(contador===9){
+                        xs_html_ronda10 += aux_html;
+                    }
+                    
+                    
 
                     contador++;
 
@@ -310,11 +427,23 @@
         }
      }
      
+     //lg and md
      $('#activos').html(html);
-     
      $('#ronda-2').html(html_ronda2);
-     
      $('#ronda-3').html(html_ronda3);
+     
+     //xd
+     $('#xs_activos').html(xs_html);
+     $('#xs_ronda-2').html(xs_html_ronda2);
+     $('#xs_ronda-3').html(xs_html_ronda3);
+     $('#xs_ronda-4').html(xs_html_ronda4);
+     $('#xs_ronda-5').html(xs_html_ronda5);
+     $('#xs_ronda-6').html(xs_html_ronda6);
+     $('#xs_ronda-7').html(xs_html_ronda7);
+     $('#xs_ronda-8').html(xs_html_ronda8);
+     $('#xs_ronda-9').html(xs_html_ronda9);
+     $('#xs_ronda-10').html(xs_html_ronda10);
+     
   }
     
     
@@ -327,39 +456,92 @@
 
 
     <br><br><br>
-    <h1 class="inicio_seccion"> Buscador de eventos </h1> 
-
-    <div class="contenido"> 
     
-    <div class="Division"><br><br><!--<p class="padding"><label for="cb"><input id="cb" type="checkbox" onclick="handleClick(this);">Ocultar eventos</label></p> -->
-    
-    <!--<center><h2> RunMap.gal </h2></center> -->
 
     
+<div class="container">
     
-    <p class="padding"> <label for="cb_todos"><input id="cb_todos" type="checkbox" onclick=handleClickTodos(this)>&nbsp;&nbsp;Todos</label><br>
-                        <label for="cb_carrera"><input id="cb_carrera" type="checkbox" onclick=handleClickCarrera(this) checked>&nbsp;&nbsp;Carreira popular</label><br>
-                        <label for="cb_maraton"><input id="cb_maraton" type="checkbox" onclick=handleClickMaraton(this)>&nbsp;&nbsp;Maratón/Media</label><br>
-                        <label for="cb_tlon"><input id="cb_tlon" type="checkbox" onclick="handleClickTlon(this);">&nbsp;&nbsp;Duatlón/Triatlón</label><br> 
-                        <label for="cb_bici"><input id="cb_bici" type="checkbox" onclick="handleClickBici(this);">&nbsp;&nbsp;Ruta ciclista</label><br>
-                        <label for="cb_trail"><input id="cb_trail" type="checkbox" onclick="handleClickTrail(this);">&nbsp;&nbsp;Trail/Montaña</label><br>
-                        <label for="cb_andaina"><input id="cb_andaina" type="checkbox" onclick="handleClickAndaina(this);">&nbsp;&nbsp;Andaina/Roteiro</label><br>
-                        <label for="cb_especial"><input id="cb_especial" type="checkbox" onclick="handleClickEspecial(this);">&nbsp;&nbsp;Especial</label><br> 
-                        <br> 
-                        &nbsp;&nbsp;Dende<br>
-                        &nbsp;&nbsp;<input type="text" name="datepicker" id="datepicker" readonly="readonly" size="10"  /> <br><br>
-                        &nbsp;&nbsp;Ata<br>
-                        &nbsp;&nbsp;<input type="text" name="datepicker2" id="datepicker2" readonly="readonly" size="10" />   
-    </p>              
-    
-    <!-- //value="01/09/2015" -->
-    
+  <div class="row">
+     
+    <!--<div class="col-lg-9 col-md-9 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">   -->
+    <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">       
+        <br><br>
+        <br><br>
+          <div class="Division2" id="map"></div> 
     </div>
-
-<center>    <br><br>
-    <div class="Division2" id="map"></div> 
-</center></div>
     
+    <br>
+    
+    <div class="col-md-1">
+        <p> </p>
+    </div>    
+    
+    <div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-4">
+
+      <h1 class="inicio_seccion"> Buscador de eventos </h1> 
+
+          <div class="Division"><br>
+
+              <p class="padding"> <label for="cb_todos"><input id="cb_todos" type="checkbox" onclick=handleClickTodos(this)>&nbsp;&nbsp;Todos</label><br>
+                                  <label for="cb_carrera"><input id="cb_carrera" type="checkbox" onclick=handleClickCarrera(this) checked>&nbsp;&nbsp;Carreira popular</label><br>
+                                  <label for="cb_maraton"><input id="cb_maraton" type="checkbox" onclick=handleClickMaraton(this)>&nbsp;&nbsp;Maratón/Media</label><br>
+                                  <label for="cb_tlon"><input id="cb_tlon" type="checkbox" onclick="handleClickTlon(this);">&nbsp;&nbsp;Duatlón/Triatlón</label><br> 
+                                  <label for="cb_bici"><input id="cb_bici" type="checkbox" onclick="handleClickBici(this);">&nbsp;&nbsp;Ruta ciclista</label><br>
+                                  <label for="cb_trail"><input id="cb_trail" type="checkbox" onclick="handleClickTrail(this);">&nbsp;&nbsp;Trail/Montaña</label><br>
+                                  <label for="cb_andaina"><input id="cb_andaina" type="checkbox" onclick="handleClickAndaina(this);">&nbsp;&nbsp;Andaina/Roteiro</label><br>
+                                  <label for="cb_especial"><input id="cb_especial" type="checkbox" onclick="handleClickEspecial(this);">&nbsp;&nbsp;Especial</label><br> 
+                                  <br> 
+                                  &nbsp;&nbsp;Dende<br>
+                                  &nbsp;&nbsp;<input type="text" name="datepicker" id="datepicker" readonly="readonly" size="10"  /> <br><br>
+                                  &nbsp;&nbsp;Ata<br>
+                                  &nbsp;&nbsp;<input type="text" name="datepicker2" id="datepicker2" readonly="readonly" size="10" />   
+              </p>              
+          </div>
+    </div>
+    
+    <!--<div class="col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-4 hidden-lg hidden-md">
+
+      <br> 
+      <h1 class="inicio_seccion2">Filtros </h1> 
+
+          <div class="Division">
+
+              <p class="padding2"> <label for="cb_todos"><input id="cb_todos" type="checkbox" onclick=handleClickTodos(this)>&nbsp;&nbsp;Todos</label><br>
+                                  <label for="cb_carrera"><input id="cb_carrera" type="checkbox" onclick=handleClickCarrera(this) checked>&nbsp;&nbsp;Carreira popular</label><br>
+                                  <label for="cb_maraton"><input id="cb_maraton" type="checkbox" onclick=handleClickMaraton(this)>&nbsp;&nbsp;Maratón/Media</label><br>
+                                  <label for="cb_tlon"><input id="cb_tlon" type="checkbox" onclick="handleClickTlon(this);">&nbsp;&nbsp;Duatlón/Triatlón</label><br> 
+                                  <label for="cb_bici"><input id="cb_bici" type="checkbox" onclick="handleClickBici(this);">&nbsp;&nbsp;Ruta ciclista</label><br>
+                                  <label for="cb_trail"><input id="cb_trail" type="checkbox" onclick="handleClickTrail(this);">&nbsp;&nbsp;Trail/Montaña</label><br>
+                                  <label for="cb_andaina"><input id="cb_andaina" type="checkbox" onclick="handleClickAndaina(this);">&nbsp;&nbsp;Andaina/Roteiro</label><br>
+                                  <label for="cb_especial"><input id="cb_especial" type="checkbox" onclick="handleClickEspecial(this);">&nbsp;&nbsp;Especial</label><br> 
+                                  <br> 
+                                  &nbsp;&nbsp;Dende<br>
+                                  &nbsp;&nbsp;<input type="text" name="datepicker" id="datepicker" readonly="readonly" size="10"  /> <br><br>
+                                  &nbsp;&nbsp;Ata<br>
+                                  &nbsp;&nbsp;<input type="text" name="datepicker2" id="datepicker2" readonly="readonly" size="10" />   
+              </p>              
+          </div>
+    </div> -->
+
+  </div>
+    
+   
+  <!--<div class="row">  
+    
+      <div class="col-xs-10 col-xs-offset-1 hidden-lg hidden-md">  
+          
+        
+        <br><br>
+        <center>    <br><br>
+          <div class="Division2" id="map2"></div> 
+        </center>
+      </div>
+      
+   </div> -->
+    
+    
+</div>
+     
     
   <script>
     
@@ -825,12 +1007,33 @@ $("#datepicker2").datepicker({
       zoom: 8
       //zoom: fitZoom
     });
+    
+    
+    //var map2;
+    //var map2 = Object.clone(map);
+    //map2 = map;
+    
+    /*map2 = new GMaps({
+      el: '#map2',
+      lat: 42.8,
+      lng: -8.06,
+      zoom: 8
+      //zoom: fitZoom
+    });*/
+    
+    /*alert(map);
+    
+    var map2;
+    map2 =map;
+    
+    alert(map2);*/
+    
   </script>
   
   
   
-    </section>
-</section>
+    <!--</section> -->
+<!--</section> -->
         
 <br><br>
     </form>
@@ -856,35 +1059,29 @@ $("#datepicker2").datepicker({
     
     <footer class="footer-distributed">
 
-			<div class="footer-right">
+        <div class="footer-right">
 
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
-				<a href="#"><i class="fa fa-github"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
 
-			</div>
+        </div>
 
-			<div class="footer-left">
+        <div class="footer-left">
 
-				<p class="footer-links">
-					<a href="#">Buscador</a>
-					&nbsp;&nbsp;·&nbsp;&nbsp;
-					<!--<a href="#">Blog</a>
-					·-->
-					<!--<a href="#">Pricing</a>
-					·-->
-					<a href="#">Sobre la web</a>
-					&nbsp;&nbsp;·&nbsp;&nbsp;
-					<!--<a href="#">Faq</a>
-					·-->
-					<a href="#">Contacto</a>
-				</p>
+                <p class="footer-links">
+                        <a href="#">Buscador</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-				<p>RunMap Galicia 2015</p>
-			</div>
+                        <a href="http://localhost:8080/RunMapGalicia_Servidor/sobre.html">Sobre la web</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-		</footer>
+                        <a href="http://localhost:8080/RunMapGalicia_Servidor/contacto2.html">Contacto</a>
+                </p>
+
+                <p>RunMap Galicia 2015</p>
+        </div>
+
+    </footer>
     
    
     
