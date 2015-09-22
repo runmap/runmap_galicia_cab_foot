@@ -174,8 +174,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" >
             <li class="active"><a href="#">Buscador</a></li>
-            <li><a href="http://www.runmapgalicia.com/sobre.html">Acerca</a></li>
-            <li><a href="http://www.runmapgalicia.com/contacto2.html">Contacta</a></li>
+            <li><a href="http://localhost:8080/RunMapGalicia_Servidor/sobre.html">Acerca</a></li>
+            <li><a href="http://localhost:8080/RunMapGalicia_Servidor/contacto2.html">Contacta</a></li>
           </ul>
         </div>
           
@@ -573,9 +573,9 @@
                     <div class="col-lg-9 col-md-9 col-xs-2 col-sm-2"><input type="text" name="datepicker" id="datepicker"  readonly="readonly" size="10"  /></div>
                    
                     <div class="col-lg-12 col-md-12 col-xs-12 hidden-sm"><p></p></div>
-                    <div class="hidden-xs col-sm-2 hidden-lg hidden-md">&nbsp;&nbsp;&nbsp;</div> 
+                    <div class="hidden-xs col-sm-1 hidden-lg hidden-md">&nbsp;&nbsp;&nbsp;</div> 
                
-                    <div class="col-lg-3 col-md-3 col-xs-2 col-sm-2">Ata:</div>
+                    <div class="col-lg-3 col-md-3 col-xs-1 col-sm-1">&nbsp;&nbsp;Ata:</div>
                     <div class="col-lg-9 col-md-9 col-xs-2 col-sm-2"><input type="text" name="datepicker2" id="datepicker2"  readonly="readonly" size="10" /></div>
                 </div> 
                 
@@ -1009,7 +1009,7 @@ $("#datepicker2").datepicker({
                         var info_alt = " " +  tit + "\n " +  item.fecha_bonita + "\n " + item.lugarBonito + " \n " + item.categoriasEvento;
                               
                                 
-                        ruta_imagen = "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/" + item.nombre_imagen  + " title=\""+info_alt+ "\" alt=\""+info_alt+"\" style=\"PADDING-LEFT: 9px; PADDING-RIGHT: 12px; height: "+altura+"px; width:"+anchura+"px \"></a> ";   
+                        ruta_imagen = "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/" + item.nombre_imagen  + " title=\""+info_alt+ "\" alt=\""+info_alt+"\" style=\"PADDING-LEFT: 3px; PADDING-RIGHT: 15px; height: "+altura+"px; width:"+anchura+"px \"></a> ";   
                         //alert(ruta_imagen);
                     }
 
@@ -1022,7 +1022,7 @@ $("#datepicker2").datepicker({
                 
                     if (item.nombre_imagen && window.screen.availWidth > 600 && window.screen.availHeight > 550 ){    
 
-                         contentMejorado = "<p><center><span style=\"color:#00638e ; font-weight: bold; align=center \">"    +  item.fecha_bonita + "&nbsp;&nbsp;</span></center></p><p class=\"market_data_ancho\" align=\"right\"><center>" + ruta_imagen + "</center><br></p>"; 
+                         contentMejorado = "<p class=\"market_data_ancho\" align=\"right\">" + ruta_imagen + "<br></p>"; 
                               /*<p class=\"market_data_ancho\" align=\"left\">Titulo: "  +  item.mejorTitulo + "<br>" +
                               "Fecha: "    +  item.fecha_bonita + "<br>"+
                               lugar+tipo+"</p>"+
@@ -1201,10 +1201,10 @@ $("#datepicker2").datepicker({
                         <a href="#">Buscador</a>
                         &nbsp;&nbsp;&nbsp;
 
-                        <a href="http://www.runmapgalicia.com/sobre.html">Sobre la web</a>
+                        <a href="http://localhost:8080/RunMapGalicia_Servidor/sobre.html">Sobre la web</a>
                         &nbsp;&nbsp;&nbsp;
                         
-                        <a href="http://www.runmapgalicia.com/contacto2.html">Contacto</a>
+                        <a href="http://localhost:8080/RunMapGalicia_Servidor/contacto2.html">Contacto</a>
                         
                 </p>
 
