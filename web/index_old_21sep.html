@@ -72,7 +72,7 @@
             
             button.navbar-toggle{margin:25px 25px 25px 25px;}
         
-            .boton-margin{margin-right:16px; margin-top:7px; margin-bottom:7px }
+            .boton-margin{margin-right:16px; margin-top:10px; margin-bottom:10px }
             
             .fecha_margen{margin-right:30px;  }
             
@@ -173,9 +173,9 @@
           
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" >
-            <li class="active"><a href="#">Buscador de eventos</a></li>
-            <li><a href="http://www.runmapgalicia.com/sobre.html">Sobre a web</a></li>
-            <!--<li><a href="http://www.runmapgalicia.com/contacto2.html">Contacta</a></li>-->
+            <li class="active"><a href="#">Buscador</a></li>
+            <li><a href="http://localhost:8080/RunMapGalicia_Servidor/sobre.html">Acerca</a></li>
+            <li><a href="http://localhost:8080/RunMapGalicia_Servidor/contacto2.html">Contacta</a></li>
           </ul>
         </div>
           
@@ -482,7 +482,6 @@
     <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">       
         <br><br>
         
-        
         <div class="Division2" id="map"></div> <br><br><br>
     </div>
     
@@ -504,7 +503,7 @@
                                   
                 <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12"> <br></div>
                 
-                <div class="col-lg-12 col-md-12 hidden-xs hidden-sm">  </div>
+                <div class="col-lg-12 col-md-12 hidden-xs hidden-sm"> <br> </div>
                 
                 <span class="button-checkbox">
                   <button type="button" class="btn boton-margin" data-color="primary">&nbsp;Todos&nbsp;&nbsp;</button>
@@ -515,7 +514,7 @@
                 
 
                 <span class="button-checkbox">
-                  <button type="button" class="btn boton-margin" data-color="primary">&nbsp;Carreira Popular</button>
+                  <button type="button" class="btn boton-margin" data-color="primary">&nbsp;Carrera Popular</button>
                   <input type="checkbox" class="hidden" checked id="cb_carrera"  /> 
                 </span>
                 
@@ -567,15 +566,15 @@
                 
                 <div class="row">
                     
-                    <div class="hidden-xs col-sm-1 hidden-lg hidden-md">&nbsp;&nbsp;&nbsp;</div> 
+                    <div class="col-xs-1 col-sm-1 hidden-lg hidden-md">&nbsp;&nbsp;&nbsp;</div> 
                     
                     <div class="col-lg-3 col-md-3 col-xs-2 col-sm-2">Dende:</div>
                     <div class="col-lg-9 col-md-9 col-xs-2 col-sm-2"><input type="text" name="datepicker" id="datepicker"  readonly="readonly" size="10"  /></div>
                    
-                    <div class="col-lg-12 col-md-12 col-xs-12 hidden-sm"><p></p></div>
-                    <div class="hidden-xs col-sm-2 hidden-lg hidden-md">&nbsp;&nbsp;&nbsp;</div> 
+                    <div class="col-lg-12 col-md-12 hidden-xs hidden-sm"><p><br/></p></div>
+                    <div class="col-xs-1 col-sm-1 hidden-lg hidden-md">&nbsp;&nbsp;&nbsp;</div> 
                
-                    <div class="col-lg-3 col-md-3 col-xs-2 col-sm-2">Ata:</div>
+                    <div class="col-lg-3 col-md-3 col-xs-1 col-sm-1">Ata:</div>
                     <div class="col-lg-9 col-md-9 col-xs-2 col-sm-2"><input type="text" name="datepicker2" id="datepicker2"  readonly="readonly" size="10" /></div>
                 </div> 
                 
@@ -870,8 +869,6 @@ $("#datepicker2").datepicker({
     
     //Función encargada de cargar los eventos correctos (data makers)
     function loadResults (data) {
-      
-        
         
 
         
@@ -938,16 +935,16 @@ $("#datepicker2").datepicker({
                     var lugar="";
 
                     if (item.lugarBonito)
-                        lugar = item.lugarBonito ;
+                        lugar = "Lugar: "    +  item.lugarBonito + "<br>";
 
                     var ruta_imagen="";
                     
                     var tipo = "";
                     if(item.categoriasEvento)
-                        tipo =   item.categoriasEvento;
+                        tipo = "Tipo: "     +  item.categoriasEvento;
                     
 
-                    if (item.nombre_imagen && window.screen.availWidth > 600 && window.screen.availHeight > 550){
+                    if (item.nombre_imagen){
                         
                         //var relac = item.width_imagen/ item.heigth_imagen ;
                         
@@ -956,48 +953,22 @@ $("#datepicker2").datepicker({
                         var altura= 0;
                         var anchura =0;
                         
-                        //alert("Altura disponible " + window.screen.availHeight);
-                        //alert("Anchura disponible " +window.screen.availWidth);
-                        
                         if( item.width_imagen>=item.heigth_imagen){
                             
-
-                            anchura= 370;
-                            
-                            anchura= anchura * ((window.screen.availWidth*1.0)/1400);
-                            
-                            //Limitar el ancho y el alto
-                            /*if( window.screen.availWidth < 600 || window.screen.availHeight < 430){
-                                anchura = 150;
-                                
-                            }    */
-                                
-                            altura = anchura * (  parseFloat(item.heigth_imagen) / parseFloat(item.width_imagen)  ); 
+                            anchura= 450;
+                            altura = 450 * (  parseFloat(item.heigth_imagen) / parseFloat(item.width_imagen)  ); 
                             
                             
                             
                         }else{
                             
-                            altura= 370;
-                            
-                            altura= altura * ((window.screen.availHeight*1.0)/1000);
-                            
-                            //alert("Altura disponible " + window.screen.availHeight);
-                            
-                            
-                            /*if( window.screen.availWidth < 600 || window.screen.availHeight < 430){
-                                
-                                altura = 150;
-                                
-                            }*/
-                            
-                            
+                            altura= 430;
                             //alert( item.width_imagen/item.height_imagen);
                             
                             //alert("parse" +  parseFloat(item.width_imagen));
                             //alert("parse" + parseFloat(item.heigth_imagen));
                             
-                            anchura = altura * (  parseFloat(item.width_imagen) / parseFloat(item.heigth_imagen) ); 
+                            anchura = 430 * (  parseFloat(item.width_imagen) / parseFloat(item.heigth_imagen) ); 
                             
                         }
                         
@@ -1009,7 +980,7 @@ $("#datepicker2").datepicker({
                         var info_alt = " " +  tit + "\n " +  item.fecha_bonita + "\n " + item.lugarBonito + " \n " + item.categoriasEvento;
                               
                                 
-                        ruta_imagen = "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/" + item.nombre_imagen  + " title=\""+info_alt+ "\" alt=\""+info_alt+"\" style=\"PADDING-LEFT: 9px; PADDING-RIGHT: 12px; height: "+altura+"px; width:"+anchura+"px \"></a> ";   
+                        ruta_imagen = "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/" + item.nombre_imagen  + " title=\""+info_alt+ "\" alt=\""+info_alt+"\" style=\"PADDING-LEFT: 3px; PADDING-RIGHT: 15px; height: "+altura+"px; width:"+anchura+"px \"></a> ";   
                         //alert(ruta_imagen);
                     }
 
@@ -1020,9 +991,9 @@ $("#datepicker2").datepicker({
                 
                     var contentMejorado = "";    
                 
-                    if (item.nombre_imagen && window.screen.availWidth > 600 && window.screen.availHeight > 550 ){    
+                    if (item.nombre_imagen){    
 
-                         contentMejorado = "<p><center><span style=\"color:#00638e ; font-weight: bold; align=center \">"    +  item.fecha_bonita + "&nbsp;&nbsp;</span></center></p><p class=\"market_data_ancho\" align=\"right\"><center>" + ruta_imagen + "</center><br></p>"; 
+                         contentMejorado = "<p class=\"market_data_ancho\" align=\"left\"><br>" + ruta_imagen + "<br></p>"; 
                               /*<p class=\"market_data_ancho\" align=\"left\">Titulo: "  +  item.mejorTitulo + "<br>" +
                               "Fecha: "    +  item.fecha_bonita + "<br>"+
                               lugar+tipo+"</p>"+
@@ -1032,24 +1003,10 @@ $("#datepicker2").datepicker({
 
                     }else{
                         
-                         
-                         
-                        if( item.mejorTitulo.indexOf(' ') === -1  || item.mejorTitulo.length<10 ){
-                            item.mejorTitulo = "Carreira de " + item.mejorTitulo;
-                        }
-                        
-                        
-                        
-                         contentMejorado = " <p class=\"market_data\" align=\"left\"><span style=\"color:#00638e ; font-weight: bold\">"+ item.mejorTitulo +"</span> </p>" +
-                              "<p>Fecha: <span style=\"color:#00638e\">"    +  item.fecha_bonita + "</span></p>"+
-                              "<p>Lugar: <span style=\"color:#00638e\">"    +lugar + "</span></p>" + 
-                              "<p>Tipo: <span style=\"color:#00638e\">"    +tipo  + "</span></p>";
-                      
-                        if( item.nombre_imagen) {
-                            contentMejorado += "<p><a href=img/" +  item.nombre_imagen + " target=\"_blank\"  ><span style=\"color:#00638e ; font-weight: bold\">Ver cartel</span></a></p>";
-                        }
-                      
-                        //"<a href=" + item.url + " target=\"_blank\">Link del evento</a><br><br>";
+                         contentMejorado = " <p class=\"market_data\" align=\"left\">Titulo: "  +  item.mejorTitulo + "<br>" +
+                              "Fecha: "    +  item.fecha_bonita + "<br>"+
+                              lugar+tipo+"<br></p>";
+                              //"<a href=" + item.url + " target=\"_blank\">Link del evento</a><br><br>";
                               
                     }
                     
@@ -1062,47 +1019,20 @@ $("#datepicker2").datepicker({
 
                     private String url_inscripcion =""; */
                     
-                    contentMejorado += "<center><p style=\"margin-top:-7px\">";
+                    if(item.url_inscripcion)
+                        contentMejorado +=   "<a href=" + item.url_inscripcion+ " target=\"_blank\"><img src=img/otras/inscripcion.png title=Inscripción alt=Inscripción style=\"height:32px; width:32px; margin-right:10px\" > </a> ";   
                     
-                    if (item.nombre_imagen && window.screen.availWidth > 600 && window.screen.availHeight > 550){
-                        
-                        if(item.url_inscripcion)
-                            contentMejorado +=   "<a href=" + item.url_inscripcion+ " target=\"_blank\"><img src=img/otras/inscripcion.png title=Inscripción alt=Inscripción style=\"height:32px; width:32px; margin-right:10px\" > </a> ";   
-
-                        if(item.url_moreinfo)        
-                            contentMejorado +=   "<a href=" + item.url_moreinfo +   " target=\"_blank\"><img src=img/otras/info.png title=Información alt=Información style=\"height:28px; width:28px; margin-right:10px\" > </a> ";   
-
-                        if(item.url_evento_facebook)
-                            contentMejorado +=   "<a href=" +  item.url_evento_facebook + " target=\"_blank\"><img src=img/otras/facebook.png title=\"Evento en el Facebook\" alt=\"Evento en el Facebook\" style=\"height:28px; width:28px; margin-right:10px\" > </a> ";   
-
-                        if(item.url_web_evento)        
-                            contentMejorado +=   "<a href=" +  item.url_web_evento + " target=\"_blank\"><img src=img/otras/webEvento.png title=\"Web propia del evento\" alt=Web propia del evento style=\"height:28px; width:28px; margin-right:10px\"> </a> ";   
-
-
-                        contentMejorado +=   "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/otras/compartir.png title=Compartir alt=Compartir style=\"height:28px; width:28px; margin-right:10px\"> </a> "; 
+                    if(item.url_moreinfo)        
+                        contentMejorado +=   "<a href=" + item.url_moreinfo +   " target=\"_blank\"><img src=img/otras/info.png title=Información alt=Información style=\"height:28px; width:28px; margin-right:10px\" > </a> ";   
                     
-                    }else{
-                        
-                        if(item.url_inscripcion)
-                            contentMejorado +=   "<a href=" + item.url_inscripcion+ " target=\"_blank\"><img src=img/otras/inscripcion.png title=Inscripción alt=Inscripción style=\"height:22px; width:22px; margin-right:5px\" > </a> ";   
-
-                        if(item.url_moreinfo)        
-                            contentMejorado +=   "<a href=" + item.url_moreinfo +   " target=\"_blank\"><img src=img/otras/info.png title=Información alt=Información style=\"height:20px; width:20px; margin-right:5px\" > </a> ";   
-
-                        if(item.url_evento_facebook)
-                            contentMejorado +=   "<a href=" +  item.url_evento_facebook + " target=\"_blank\"><img src=img/otras/facebook.png title=\"Evento en el Facebook\" alt=\"Evento en el Facebook\" style=\"height:20px; width:20px; margin-right:5px\" > </a> ";   
-
-                        if(item.url_web_evento)        
-                            contentMejorado +=   "<a href=" +  item.url_web_evento + " target=\"_blank\"><img src=img/otras/webEvento.png title=\"Web propia del evento\" alt=Web propia del evento style=\"height:20px; width:20px; margin-right:5px\"> </a> ";   
-
-
-                        contentMejorado +=   "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/otras/compartir.png title=Compartir alt=Compartir style=\"height:20px; width:20px; margin-right:5px\"> </a> "; 
+                    if(item.url_evento_facebook)
+                        contentMejorado +=   "<a href=" +  item.url_evento_facebook + " target=\"_blank\"><img src=img/otras/facebook.png title=\"Evento en el Facebook\" alt=\"Evento en el Facebook\" style=\"height:28px; width:28px; margin-right:10px\" > </a> ";   
                     
-                    }
+                    if(item.url_web_evento)        
+                        contentMejorado +=   "<a href=" +  item.url_web_evento + " target=\"_blank\"><img src=img/otras/webEvento.png title=\"Web propia del evento\" alt=Web propia del evento style=\"height:28px; width:28px; margin-right:10px\"> </a> ";   
                     
-                    
-                    contentMejorado += "</center></p>";
-                        
+                            
+                    contentMejorado +=   "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/otras/compartir.png title=Compartir alt=Compartir style=\"height:28px; width:28px; margin-right:10px\"> </a> "; 
 
                     markers_data.push({
                       lat : item.lat,
@@ -1133,28 +1063,38 @@ $("#datepicker2").datepicker({
       }
       
     }
-
+    
+    
+    
     xhr.done(loadResults);
-    
-    var value_zoom = 8;
-    
-    var element_css = "#map";
-    
-    if(window.screen.availHeight<700)
-        var value_zoom = 7;
-    
-    
-    
 
     map = new GMaps({
-      el: element_css,
+      el: '#map',
       lat: 42.8,
       lng: -8.06,
-      zoom: value_zoom
+      zoom: 8
       //zoom: fitZoom
     });
     
-   
+    
+    //var map2;
+    //var map2 = Object.clone(map);
+    //map2 = map;
+    
+    /*map2 = new GMaps({
+      el: '#map2',
+      lat: 42.8,
+      lng: -8.06,
+      zoom: 8
+      //zoom: fitZoom
+    });*/
+    
+    /*alert(map);
+    
+    var map2;
+    map2 =map;
+    
+    alert(map2);*/
     
   </script>
   
@@ -1201,10 +1141,10 @@ $("#datepicker2").datepicker({
                         <a href="#">Buscador</a>
                         &nbsp;&nbsp;&nbsp;
 
-                        <a href="http://www.runmapgalicia.com/sobre.html">Sobre a web</a>
-                        <!--&nbsp;&nbsp;&nbsp;
+                        <a href="http://localhost:8080/RunMapGalicia_Servidor/sobre.html">Sobre la web</a>
+                        &nbsp;&nbsp;&nbsp;
                         
-                        <a href="http://www.runmapgalicia.com/contacto2.html">Contacto</a>-->
+                        <a href="http://localhost:8080/RunMapGalicia_Servidor/contacto2.html">Contacto</a>
                         
                 </p>
 
@@ -1215,7 +1155,8 @@ $("#datepicker2").datepicker({
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     
     <script>   
     $(function () {
@@ -1317,8 +1258,6 @@ $("#datepicker2").datepicker({
     });
     </script> 
    
-    
-     
     
    <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

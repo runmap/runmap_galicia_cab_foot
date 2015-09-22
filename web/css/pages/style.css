@@ -106,6 +106,15 @@ body{
 
 img{white-space:pre}
 
+.bocadillo{
+   max-width: 560px; 
+   max-height: 800px; 
+   width: 560px; 
+   height: 800px; 
+   margin-right: 5px;
+   //align: "left";
+}
+
 p.market_data{
    max-width: 320px; 
    margin-right: 5px;

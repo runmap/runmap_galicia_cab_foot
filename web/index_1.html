@@ -1022,7 +1022,7 @@ $("#datepicker2").datepicker({
                 
                     if (item.nombre_imagen && window.screen.availWidth > 600 && window.screen.availHeight > 550 ){    
 
-                         contentMejorado = "<p><center><span style=\"color:#00638e ; font-weight: bold; align=center \">"    +  item.fecha_bonita + "&nbsp;&nbsp;</span></center></p><p class=\"market_data_ancho\" align=\"right\"><center>" + ruta_imagen + "</center><br></p>"; 
+                         contentMejorado = "<div class=\"bocadillo\"><p><center><span style=\"color:#00638e ; font-weight: bold; align=center \">"    +  item.fecha_bonita + "&nbsp;&nbsp;</span></center></p><p class=\"market_data_ancho\" align=\"right\"><center>" + ruta_imagen + "</center><br></p>"; 
                               /*<p class=\"market_data_ancho\" align=\"left\">Titulo: "  +  item.mejorTitulo + "<br>" +
                               "Fecha: "    +  item.fecha_bonita + "<br>"+
                               lugar+tipo+"</p>"+
@@ -1040,7 +1040,7 @@ $("#datepicker2").datepicker({
                         
                         
                         
-                         contentMejorado = " <p class=\"market_data\" align=\"left\"><span style=\"color:#00638e ; font-weight: bold\">"+ item.mejorTitulo +"</span> </p>" +
+                         contentMejorado = "<div class=\"bocadillo\"> <p class=\"market_data\" align=\"left\"><span style=\"color:#00638e ; font-weight: bold\">"+ item.mejorTitulo +"</span> </p>" +
                               "<p>Fecha: <span style=\"color:#00638e\">"    +  item.fecha_bonita + "</span></p>"+
                               "<p>Lugar: <span style=\"color:#00638e\">"    +lugar + "</span></p>" + 
                               "<p>Tipo: <span style=\"color:#00638e\">"    +tipo  + "</span></p>";
@@ -1101,7 +1101,7 @@ $("#datepicker2").datepicker({
                     }
                     
                     
-                    contentMejorado += "</center></p>";
+                    contentMejorado += "</center></p></div>";
                         
 
                     markers_data.push({
