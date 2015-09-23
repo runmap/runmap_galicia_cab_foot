@@ -964,7 +964,7 @@ $("#datepicker2").datepicker({
 
                             anchura= 370;
                             
-                            anchura= anchura * ((window.screen.availWidth*1.0)/1400);
+                            anchura= anchura * ((window.screen.availWidth*1.0)/1400) * 0.9;
                             
                             //Limitar el ancho y el alto
                             /*if( window.screen.availWidth < 600 || window.screen.availHeight < 430){
@@ -980,7 +980,7 @@ $("#datepicker2").datepicker({
                             
                             altura= 370;
                             
-                            altura= altura * ((window.screen.availHeight*1.0)/1000);
+                            altura= altura * ((window.screen.availHeight*1.0)/1000) * 0.9;
                             
                             //alert("Altura disponible " + window.screen.availHeight);
                             
@@ -1020,16 +1020,17 @@ $("#datepicker2").datepicker({
                 
                     var contentMejorado = "";    
                 
+                    //Hay pantalla dde mediana a grande y hay imagen
                     if (item.nombre_imagen && window.screen.availWidth > 600 && window.screen.availHeight > 550 ){    
 
-                         contentMejorado = "<p><center><span style=\"color:#00638e ; font-weight: bold; align=center \">"    +  item.fecha_bonita + "&nbsp;&nbsp;</span></center></p><p class=\"market_data_ancho\" align=\"right\"><center>" + ruta_imagen + "</center><br></p>"; 
+                         contentMejorado = "<p><center><span style=\"color:#00638e ; font-weight: bold; align=center ; margin-top:-15px; font-size: 85%; \">"    +  item.fecha_bonita + "&nbsp;&nbsp;</span></center></p><p class=\"market_data_ancho\" align=\"right\"><center>" + ruta_imagen + "</center></p>"; 
                               /*<p class=\"market_data_ancho\" align=\"left\">Titulo: "  +  item.mejorTitulo + "<br>" +
                               "Fecha: "    +  item.fecha_bonita + "<br>"+
                               lugar+tipo+"</p>"+
                               "<a href=" + item.url + " target=\"_blank\">Link del evento</a><br><br>"+
                               ;*/
 
-
+                    //En los demás casos       
                     }else{
                         
                          
@@ -1038,8 +1039,7 @@ $("#datepicker2").datepicker({
                             item.mejorTitulo = "Carreira de " + item.mejorTitulo;
                         }
                         
-                        
-                        
+
                          contentMejorado = " <p class=\"market_data\" align=\"left\"><span style=\"color:#00638e ; font-weight: bold\">"+ item.mejorTitulo +"</span> </p>" +
                               "<p>Fecha: <span style=\"color:#00638e\">"    +  item.fecha_bonita + "</span></p>"+
                               "<p>Lugar: <span style=\"color:#00638e\">"    +lugar + "</span></p>" + 
@@ -1062,9 +1062,9 @@ $("#datepicker2").datepicker({
 
                     private String url_inscripcion =""; */
                     
-                    contentMejorado += "<center><p style=\"margin-top:-7px\">";
+                    contentMejorado += "<center><p style=\"margin-top:-3px\">";
                     
-                    if (item.nombre_imagen && window.screen.availWidth > 600 && window.screen.availHeight > 550){
+                    /*if (item.nombre_imagen && window.screen.availWidth > 600 && window.screen.availHeight > 550){
                         
                         if(item.url_inscripcion)
                             contentMejorado +=   "<a href=" + item.url_inscripcion+ " target=\"_blank\"><img src=img/otras/inscripcion.png title=Inscripción alt=Inscripción style=\"height:32px; width:32px; margin-right:10px\" > </a> ";   
@@ -1081,13 +1081,13 @@ $("#datepicker2").datepicker({
 
                         contentMejorado +=   "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/otras/compartir.png title=Compartir alt=Compartir style=\"height:28px; width:28px; margin-right:10px\"> </a> "; 
                     
-                    }else{
+                    }else{*/
                         
                         if(item.url_inscripcion)
                             contentMejorado +=   "<a href=" + item.url_inscripcion+ " target=\"_blank\"><img src=img/otras/inscripcion.png title=Inscripción alt=Inscripción style=\"height:22px; width:22px; margin-right:5px\" > </a> ";   
 
                         if(item.url_moreinfo)        
-                            contentMejorado +=   "<a href=" + item.url_moreinfo +   " target=\"_blank\"><img src=img/otras/info.png title=Información alt=Información style=\"height:20px; width:20px; margin-right:5px\" > </a> ";   
+                            contentMejorado +=   "<a href=" + item.url_moreinfo +   " target=\"_blank\"><img src=img/otras/info.png title=Información alt=Información style=\"height:20px; width:20px; margin-right:5px \" > </a> ";   
 
                         if(item.url_evento_facebook)
                             contentMejorado +=   "<a href=" +  item.url_evento_facebook + " target=\"_blank\"><img src=img/otras/facebook.png title=\"Evento en el Facebook\" alt=\"Evento en el Facebook\" style=\"height:20px; width:20px; margin-right:5px\" > </a> ";   
@@ -1096,12 +1096,14 @@ $("#datepicker2").datepicker({
                             contentMejorado +=   "<a href=" +  item.url_web_evento + " target=\"_blank\"><img src=img/otras/webEvento.png title=\"Web propia del evento\" alt=Web propia del evento style=\"height:20px; width:20px; margin-right:5px\"> </a> ";   
 
 
-                        contentMejorado +=   "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/otras/compartir.png title=Compartir alt=Compartir style=\"height:20px; width:20px; margin-right:5px\"> </a> "; 
+                        //contentMejorado +=   "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/otras/compartir.png title=Compartir alt=Compartir style=\"height:20px; width:20px; margin-right:5px\"> </a> "; 
                     
-                    }
+                    //}
+                    
                     
                     
                     contentMejorado += "</center></p>";
+                    //alert(contentMejorado);
                         
 
                     markers_data.push({
@@ -1189,8 +1191,8 @@ $("#datepicker2").datepicker({
 
         <div class="footer-right">
 
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.facebook.com/RunMap-Galicia-1499864900330757"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/runmapgalicia"><i class="fa fa-twitter"></i></a>  
 
         </div>
 

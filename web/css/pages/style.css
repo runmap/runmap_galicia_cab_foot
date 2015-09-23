@@ -25,7 +25,7 @@
       //width: 750px;
       //height: 650px;
       
-      height: 73vh;
+      height: 80vh;
       max-width: 100%;
 }
 
@@ -116,14 +116,14 @@ img{white-space:pre}
 }
 
 p.market_data{
-   max-width: 320px; 
+   max-width: 450px; 
    margin-right: 5px;
    //align: "left";
 }
 
 p.market_data_ancho{
-   max-width: 560px; 
-   max-height: 650px; 
+   max-width: 650px; 
+   max-height: 750px; 
    margin-right: 5px;
    margin-left: 12px;
    //align: "left";
