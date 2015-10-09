@@ -164,7 +164,7 @@
           
 
          
-          <a class="navbar-brand" href="http://www.runmapgalicia.com"> 
+          <a class="navbar-brand" href="#"> 
               <img src="img/otras/logo_web_con_texto.png" alt="logo" style="height:70px; margin-top: -9px; margin-bottom: -5px;  ">   <!--margin-top: -8px -->
           </a>
 
@@ -219,9 +219,246 @@
 	-->
 
     
+<br><br>
+
+<div class="container">
+ <div class="row">
+     
+  <div class="col-lg-12 col-md-12 hidden-sm hidden-xs center">
+	
+        <h1 class="inicio_seccion"> Próximos eventos </h1>     <br>        
+        <div class="row-fluid">
+            <div class="carousel slide row" id="carreras">
+
+                <div class="carousel-inner">
+
+                                <div class='item active' id="activos"></div>
+
+                                <div class='item' id='ronda-2'></div>
 
 
+                                <div class='item' id='ronda-3'></div>
 
+                </div>
+                <a data-slide="prev" href="calendario#carreras" class="left carousel-control">‹</a>
+                <a data-slide="next" href="calendario#carreras" class="right carousel-control">›</a>
+            </div>
+        </div>
+  </div>
+  
+     <div class="hidden-lg hidden-md center">
+         <center><h1 class="inicio_seccion_xs"> Próximos eventos </h1> </center>    <br>  <br> 
+     </div>
+     
+  <div class="col-xs-8 col-sm-6 col-xs-offset-2 col-sm-offset-3 hidden-lg hidden-md center">
+	
+
+              
+        <div class="row-fluid">
+            <div class="carousel slide row" id="carreras2">
+
+                <div class="carousel-inner">
+
+                        <div class='item active' id="xs_activos"></div>
+                        <div class='item' id='xs_ronda-2'></div>
+                        <div class='item' id='xs_ronda-3'></div> 
+                        <div class='item' id='xs_ronda-4'></div> 
+                        <div class='item' id='xs_ronda-5'></div> 
+                        <div class='item' id='xs_ronda-6'></div> 
+                        <div class='item' id='xs_ronda-7'></div> 
+                        <div class='item' id='xs_ronda-8'></div> 
+                        <div class='item' id='xs_ronda-9'></div> 
+                        <div class='item' id='xs_ronda-10'></div> 
+
+                </div>
+                <a data-slide="prev" href="calendario#carreras2" class="left carousel-control">‹</a>
+                <a data-slide="next" href="calendario#carreras2" class="right carousel-control">›</a>
+            </div>
+        </div>
+  </div>   
+     
+     
+ </div>    
+</div>
+          
+    <script>
+        
+        
+ function loadInfoVisor (data) {
+        
+     var html = "";  
+     var html_ronda2 = "";
+     var html_ronda3 = "";
+     
+     var xs_html = "";  
+     var xs_html_ronda2 = "";
+     var xs_html_ronda3 = "";
+     var xs_html_ronda4 = "";
+     var xs_html_ronda5 = "";
+     var xs_html_ronda6 = "";
+     var xs_html_ronda7 = "";
+     var xs_html_ronda8 = "";
+     var xs_html_ronda9 = "";
+     var xs_html_ronda10 = "";
+     
+     var contador=0;
+      
+     var today = new Date();
+      
+     if (data.length > 0) {
+
+        for (var i = 0; i < data.length; i++) {
+            
+            var item = data[i];
+            var width = item.width_imagen;
+            var height = item.heigth_imagen;
+            var relacion = (height*1.0) / (width*1.0);
+            
+            //alert(width + " " + height + " " + relacion)
+            
+            if(item.lat && item.nombre_imagen && relacion>1.35 && relacion<1.45){
+                
+                //alert("OK" + width + " " + height + " " + relacion)
+                
+                var fec = item.fecha;
+                
+                var anho = fec.substring(0, 4);
+                var mes = fec.substring(4, 6);
+                var dia = fec.substring(6, 8);
+                var fecDate = new Date(anho, mes-1, dia);
+                
+                if( fecDate >= today   ){
+
+                    var ruta_im = "img/" + item.nombre_imagen;
+
+                    var diames = dia+"/"+mes;
+
+                    var aux_html="";
+                    
+                    var link_desde_cartel="";
+                    
+                    
+                    if(item.url_web_evento)
+                        link_desde_cartel = item.url_web_evento;
+                    
+                    else if(item.url_inscripcion)
+                        link_desde_cartel = item.url_inscripcion;
+                    
+                    else if(item.url_moreinfo)
+                        link_desde_cartel = item.url_moreinfo;
+                    
+                    else if(item.url_evento_facebook)
+                        link_desde_cartel = item.url_evento_facebook;
+ 
+                    aux_html += "<div class=\"col-md-3\">" + 
+                    "<div class=\"thumbnail\"> <a href=\""+ link_desde_cartel+"\" target=\"_blank\" >"+
+                    "<img src='"+ruta_im+ "' alt="+item.mejorTitulo+" /></a></div>" + 
+                    "<div class=\"caption\"> <div class=\"fecha\">" +
+                    "<span class=\"day\"> " + diames + "</span><span class=\"month\">&nbsp;</span><span class=\"month\">&nbsp;</span> </div>" +
+                    "<div class=\"name\">" + item.mejorTitulo + "  </div> <div class=\"place\">" + item.lugarBonito + "</div> </div></div>"; 
+
+                    if(contador<4){
+                        html += aux_html;
+                    }
+
+                    else if(contador>3 && contador<8){
+                        html_ronda2 += aux_html;
+                    }
+
+                    else if(contador>7 && contador<12){
+                        html_ronda3 += aux_html;
+                    }
+                    
+                    
+                    
+                    if(contador===0){
+                        xs_html += aux_html;
+                    }
+
+                    else if(contador===1){
+                        xs_html_ronda2 += aux_html;
+                    }
+
+                    else if(contador===2){
+                        xs_html_ronda3 += aux_html;
+                    }
+
+                    else if(contador===3){
+                        xs_html_ronda4 += aux_html;
+                    }
+
+                    else if(contador===4){
+                        xs_html_ronda5 += aux_html;
+                    }
+
+                    else if(contador===5){
+                        xs_html_ronda6 += aux_html;
+                    }
+
+                    else if(contador===6){
+                        xs_html_ronda7 += aux_html;
+                    }
+
+                    else if(contador===7){
+                        xs_html_ronda8 += aux_html;
+                    }
+
+                    else if(contador===8){
+                        xs_html_ronda9 += aux_html;
+                    }
+
+                    else if(contador===9){
+                        xs_html_ronda10 += aux_html;
+                    }
+                    
+                    
+
+                    contador++;
+
+                    if(contador===12){
+                        break;
+                    }
+                
+                }else{
+
+                    //alert(fecDate);
+                    //alert(today);
+                }
+ 
+            }
+            
+        }
+     }
+     
+     //lg and md
+     $('#activos').html(html);
+     $('#ronda-2').html(html_ronda2);
+     $('#ronda-3').html(html_ronda3);
+     
+     //xd
+     $('#xs_activos').html(xs_html);
+     $('#xs_ronda-2').html(xs_html_ronda2);
+     $('#xs_ronda-3').html(xs_html_ronda3);
+     $('#xs_ronda-4').html(xs_html_ronda4);
+     $('#xs_ronda-5').html(xs_html_ronda5);
+     $('#xs_ronda-6').html(xs_html_ronda6);
+     $('#xs_ronda-7').html(xs_html_ronda7);
+     $('#xs_ronda-8').html(xs_html_ronda8);
+     $('#xs_ronda-9').html(xs_html_ronda9);
+     $('#xs_ronda-10').html(xs_html_ronda10);
+     
+  }
+    
+    
+        
+    var xhr  = $.getJSON('testTodasCarreras.json'); 
+    xhr.done(loadInfoVisor);
+    
+    
+</script>
+
+
+    <br><br><br>
     
 
     
@@ -898,8 +1135,7 @@ $("#datepicker2").datepicker({
       }
       
     }
-    
-    var xhr  = $.getJSON('testTodasCarreras.json'); 
+
     xhr.done(loadResults);
     
     var value_zoom = 8;
@@ -930,248 +1166,6 @@ $("#datepicker2").datepicker({
 <!--</section> -->
         
 <br><br>
-
-<div class="container">
- <div class="row">
-     
-  <div class="col-lg-12 col-md-12 hidden-sm hidden-xs center">
-	
-        <h1 class="inicio_seccion"> Próximos eventos </h1>     <br>        
-        <div class="row-fluid">
-            <div class="carousel slide row" id="carreras">
-
-                <div class="carousel-inner">
-
-                                <div class='item active' id="activos"></div>
-
-                                <div class='item' id='ronda-2'></div>
-
-
-                                <div class='item' id='ronda-3'></div>
-
-                </div>
-                <a data-slide="prev" href="calendario#carreras" class="left carousel-control">‹</a>
-                <a data-slide="next" href="calendario#carreras" class="right carousel-control">›</a>
-            </div>
-        </div>
-  </div>
-  
-     <div class="hidden-lg hidden-md center">
-         <center><h1 class="inicio_seccion_xs"> Próximos eventos </h1> </center>    <br>  <br> 
-     </div>
-     
-  <div class="col-xs-8 col-sm-6 col-xs-offset-2 col-sm-offset-3 hidden-lg hidden-md center">
-	
-
-              
-        <div class="row-fluid">
-            <div class="carousel slide row" id="carreras2">
-
-                <div class="carousel-inner">
-
-                        <div class='item active' id="xs_activos"></div>
-                        <div class='item' id='xs_ronda-2'></div>
-                        <div class='item' id='xs_ronda-3'></div> 
-                        <div class='item' id='xs_ronda-4'></div> 
-                        <div class='item' id='xs_ronda-5'></div> 
-                        <div class='item' id='xs_ronda-6'></div> 
-                        <div class='item' id='xs_ronda-7'></div> 
-                        <div class='item' id='xs_ronda-8'></div> 
-                        <div class='item' id='xs_ronda-9'></div> 
-                        <div class='item' id='xs_ronda-10'></div> 
-
-                </div>
-                <a data-slide="prev" href="calendario#carreras2" class="left carousel-control">‹</a>
-                <a data-slide="next" href="calendario#carreras2" class="right carousel-control">›</a>
-            </div>
-        </div>
-  </div>   
-     
-     
- </div>    
-</div>
-          
-    <script>
-        
-        
- function loadInfoVisor (data) {
-        
-     var html = "";  
-     var html_ronda2 = "";
-     var html_ronda3 = "";
-     
-     var xs_html = "";  
-     var xs_html_ronda2 = "";
-     var xs_html_ronda3 = "";
-     var xs_html_ronda4 = "";
-     var xs_html_ronda5 = "";
-     var xs_html_ronda6 = "";
-     var xs_html_ronda7 = "";
-     var xs_html_ronda8 = "";
-     var xs_html_ronda9 = "";
-     var xs_html_ronda10 = "";
-     
-     var contador=0;
-      
-     var today = new Date();
-      
-     if (data.length > 0) {
-
-        for (var i = 0; i < data.length; i++) {
-            
-            var item = data[i];
-            var width = item.width_imagen;
-            var height = item.heigth_imagen;
-            var relacion = (height*1.0) / (width*1.0);
-            
-            //alert(width + " " + height + " " + relacion)
-            
-            if(item.lat && item.nombre_imagen && relacion>1.35 && relacion<1.45){
-                
-                //alert("OK" + width + " " + height + " " + relacion)
-                
-                var fec = item.fecha;
-                
-                var anho = fec.substring(0, 4);
-                var mes = fec.substring(4, 6);
-                var dia = fec.substring(6, 8);
-                var fecDate = new Date(anho, mes-1, dia);
-                
-                if( fecDate >= today   ){
-
-                    var ruta_im = "img/" + item.nombre_imagen;
-
-                    var diames = dia+"/"+mes;
-
-                    var aux_html="";
-                    
-                    var link_desde_cartel="";
-                    
-                    
-                    if(item.url_web_evento)
-                        link_desde_cartel = item.url_web_evento;
-                    
-                    else if(item.url_inscripcion)
-                        link_desde_cartel = item.url_inscripcion;
-                    
-                    else if(item.url_moreinfo)
-                        link_desde_cartel = item.url_moreinfo;
-                    
-                    else if(item.url_evento_facebook)
-                        link_desde_cartel = item.url_evento_facebook;
- 
-                    aux_html += "<div class=\"col-md-3\">" + 
-                    "<div class=\"thumbnail\"> <a href=\""+ link_desde_cartel+"\" target=\"_blank\" >"+
-                    "<img src='"+ruta_im+ "' alt="+item.mejorTitulo+" /></a></div>" + 
-                    "<div class=\"caption\"> <div class=\"fecha\">" +
-                    "<span class=\"day\"> " + diames + "</span><span class=\"month\">&nbsp;</span><span class=\"month\">&nbsp;</span> </div>" +
-                    "<div class=\"name\">" + item.mejorTitulo + "  </div> <div class=\"place\">" + item.lugarBonito + "</div> </div></div>"; 
-
-                    if(contador<4){
-                        html += aux_html;
-                    }
-
-                    else if(contador>3 && contador<8){
-                        html_ronda2 += aux_html;
-                    }
-
-                    else if(contador>7 && contador<12){
-                        html_ronda3 += aux_html;
-                    }
-                    
-                    
-                    
-                    if(contador===0){
-                        xs_html += aux_html;
-                    }
-
-                    else if(contador===1){
-                        xs_html_ronda2 += aux_html;
-                    }
-
-                    else if(contador===2){
-                        xs_html_ronda3 += aux_html;
-                    }
-
-                    else if(contador===3){
-                        xs_html_ronda4 += aux_html;
-                    }
-
-                    else if(contador===4){
-                        xs_html_ronda5 += aux_html;
-                    }
-
-                    else if(contador===5){
-                        xs_html_ronda6 += aux_html;
-                    }
-
-                    else if(contador===6){
-                        xs_html_ronda7 += aux_html;
-                    }
-
-                    else if(contador===7){
-                        xs_html_ronda8 += aux_html;
-                    }
-
-                    else if(contador===8){
-                        xs_html_ronda9 += aux_html;
-                    }
-
-                    else if(contador===9){
-                        xs_html_ronda10 += aux_html;
-                    }
-                    
-                    
-
-                    contador++;
-
-                    if(contador===12){
-                        break;
-                    }
-                
-                }else{
-
-                    //alert(fecDate);
-                    //alert(today);
-                }
- 
-            }
-            
-        }
-     }
-     
-     //lg and md
-     $('#activos').html(html);
-     $('#ronda-2').html(html_ronda2);
-     $('#ronda-3').html(html_ronda3);
-     
-     //xd
-     $('#xs_activos').html(xs_html);
-     $('#xs_ronda-2').html(xs_html_ronda2);
-     $('#xs_ronda-3').html(xs_html_ronda3);
-     $('#xs_ronda-4').html(xs_html_ronda4);
-     $('#xs_ronda-5').html(xs_html_ronda5);
-     $('#xs_ronda-6').html(xs_html_ronda6);
-     $('#xs_ronda-7').html(xs_html_ronda7);
-     $('#xs_ronda-8').html(xs_html_ronda8);
-     $('#xs_ronda-9').html(xs_html_ronda9);
-     $('#xs_ronda-10').html(xs_html_ronda10);
-     
-  }
-    
-    
-        
-    
-    xhr.done(loadInfoVisor);
-    
-    
-</script>
-
-
-    <br><br><br>
-
-
-
     </form>
     
     
