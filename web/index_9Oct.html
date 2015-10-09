@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<head>
+    
+    <title>RunMapGalicia : Buscador de eventos deportivos en Galicia</title>
+    <meta charset="UTF-8">
+    
+    <!-- SEO -->
+    <meta property="og:locale" content="es_ES" >
+    <meta property="og:type" content="website" >
+    <meta property="og:site_name" content="RunMapGalicia.com" >
+    <meta property="og:description" content="RunMapGalicia es un buscador de eventos deportivos populares para Galicia, incluyendo carreras populares , trail , montaña , ciclismo , btt , maratón , media y otros eventos especiales  " >
+    <meta property="og:url" content="www.runmapgalicia.com/" >
+    <meta name="description" content="RunMapGalicia es un buscador de eventos deportivos populares para Galicia, incluyendo carreras populares, trail, ciclismo, btt, maratón, media maratón y otros eventos especiales" > 
+    <meta name="keywords" content="deporte, popular, evento, eventos, galicia, carrera, carreira, deportivo, correr, duatlón, trial, montaña, run, runmap, runmapgalicia, galiza, ciclismo, marcha ciclista, btt, maratón,  "/>
+    
+    <!--Google analitics-->
+    <meta name="google-site-verification" content="suIcNBfe6rIJPjsueVpMZDnPtY6ISfOhR7WQX7SeiOQ" />
+    
+    <!--Bootstrap-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    
+    
+    <!-- CSS --> 
+    <link href="css/pages/style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/pages/calendario.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/footer-distributed.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+
+    
+    <!--<link href="css/pages/master.css" rel="stylesheet" />-->  <!-- master estropea el estilo de la cabecera -->
+    <!--<link href="css/pages/master.css" rel="stylesheet" />
+    <link href="css/pages/calendario.css" rel="stylesheet" />
+     -->
+    <!--<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+    <link href="css/pages/globals.css" rel="stylesheet" /> -->
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet" />  --> 
+    <!--<link href="css/cookiecuttr.css" rel="stylesheet" /> -->
+    <!-- <link href="css/pages/mobile.css" rel="stylesheet" /> ->
+    <!-- <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/> -->
+    
+    
+     <!-- JS --> 
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>  
+    <script src="js/gmaps.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>   
+    <!--<script src="js/jquery.cookie.js"></script> -->
+    <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> -->
+    
+  
+  <!-- STYLE para la cabecera --> 
+  <style>
+            
+            ul.navbar-nav{margin:4px 4px 10px 10px; max-width: 250px; width: 200px; }
+            
+            button.navbar-toggle{margin:25px 25px 25px 25px;}
+        
+            .boton-margin{margin-right:16px; margin-top:7px; margin-bottom:7px }
+            
+            .fecha_margen{margin-right:30px;  }
+            
+            .navbar-header {
+                float: none;
+            }
+            .navbar-toggle {
+                display: block;
+                background: #828282;
+            }
+            .navbar-collapse {
+                border-top: 1px solid transparent;
+                box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+                //background: red;
+                
+                float: right;
+            }
+            .navbar-collapse.collapse {
+                display: none!important;
+                //background: red;
+                //float: right;
+                
+            }
+            .navbar-nav {
+                float: none!important;
+                margin: 10.5px -15px;
+                //background: red;
+            }
+            .navbar-nav>li {
+                float: none;
+            }
+            .navbar-nav>li>a {
+                padding-top: 6px;
+                padding-bottom: 6px;
+            }
+    
+
+            .navbar-collapse.collapse.in{
+                display: block!important;
+                
+                max-width: 400px;
+                float: right;
+            }
+    
+            .navbar-inverse{
+                
+                //width:
+                //height: 270px;
+                //background: red;
+                //float: right;
+            }
+            
+            .navbar-header{
+                
+                //width:
+                //height: 200px;
+                //background: red;
+                //float: right;
+            }
+            
+            .image {
+                /* min-width: 100%; REMOVE THIS */
+                max-width: 100%;
+                height: auto;
+            }
+            
+    </style>
+  
+
+</head>
+        
+<body>
+    
+    
+    <!--Cabecera-->
+    <nav class="navbar navbar-inverse">
+       <div class="container"> 
+          
+          
+        <div class="navbar-header">
+           
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>  
+          
+
+         
+          <a class="navbar-brand" href="http://www.runmapgalicia.com"> 
+              <img src="img/otras/logo_web_con_texto.png" alt="logo" style="height:70px; margin-top: -9px; margin-bottom: -5px;  ">   <!--margin-top: -8px -->
+          </a>
+
+        </div>
+          
+          
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right" >
+            <li class="active"><a href="#">Buscador de eventos</a></li>
+            <li><a href="http://www.runmapgalicia.com/sobre.html">Sobre a web</a></li>
+            <!--<li><a href="http://www.runmapgalicia.com/contacto2.html">Contacta</a></li>-->
+          </ul>
+        </div>
+          
+       </div>  
+        
+    </nav>
+    
+    
+    <br><br>
+
+    
+<form method="post" action="calendario" id="form1">
+
+<!--<br><br>
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="text-center">
+            <span class="hidden-sm hidden-md hidden-lg">col-xs</span>
+            <span class="visible-sm hidden-md hidden-lg">col-sm</span>
+            <span class="visible-md hidden-sm hidden-lg">col-md</span>
+            <span class="visible-lg hidden-sm hidden-md">col-lg</span>
+            </h1>
+            <h3 class="text-center">
+            <span class="hidden-sm hidden-md hidden-lg">15px auto|30 15px</span>
+            <span class="visible-sm hidden-md hidden-lg">15px ~62|30 15px</span>
+            <span class="visible-md hidden-sm hidden-lg">15px ~81|30 15px</span>
+            <span class="visible-lg hidden-sm hidden-md">15px ~97|30 15px</span>
+            </h3>
+        </div>
+    </div>   --> 
+    
+<!--Comenté sections-->  
+
+
+
+<!-- Bootstrap traballa así:
+	 xs -> móbil
+	 sm -> tableta
+	 md -> pantalla de ordenador pequena
+	 lg -> pantalla de ordenador grande
+	-->
+
+    
+
+
+
+    
+
+    
+<div class="container">
+    
+  <div class="row">
+      
+    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs center"> 
+        <h1 class="inicio_seccion"> Buscador de eventos </h1>
+    </div>
+      
+    <div class="hidden-lg hidden-md center">
+         <center><h1 class="inicio_seccion_xs"> Buscador de eventos </h1> 
+    </div>  
+      
+  </div> 
+    
+  <div class="row">  
+     
+    <!--<div class="col-lg-9 col-md-9 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">   -->
+    <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">       
+        <br><br>
+        
+        
+        <div class="Division2" id="map"></div> <br><br><br>
+    </div>
+    
+    <br>
+    
+    <div class="col-md-1">
+        <p> </p>
+    </div>  
+    
+    <div class="hidden-lg hidden-md center">
+        <br><br><br> <center><h1 class="inicio_seccion_xs"> Filtros </h1>     </center>
+    </div>
+    
+    
+    
+    <div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1">
+
+        <p class="padding">  
+                                  
+                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12"> <br></div>
+                
+                <div class="col-lg-12 col-md-12 hidden-xs hidden-sm">  </div>
+                
+                <span class="button-checkbox">
+                  <button type="button" class="btn boton-margin" data-color="primary">&nbsp;Todos&nbsp;&nbsp;</button>
+                  <input type="checkbox" class="hidden"  id="cb_todos"  /> 
+                </span>
+        
+                <div class="col-lg-12 col-md-12 hidden-xs hidden-sm"></div>
+                
+
+                <span class="button-checkbox">
+                  <button type="button" class="btn boton-margin" data-color="primary">&nbsp;Carreira Popular</button>
+                  <input type="checkbox" class="hidden" checked id="cb_carrera"  /> 
+                </span>
+                
+                <div class="row col-lg-12 col-md-12 hidden-xs hidden-sm"></div>
+                
+
+                <span class="button-checkbox">
+                  <button type="button" class="btn boton-margin" data-color="primary" >&nbsp;Maratón</button>
+                  <input type="checkbox" class="hidden" id="cb_maraton"  />
+                </span>
+                
+                <div class="col-lg-12 col-md-12 hidden-xs hidden-sm"></div>
+
+                <span class="button-checkbox">
+                  <button type="button" class="btn boton-margin" data-color="primary" >&nbsp;Duatlón/Triatlón</button>
+                  <input type="checkbox" class="hidden" id="cb_tlon"  />
+                </span>
+                
+                <div class="col-lg-12 col-md-12 hidden-xs hidden-sm"></div>
+
+                <span class="button-checkbox">
+                  <button type="button" class="btn boton-margin" data-color="primary" >&nbsp;Ruta ciclista</button>
+                  <input type="checkbox" class="hidden" id="cb_bici"  />
+                </span>
+                
+                <div class="col-lg-12 col-md-12 hidden-xs hidden-sm"></div>
+
+                <span class="button-checkbox">
+                  <button type="button" class="btn boton-margin" data-color="primary" >&nbsp;Trail/Montaña</button>
+                  <input type="checkbox" class="hidden" id="cb_trail"  />
+                </span>
+                
+                <div class="col-lg-12 col-md-12 hidden-xs hidden-sm"></div>
+
+                <span class="button-checkbox">
+                  <button type="button" class="btn boton-margin" data-color="primary" >&nbsp;Andaina/Roteiro</button>
+                  <input type="checkbox" class="hidden" id="cb_andaina"  />
+                </span>
+                
+                <div class="col-lg-12 col-md-12 hidden-xs hidden-sm"></div>
+
+                <span class="button-checkbox">
+                  <button type="button" class="btn boton-margin" data-color="primary" >&nbsp;Especial</button>
+                  <input type="checkbox" class="hidden" id="cb_especial"  />
+                </span>
+                
+                
+                <br> <br> 
+                
+                <div class="row">
+                    
+                    <div class="hidden-xs col-sm-1 hidden-lg hidden-md">&nbsp;&nbsp;&nbsp;</div> 
+                    
+                    <div class="col-lg-3 col-md-3 col-xs-2 col-sm-2">Dende:</div>
+                    <div class="col-lg-9 col-md-9 col-xs-2 col-sm-2"><input type="text" name="datepicker" id="datepicker"  readonly="readonly" size="10"  /></div>
+                   
+                    <div class="col-lg-12 col-md-12 col-xs-12 hidden-sm"><p></p></div>
+                    <div class="hidden-xs col-sm-2 hidden-lg hidden-md">&nbsp;&nbsp;&nbsp;</div> 
+               
+                    <div class="col-lg-3 col-md-3 col-xs-2 col-sm-2">Ata:</div>
+                    <div class="col-lg-9 col-md-9 col-xs-2 col-sm-2"><input type="text" name="datepicker2" id="datepicker2"  readonly="readonly" size="10" /></div>
+                </div> 
+                
+                <br><br>
+                
+
+                
+        </p>           
+          
+    </div>
+    
+    
+    
+    
+    
+
+  </div>
+    
+   
+  <!--<div class="row">  
+    
+      <div class="col-xs-10 col-xs-offset-1 hidden-lg hidden-md">  
+          
+        
+        <br><br>
+        <center>    <br><br>
+          <div class="Division2" id="map2"></div> 
+        </center>
+      </div>
+      
+   </div> -->
+    
+    
+</div>
+     
+    
+  <script>
+    
+    var today = new Date();
+    var dateDesde = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    var dd2;
+
+    if(dd<10) {
+        dd2='0'+dd;
+    } else
+        dd2 = dd;
+
+    if(mm<10) {
+        mm='0'+mm;
+    } 
+
+    today = dd2+'/'+mm+'/'+yyyy;
+        
+    
+    
+    var today_more_1_month = new Date();
+    today_more_1_month.setMonth(today_more_1_month.getMonth() + 1);
+    var dateHasta = new Date();
+    dateHasta.setMonth(dateHasta.getMonth() + 1);
+    
+    
+
+    var _dd = today_more_1_month.getDate();
+    var _mm = today_more_1_month.getMonth()+1; //January is 0!
+    var _yyyy = today_more_1_month.getFullYear();
+
+    var _dd2;
+
+    if(_dd<10) {
+        _dd2='0'+_dd;
+    } else
+        _dd2 = _dd;
+
+    if(_mm<10) {
+        _mm='0'+_mm;
+    } 
+
+    today_more_1_month = _dd2+'/'+_mm+'/'+_yyyy;
+    
+    
+    document.getElementById('datepicker').value = today;
+    document.getElementById('datepicker2').value = today_more_1_month;
+
+
+      
+    jQuery(function($){
+        $.datepicker.regional['es'] = {
+        closeText: 'Cerrar',
+        prevText: '&#x3c;Ant',
+        nextText: 'Sig&#x3e;',
+        currentText: 'Hoy',
+        monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+        'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+        monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun',
+        'Jul','Ago','Sep','Oct','Nov','Dic'],
+        dayNames: ['Domingo','Lunes','Martes','Mi&eacute;rcoles','Jueves','Viernes','S&aacute;bado'],
+        dayNamesShort: ['Dom','Lun','Mar','Mi&eacute;','Juv','Vie','S&aacute;b'],
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','S&aacute;'],
+        weekHeader: 'Sm',
+        dateFormat: 'dd/mm/yy',
+        yearRange: '2015:2016',
+        minDate: new Date(yyyy, mm-1, dd),
+        maxDate: '+1Y',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: ''};
+        $.datepicker.setDefaults($.datepicker.regional['es']);
+    }); 
+    
+$(document).ready(function() {
+    $("#datepicker").datepicker({
+    //minDate: new Date(2015, 8, 1),
+    //maxDate: new Date(2015, 12, 31),
+    dateFormat: 'dd/mm/yy',
+    constrainInput: true });
+  });
+  
+$("#datepicker").datepicker({
+  onSelect: function(dateText1) {
+     // alert(dateText1);
+      
+  var anhoDesde = dateText1.substring(6, 10);
+  var mesDesde = dateText1.substring(3, 5)-1;
+  var diaDesde = dateText1.substring(0, 2);
+  
+  dateDesde = new Date(anhoDesde, mesDesde, diaDesde);
+
+  xhr.done(loadResults);
+    
+  }
+});
+
+$(document).ready(function() {
+    $("#datepicker2").datepicker();
+  });
+  
+$("#datepicker2").datepicker({
+  onSelect: function(dateText2) {
+ 
+  var anhoHasta = dateText2.substring(6, 10);
+  var mesHasta = dateText2.substring(3, 5)-1;
+  var diaHasta = dateText2.substring(0, 2);
+  
+  dateHasta = new Date(anhoHasta, mesHasta, diaHasta);
+  
+    
+   xhr.done(loadResults);
+  }
+});
+    
+  
+    
+    
+    var todosChecked = false;
+    var carreraChecked = true;
+    var maratonChecked = false;
+    var tlonChecked = false;
+    var biciChecked = false;
+    var trailChecked = false;
+    var andainaChecked = false;
+    var especialChecked = false;
+    
+    var fechaHasta = "";
+    
+    
+    
+    function handleClickTodos(cb_todos) {
+        
+        if(cb_todos.checked){
+            todosChecked = true;
+            $("#cb_carrera").prop("checked", false);
+            carreraChecked = false;
+            $("#cb_maraton").prop("checked", false);
+            maratonChecked = false;
+            $("#cb_tlon").prop("checked", false);
+            tlonChecked = false;
+            $("#cb_bici").prop("checked", false);
+            biciChecked = false;
+            $("#cb_trail").prop("checked", false);
+            trailChecked = false;
+            $("#cb_andaina").prop("checked", false);
+            andainaChecked = false;
+            $("#cb_especial").prop("checked", false);
+            especialChecked = false;
+            
+        }else{
+            todosChecked = false;
+            $("#cb_carrera").prop("checked", false);
+            carreraChecked = false;
+            $("#cb_maraton").prop("checked", false);
+            maratonChecked = false;
+            $("#cb_tlon").prop("checked", false);
+            tlonChecked = false;
+            $("#cb_bici").prop("checked", false);
+            biciChecked = false;
+            $("#cb_trail").prop("checked", false);
+            trailChecked = false;
+            $("#cb_andaina").prop("checked", false);
+            andainaChecked = false;
+            $("#cb_especial").prop("checked", false);
+            especialChecked = false;
+        }
+        
+        xhr.done(loadResults);
+    }
+
+    
+    function handleClickCarrera(cb_carrera) {
+        
+        if(cb_carrera.checked)
+            carreraChecked = true;
+        else
+            carreraChecked = false;
+        
+        xhr.done(loadResults);
+    }
+    
+    function handleClickMaraton(cb_maraton) {
+        
+        if(cb_maraton.checked)
+            maratonChecked = true;
+        else
+            maratonChecked = false;
+        
+        xhr.done(loadResults);
+    }
+      
+    function handleClickTlon(cb_tlon) {
+        
+        if(cb_tlon.checked)
+            tlonChecked = true;
+        else
+            tlonChecked = false;
+        
+        xhr.done(loadResults);
+    }
+
+    function handleClickBici(cb_bici) {
+        
+        if(cb_bici.checked)
+            biciChecked = true;
+        else
+            biciChecked = false;
+        
+        xhr.done(loadResults);
+    }    
+        
+    function handleClickTrail(cb_trail) {
+        
+        if(cb_trail.checked)
+            trailChecked = true;
+        else
+            trailChecked = false;
+        
+        xhr.done(loadResults);
+    }      
+        
+        
+    function handleClickAndaina(cb_andaina) {
+        
+        if(cb_andaina.checked)
+            andainaChecked = true;
+        else
+            andainaChecked = false;
+        
+        xhr.done(loadResults);
+    }      
+        
+    function handleClickEspecial(cb_especial) {
+        
+        if(cb_especial.checked)
+            especialChecked = true;
+        else
+            especialChecked = false;
+        
+        xhr.done(loadResults);
+    }        
+        
+        
+
+    var map;  
+ 
+    function printResults(data) {
+      //$('#foursquare-results').text(JSON.stringify(data));
+      //prettyPrint();
+    }
+    
+    //Función encargada de cargar los eventos correctos (data makers)
+    function loadResults (data) {
+      
+        
+        
+
+        
+      var markers_data = [];      
+      
+      map.removeMarkers();
+      
+      //if (data.length > 0 && mostrarResultados) {
+      if (data.length > 0) {
+        //items = data.carreras;
+
+        for (var i = 0; i < data.length; i++) {
+            
+          var item = data[i];
+
+          if (item.lat != undefined && item.lng != undefined) {
+            var icon = 'http://4.bp.blogspot.com/_CveElNoYZVE/TVJZb4CQ-iI/AAAAAAAAJHU/1bxwXqprbi8/s1600/toggleActivityPanel%2528%2529.png';
+
+
+            
+            
+            if(item.lat){
+                
+                
+                var fec = item.fecha;
+                
+                var anho = fec.substring(0, 4);
+                var mes = fec.substring(4, 6)-1;
+                var dia = fec.substring(6, 8);
+                var fecDate = new Date(anho, mes, dia);
+                
+               // alert(fecDate);
+               // alert(dateDesde);
+                //alert(fec + " " + anho + " " + mes + " " + dia + " " + fecDate);
+                
+                //fecDate >= dateDesde &&
+                if( fecDate >= dateDesde && fecDate <= dateHasta &&
+                    ( todosChecked ||     
+                    ((carreraChecked && $.inArray("Carrera" ,  item.categoriasEvento)>-1) ||
+                    (maratonChecked && $.inArray("Maraton" ,  item.categoriasEvento)>-1) ||   
+                    (tlonChecked && $.inArray("Duatlon" ,     item.categoriasEvento)>-1) ||
+                    (biciChecked && $.inArray("Ciclismo" ,    item.categoriasEvento)>-1) ||
+                    (trailChecked && $.inArray("Trail" ,    item.categoriasEvento)>-1) ||
+                    (andainaChecked && $.inArray("Andaina" ,  item.categoriasEvento)>-1) ||
+                    (especialChecked && $.inArray("Especial", item.categoriasEvento)>-1) )  )  ){
+                
+
+                
+                    var tit="";
+
+                    if(item.tituloExtra){
+                        tit = item.tituloExtra;
+                    }else{
+                        tit = item.titulo;
+                    }
+
+                    var fecha_evento=item.fecha;
+
+                    if(item.hora_comienzo){
+                        fecha_evento= fecha_evento+" ("+item.hora_comienzo+")";
+                    }
+
+
+                    var lugar="";
+
+                    if (item.lugarBonito)
+                        lugar = item.lugarBonito ;
+
+                    var ruta_imagen="";
+                    
+                    var tipo = "";
+                    if(item.categoriasEvento)
+                        tipo =   item.categoriasEvento;
+                    
+
+                    if (item.nombre_imagen && window.screen.availWidth > 600 && window.screen.availHeight > 550){
+                        
+                        //var relac = item.width_imagen/ item.heigth_imagen ;
+                        
+                        //alert(relac);
+                        
+                        var altura= 0;
+                        var anchura =0;
+                        
+                        //alert("Altura disponible " + window.screen.availHeight);
+                        //alert("Anchura disponible " +window.screen.availWidth);
+                        
+                        if( item.width_imagen>=item.heigth_imagen){
+                            
+
+                            anchura= 370;
+                            
+                            anchura= anchura * ((window.screen.availWidth*1.0)/1400) * 0.9;
+                            
+                            //Limitar el ancho y el alto
+                            /*if( window.screen.availWidth < 600 || window.screen.availHeight < 430){
+                                anchura = 150;
+                                
+                            }    */
+                                
+                            altura = anchura * (  parseFloat(item.heigth_imagen) / parseFloat(item.width_imagen)  ); 
+                            
+                            
+                            
+                        }else{
+                            
+                            altura= 370;
+                            
+                            altura= altura * ((window.screen.availHeight*1.0)/1000) * 0.9;
+                            
+                            //alert("Altura disponible " + window.screen.availHeight);
+                            
+                            
+                            /*if( window.screen.availWidth < 600 || window.screen.availHeight < 430){
+                                
+                                altura = 150;
+                                
+                            }*/
+                            
+                            
+                            //alert( item.width_imagen/item.height_imagen);
+                            
+                            //alert("parse" +  parseFloat(item.width_imagen));
+                            //alert("parse" + parseFloat(item.heigth_imagen));
+                            
+                            anchura = altura * (  parseFloat(item.width_imagen) / parseFloat(item.heigth_imagen) ); 
+                            
+                        }
+                        
+                        //alert(item.width_imagen+ " " +item.heigth_imagen);
+                        //alert(anchura + " " + altura);
+                        
+                        var tit = (item.mejorTitulo).replace("\"", ""); 
+                        
+                        var info_alt = " " +  tit + "\n " +  item.fecha_bonita + "\n " + item.lugarBonito + " \n " + item.categoriasEvento;
+                              
+                                
+                        ruta_imagen = "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/" + item.nombre_imagen  + " title=\""+info_alt+ "\" alt=\""+info_alt+"\" style=\"PADDING-LEFT: 9px; PADDING-RIGHT: 12px; height: "+altura+"px; width:"+anchura+"px \"></a> ";   
+                        //alert(ruta_imagen);
+                    }
+
+                    /*if(item.heigth_imagen>= item.width_imagen)
+                        ruta_imagen = "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/" + item.nombre_imagen  + "  height=\"320\" width=\"210\"> </a><br><br> "
+                    else
+                        ruta_imagen = "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/" + item.nombre_imagen  + "  height=\"200\" width=\"290\"> </a><br><br> "*/
+                
+                    var contentMejorado = "";    
+                
+                    //Hay pantalla dde mediana a grande y hay imagen
+                    if (item.nombre_imagen && window.screen.availWidth > 600 && window.screen.availHeight > 550 ){    
+
+                         contentMejorado = "<p><center><span style=\"color:#00638e ; font-weight: bold; align=center ; margin-top:-15px; font-size: 85%; \">"    +  item.fecha_bonita + "&nbsp;&nbsp;</span></center></p><p class=\"market_data_ancho\" align=\"right\"><center>" + ruta_imagen + "</center></p>"; 
+                              /*<p class=\"market_data_ancho\" align=\"left\">Titulo: "  +  item.mejorTitulo + "<br>" +
+                              "Fecha: "    +  item.fecha_bonita + "<br>"+
+                              lugar+tipo+"</p>"+
+                              "<a href=" + item.url + " target=\"_blank\">Link del evento</a><br><br>"+
+                              ;*/
+
+                    //En los demás casos       
+                    }else{
+                        
+                         
+                         
+                        if( item.mejorTitulo.indexOf(' ') === -1  || item.mejorTitulo.length<10 ){
+                            item.mejorTitulo = "Carreira de " + item.mejorTitulo;
+                        }
+                        
+
+                         contentMejorado = " <p class=\"market_data\" align=\"left\"><span style=\"color:#00638e ; font-weight: bold\">"+ item.mejorTitulo +"</span> </p>" +
+                              "<p>Fecha: <span style=\"color:#00638e\">"    +  item.fecha_bonita + "</span></p>"+
+                              "<p>Lugar: <span style=\"color:#00638e\">"    +lugar + "</span></p>" + 
+                              "<p>Tipo: <span style=\"color:#00638e\">"    +tipo  + "</span></p>";
+                      
+                        if( item.nombre_imagen) {
+                            contentMejorado += "<p><a href=img/" +  item.nombre_imagen + " target=\"_blank\"  ><span style=\"color:#00638e ; font-weight: bold\">Ver cartel</span></a></p>";
+                        }
+                      
+                        //"<a href=" + item.url + " target=\"_blank\">Link del evento</a><br><br>";
+                              
+                    }
+                    
+                    //Chequear si existen las urls.... y en función de eso mostrar...
+                    
+                    /*    private String url_moreinfo="";
+                    private String url_imagen_cartel="";
+                    private String url_web_evento="";
+                    private String url_evento_facebook="";
+
+                    private String url_inscripcion =""; */
+                    
+                    contentMejorado += "<center><p style=\"margin-top:-3px\">";
+                    
+                    /*if (item.nombre_imagen && window.screen.availWidth > 600 && window.screen.availHeight > 550){
+                        
+                        if(item.url_inscripcion)
+                            contentMejorado +=   "<a href=" + item.url_inscripcion+ " target=\"_blank\"><img src=img/otras/inscripcion.png title=Inscripción alt=Inscripción style=\"height:32px; width:32px; margin-right:10px\" > </a> ";   
+
+                        if(item.url_moreinfo)        
+                            contentMejorado +=   "<a href=" + item.url_moreinfo +   " target=\"_blank\"><img src=img/otras/info.png title=Información alt=Información style=\"height:28px; width:28px; margin-right:10px\" > </a> ";   
+
+                        if(item.url_evento_facebook)
+                            contentMejorado +=   "<a href=" +  item.url_evento_facebook + " target=\"_blank\"><img src=img/otras/facebook.png title=\"Evento en el Facebook\" alt=\"Evento en el Facebook\" style=\"height:28px; width:28px; margin-right:10px\" > </a> ";   
+
+                        if(item.url_web_evento)        
+                            contentMejorado +=   "<a href=" +  item.url_web_evento + " target=\"_blank\"><img src=img/otras/webEvento.png title=\"Web propia del evento\" alt=Web propia del evento style=\"height:28px; width:28px; margin-right:10px\"> </a> ";   
+
+
+                        contentMejorado +=   "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/otras/compartir.png title=Compartir alt=Compartir style=\"height:28px; width:28px; margin-right:10px\"> </a> "; 
+                    
+                    }else{*/
+                        
+                        if(item.url_inscripcion)
+                            contentMejorado +=   "<a href=" + item.url_inscripcion+ " target=\"_blank\"><img src=img/otras/inscripcion.png title=Inscripción alt=Inscripción style=\"height:22px; width:22px; margin-right:5px\" > </a> ";   
+
+                        if(item.url_moreinfo)        
+                            contentMejorado +=   "<a href=" + item.url_moreinfo +   " target=\"_blank\"><img src=img/otras/info.png title=Información alt=Información style=\"height:20px; width:20px; margin-right:5px \" > </a> ";   
+
+                        if(item.url_evento_facebook)
+                            contentMejorado +=   "<a href=" +  item.url_evento_facebook + " target=\"_blank\"><img src=img/otras/facebook.png title=\"Evento en el Facebook\" alt=\"Evento en el Facebook\" style=\"height:20px; width:20px; margin-right:5px\" > </a> ";   
+
+                        if(item.url_web_evento)        
+                            contentMejorado +=   "<a href=" +  item.url_web_evento + " target=\"_blank\"><img src=img/otras/webEvento.png title=\"Web propia del evento\" alt=Web propia del evento style=\"height:20px; width:20px; margin-right:5px\"> </a> ";   
+
+
+                        //contentMejorado +=   "<a href=img/" +  item.nombre_imagen + " target=\"_blank\"><img src=img/otras/compartir.png title=Compartir alt=Compartir style=\"height:20px; width:20px; margin-right:5px\"> </a> "; 
+                    
+                    //}
+                    
+                    
+                    
+                    contentMejorado += "</center></p>";
+                    //alert(contentMejorado);
+                        
+
+                    markers_data.push({
+                      lat : item.lat,
+                      lng : item.lng,
+                      title : tit,
+                      infoWindow: {
+                         content: contentMejorado
+                      },
+                      icon : {
+                        size : new google.maps.Size(26, 26),
+                        url : icon
+                      }
+                    });
+
+                
+                }
+            }
+          }
+        }
+        
+        map.addMarkers(markers_data);
+        
+      }else{
+ 
+        //markers_data = [];
+        map.removeMarkers();
+        
+      }
+      
+    }
+    
+    var xhr  = $.getJSON('testTodasCarreras.json'); 
+    xhr.done(loadResults);
+    
+    var value_zoom = 8;
+    
+    var element_css = "#map";
+    
+    if(window.screen.availHeight<700)
+        var value_zoom = 7;
+    
+    
+    
+
+    map = new GMaps({
+      el: element_css,
+      lat: 42.8,
+      lng: -8.06,
+      zoom: value_zoom
+      //zoom: fitZoom
+    });
+    
+   
+    
+  </script>
+  
+  
+  
+    <!--</section> -->
+<!--</section> -->
+        
+<br><br>
+
+<div class="container">
+ <div class="row">
+     
+  <div class="col-lg-12 col-md-12 hidden-sm hidden-xs center">
+	
+        <h1 class="inicio_seccion"> Próximos eventos </h1>     <br>        
+        <div class="row-fluid">
+            <div class="carousel slide row" id="carreras">
+
+                <div class="carousel-inner">
+
+                                <div class='item active' id="activos"></div>
+
+                                <div class='item' id='ronda-2'></div>
+
+
+                                <div class='item' id='ronda-3'></div>
+
+                </div>
+                <a data-slide="prev" href="calendario#carreras" class="left carousel-control">‹</a>
+                <a data-slide="next" href="calendario#carreras" class="right carousel-control">›</a>
+            </div>
+        </div>
+  </div>
+  
+     <div class="hidden-lg hidden-md center">
+         <center><h1 class="inicio_seccion_xs"> Próximos eventos </h1> </center>    <br>  <br> 
+     </div>
+     
+  <div class="col-xs-8 col-sm-6 col-xs-offset-2 col-sm-offset-3 hidden-lg hidden-md center">
+	
+
+              
+        <div class="row-fluid">
+            <div class="carousel slide row" id="carreras2">
+
+                <div class="carousel-inner">
+
+                        <div class='item active' id="xs_activos"></div>
+                        <div class='item' id='xs_ronda-2'></div>
+                        <div class='item' id='xs_ronda-3'></div> 
+                        <div class='item' id='xs_ronda-4'></div> 
+                        <div class='item' id='xs_ronda-5'></div> 
+                        <div class='item' id='xs_ronda-6'></div> 
+                        <div class='item' id='xs_ronda-7'></div> 
+                        <div class='item' id='xs_ronda-8'></div> 
+                        <div class='item' id='xs_ronda-9'></div> 
+                        <div class='item' id='xs_ronda-10'></div> 
+
+                </div>
+                <a data-slide="prev" href="calendario#carreras2" class="left carousel-control">‹</a>
+                <a data-slide="next" href="calendario#carreras2" class="right carousel-control">›</a>
+            </div>
+        </div>
+  </div>   
+     
+     
+ </div>    
+</div>
+          
+    <script>
+        
+        
+ function loadInfoVisor (data) {
+        
+     var html = "";  
+     var html_ronda2 = "";
+     var html_ronda3 = "";
+     
+     var xs_html = "";  
+     var xs_html_ronda2 = "";
+     var xs_html_ronda3 = "";
+     var xs_html_ronda4 = "";
+     var xs_html_ronda5 = "";
+     var xs_html_ronda6 = "";
+     var xs_html_ronda7 = "";
+     var xs_html_ronda8 = "";
+     var xs_html_ronda9 = "";
+     var xs_html_ronda10 = "";
+     
+     var contador=0;
+      
+     var today = new Date();
+      
+     if (data.length > 0) {
+
+        for (var i = 0; i < data.length; i++) {
+            
+            var item = data[i];
+            var width = item.width_imagen;
+            var height = item.heigth_imagen;
+            var relacion = (height*1.0) / (width*1.0);
+            
+            //alert(width + " " + height + " " + relacion)
+            
+            if(item.lat && item.nombre_imagen && relacion>1.35 && relacion<1.45){
+                
+                //alert("OK" + width + " " + height + " " + relacion)
+                
+                var fec = item.fecha;
+                
+                var anho = fec.substring(0, 4);
+                var mes = fec.substring(4, 6);
+                var dia = fec.substring(6, 8);
+                var fecDate = new Date(anho, mes-1, dia);
+                
+                if( fecDate >= today   ){
+
+                    var ruta_im = "img/" + item.nombre_imagen;
+
+                    var diames = dia+"/"+mes;
+
+                    var aux_html="";
+                    
+                    var link_desde_cartel="";
+                    
+                    
+                    if(item.url_web_evento)
+                        link_desde_cartel = item.url_web_evento;
+                    
+                    else if(item.url_inscripcion)
+                        link_desde_cartel = item.url_inscripcion;
+                    
+                    else if(item.url_moreinfo)
+                        link_desde_cartel = item.url_moreinfo;
+                    
+                    else if(item.url_evento_facebook)
+                        link_desde_cartel = item.url_evento_facebook;
+ 
+                    aux_html += "<div class=\"col-md-3\">" + 
+                    "<div class=\"thumbnail\"> <a href=\""+ link_desde_cartel+"\" target=\"_blank\" >"+
+                    "<img src='"+ruta_im+ "' alt="+item.mejorTitulo+" /></a></div>" + 
+                    "<div class=\"caption\"> <div class=\"fecha\">" +
+                    "<span class=\"day\"> " + diames + "</span><span class=\"month\">&nbsp;</span><span class=\"month\">&nbsp;</span> </div>" +
+                    "<div class=\"name\">" + item.mejorTitulo + "  </div> <div class=\"place\">" + item.lugarBonito + "</div> </div></div>"; 
+
+                    if(contador<4){
+                        html += aux_html;
+                    }
+
+                    else if(contador>3 && contador<8){
+                        html_ronda2 += aux_html;
+                    }
+
+                    else if(contador>7 && contador<12){
+                        html_ronda3 += aux_html;
+                    }
+                    
+                    
+                    
+                    if(contador===0){
+                        xs_html += aux_html;
+                    }
+
+                    else if(contador===1){
+                        xs_html_ronda2 += aux_html;
+                    }
+
+                    else if(contador===2){
+                        xs_html_ronda3 += aux_html;
+                    }
+
+                    else if(contador===3){
+                        xs_html_ronda4 += aux_html;
+                    }
+
+                    else if(contador===4){
+                        xs_html_ronda5 += aux_html;
+                    }
+
+                    else if(contador===5){
+                        xs_html_ronda6 += aux_html;
+                    }
+
+                    else if(contador===6){
+                        xs_html_ronda7 += aux_html;
+                    }
+
+                    else if(contador===7){
+                        xs_html_ronda8 += aux_html;
+                    }
+
+                    else if(contador===8){
+                        xs_html_ronda9 += aux_html;
+                    }
+
+                    else if(contador===9){
+                        xs_html_ronda10 += aux_html;
+                    }
+                    
+                    
+
+                    contador++;
+
+                    if(contador===12){
+                        break;
+                    }
+                
+                }else{
+
+                    //alert(fecDate);
+                    //alert(today);
+                }
+ 
+            }
+            
+        }
+     }
+     
+     //lg and md
+     $('#activos').html(html);
+     $('#ronda-2').html(html_ronda2);
+     $('#ronda-3').html(html_ronda3);
+     
+     //xd
+     $('#xs_activos').html(xs_html);
+     $('#xs_ronda-2').html(xs_html_ronda2);
+     $('#xs_ronda-3').html(xs_html_ronda3);
+     $('#xs_ronda-4').html(xs_html_ronda4);
+     $('#xs_ronda-5').html(xs_html_ronda5);
+     $('#xs_ronda-6').html(xs_html_ronda6);
+     $('#xs_ronda-7').html(xs_html_ronda7);
+     $('#xs_ronda-8').html(xs_html_ronda8);
+     $('#xs_ronda-9').html(xs_html_ronda9);
+     $('#xs_ronda-10').html(xs_html_ronda10);
+     
+  }
+    
+    
+        
+    
+    xhr.done(loadInfoVisor);
+    
+    
+</script>
+
+
+    <br><br><br>
+
+    <div class="row">
+        <div class="col-lg-2 col-lg-offset-5 col-md-2 col-md-offset-5 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">  
+
+            <a class="twitter-timeline"  href="https://twitter.com/RunMapGalicia" data-widget-id="652389302165479424">Tweets por el @RunMapGalicia.</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          
+        </div>
+    </div>
+
+    </form>
+    
+    
+    <!--<br><br>
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="text-center">
+            <span class="hidden-sm hidden-md hidden-lg">col-xs</span>
+            <span class="visible-sm hidden-md hidden-lg">col-sm</span>
+            <span class="visible-md hidden-sm hidden-lg">col-md</span>
+            <span class="visible-lg hidden-sm hidden-md">col-lg</span>
+            </h1>
+            <h3 class="text-center">
+            <span class="hidden-sm hidden-md hidden-lg">15px auto|30 15px</span>
+            <span class="visible-sm hidden-md hidden-lg">15px ~62|30 15px</span>
+            <span class="visible-md hidden-sm hidden-lg">15px ~81|30 15px</span>
+            <span class="visible-lg hidden-sm hidden-md">15px ~97|30 15px</span>
+            </h3>
+        </div>
+    </div>-->
+    
+    
+    
+    
+   
+    
+    
+    <footer class="footer-distributed">
+
+         <br><br>
+        
+        <div class="footer-right">
+
+                <a href="https://www.facebook.com/RunMap-Galicia-1499864900330757"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/runmapgalicia"><i class="fa fa-twitter"></i></a>  
+
+        </div>
+
+        <div class="footer-left">
+
+                <p class="footer-links">
+                        <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                        <a href="#">Buscador</a>
+                        &nbsp;&nbsp;&nbsp;
+
+                        <a href="http://www.runmapgalicia.com/sobre.html">Sobre a web</a>
+                        <!--&nbsp;&nbsp;&nbsp;
+                        
+                        <a href="http://www.runmapgalicia.com/contacto2.html">Contacto</a>-->
+                        
+                </p>
+
+                <p>RunMap Galicia 2015</p>
+        </div>
+
+    </footer>
+        
+    
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    
+    <script>   
+    $(function () {
+        $('.button-checkbox').each(function () {
+
+            // Settings
+            var $widget = $(this),
+                $button = $widget.find('button'),
+                $checkbox = $widget.find('input:checkbox'),
+                color = $button.data('color'),
+                settings = {
+                    on: {
+                        icon: 'glyphicon glyphicon-check'
+                    },
+                    off: {
+                        icon: 'glyphicon glyphicon-unchecked'
+                    }
+                };
+
+            // Event Handlers
+            $button.on('click', function () {
+                $checkbox.prop('checked', !$checkbox.is(':checked'));
+                $checkbox.triggerHandler('change');
+                updateDisplay();
+            });
+            $checkbox.on('change', function () {
+                
+                
+                
+                if( $checkbox.attr('id') === 'cb_todos' ){
+                    
+                    handleClickTodos(this);
+                    
+                    $('#cb_carrera').trigger('change');
+                    $('#cb_maraton').trigger('change');
+                    $('#cb_tlon').trigger('change');
+                    $('#cb_bici').trigger('change');
+                    $('#cb_trail').trigger('change');
+                    $('#cb_andaina').trigger('change');
+                    $('#cb_especial').trigger('change');
+
+                }else if( $checkbox.attr('id') === 'cb_carrera' )
+                    handleClickCarrera(this);
+                else if( $checkbox.attr('id') === 'cb_maraton' )
+                    handleClickMaraton(this);
+                else if( $checkbox.attr('id') === 'cb_tlon' )
+                    handleClickTlon(this);
+                else if( $checkbox.attr('id') === 'cb_bici' )
+                    handleClickBici(this);
+                else if( $checkbox.attr('id') === 'cb_trail' )
+                    handleClickTrail(this);
+                else if( $checkbox.attr('id') === 'cb_andaina' )
+                    handleClickAndaina(this);
+                else if( $checkbox.attr('id') === 'cb_especial' )
+                    handleClickEspecial(this);
+                
+                updateDisplay();
+                
+
+            });
+
+            // Actions
+            function updateDisplay() {
+                var isChecked = $checkbox.is(':checked');
+
+                // Set the button's state
+                $button.data('state', (isChecked) ? "on" : "off");
+
+                // Set the button's icon
+                $button.find('.state-icon')
+                    .removeClass()
+                    .addClass('state-icon ' + settings[$button.data('state')].icon);
+
+                // Update the button's color
+                if (isChecked) {
+                    $button
+                        .removeClass('btn-default')
+                        .addClass('btn-' + color + ' active');
+                }
+                else {
+                    $button
+                        .removeClass('btn-' + color + ' active')
+                        .addClass('btn-default');
+                }
+            }
+
+            // Initialization
+            function init() {
+
+                updateDisplay();
+
+                // Inject the icon if applicable
+                if ($button.find('.state-icon').length == 0) {
+                    $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
+                }
+            }
+            init();
+        });
+    });
+    </script> 
+   
+    
+    
+     
+     
+    
+   <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-66937866-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</body>
+</html>
